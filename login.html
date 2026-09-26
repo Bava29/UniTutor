@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- =========================================
+     LOGIN PAGE
+========================================= -->
+
+<body class="unitutor-auth-body">
+
+    <!-- Top Actions -->
+    <div class="unitutor-auth-actions">
+
+        <button class="unitutor-auth-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode"
+            title="Dark Mode">
+            <i data-lucide="moon"></i>
+        </button>
+
+        <button class="unitutor-auth-toggle" id="rtlToggle" type="button" aria-label="Toggle RTL mode" title="RTL Mode">
+            <i data-lucide="arrow-left-right"></i>
+        </button>
+
+    </div>
+
+
+    <!-- Login Wrapper -->
+    <main class="unitutor-auth-wrapper">
+
+        <div class="unitutor-auth-card">
+
+            <!-- Logo -->
+            <a href="index.html" class="unitutor-auth-logo">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+
+
+            <!-- Heading -->
+            <div class="unitutor-auth-heading">
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Sign in to continue your learning journey with UniTutor.
+                </p>
+
+            </div>
+
+
+            <!-- Login Form -->
+            <form class="unitutor-auth-form">
+
+                <!-- Email -->
+                <div class="unitutor-auth-field">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+
+                </div>
+
+
+                <div class="unitutor-auth-field">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div class="unitutor-password-wrapper">
+
+                        <input type="password" id="loginPassword" name="password" placeholder="Enter your password"
+                            required>
+
+                        <button type="button" class="unitutor-password-toggle" data-password-target="loginPassword"
+                            aria-label="Show password">
+                            <i data-lucide="eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remember + Forgot -->
+                <div class="unitutor-auth-options">
+
+                    <label class="unitutor-remember">
+
+                        <input type="checkbox" name="remember">
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                    <a href="forgot-password.html">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- Login -->
+                <button type="submit" class="primary-btn unitutor-auth-submit">
+
+                    <span>Login</span>
+
+                    <i data-lucide="arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- Divider -->
+            <div class="unitutor-auth-divider">
+                <span>OR CONTINUE WITH</span>
+            </div>
+
+
+            <!-- Social Login -->
+            <div class="unitutor-auth-socials">
+
+                <!-- Google -->
+                <a href="#" class="unitutor-social-google">
+
+                    <img src="images/google-logo.svg" alt="Google">
+
+                    <span>Google</span>
+
+                </a>
+
+
+                <!-- Facebook -->
+                <a href="#" class="unitutor-social-facebook">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                    <span>Facebook</span>
+
+                </a>
+
+
+                <!-- X -->
+                <a href="#" class="unitutor-social-x">
+
+                    <i class="fa-brands fa-apple"></i>
+
+                    <span>Apple</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Register -->
+            <p class="unitutor-auth-bottom-text">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create an account
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

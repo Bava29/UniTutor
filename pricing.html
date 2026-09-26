@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+     UniTutor Header
+========================= -->
+    <header class="unitutor-header">
+        <div class="unitutor-header-inner">
+
+            <!-- Logo -->
+            <a href="index.html" class="unitutor-logo">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="unitutor-nav" id="unitutorNav">
+                <ul class="unitutor-menu">
+
+                    <li class="unitutor-dropdown">
+                        <a href="javascript:void(0);" class="unitutor-dropdown-link">
+                            <span class="unitutor-nav-label">Home</span>
+                            <i data-lucide="chevron-down"></i>
+                        </a>
+
+                        <ul class="unitutor-dropdown-menu">
+                            <li>
+                                <a href="index.html">Home 1</a>
+                            </li>
+                            <li>
+                                <a href="home-2.html">Home 2</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="tutors-subjects.html"><span class="unitutor-nav-label">Tutors &amp; Subjects</span></a>
+                    </li>
+
+                    <li>
+                        <a href="about.html"><span class="unitutor-nav-label">About</span></a>
+                    </li>
+
+                    <li>
+                        <a href="how-it-works.html"><span class="unitutor-nav-label">How It Works</span></a>
+                    </li>
+
+                    <li>
+                        <a href="pricing.html" class="active"><span class="unitutor-nav-label">Pricing</span></a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html"><span class="unitutor-nav-label">Contact</span></a>
+                    </li>
+
+                </ul>
+
+                <!-- Mobile Actions -->
+                <div class="mobile-menu-actions">
+
+                    <button class="header-toggle-btn" id="mobileThemeToggle" type="button">
+                        <i data-lucide="moon"></i>
+                        <span>Dark Mode</span>
+                    </button>
+
+                    <button class="header-toggle-btn" id="mobileRtlToggle" type="button">
+                        <i data-lucide="arrow-left-right"></i>
+                        <span>RTL Mode</span>
+                    </button>
+
+                    <a href="login.html" class="mobile-login-btn">
+                        <span>Login</span>
+                    </a>
+
+                    <a href="dashboard.html" class="mobile-dashboard-btn">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                </div>
+            </nav>
+
+            <!-- Desktop Actions -->
+            <div class="unitutor-header-actions">
+
+                <!-- Dark Mode -->
+                <button class="header-icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode"
+                    title="Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+
+                <!-- RTL -->
+                <button class="header-icon-btn" id="rtlToggle" type="button" aria-label="Toggle RTL mode"
+                    title="RTL Mode">
+                    <i data-lucide="arrow-left-right"></i>
+                </button>
+
+                <!-- Login -->
+                <a href="login.html" class="header-login-btn">
+                    Login
+                </a>
+
+                <!-- Dashboard -->
+                <a href="dashboard.html" class="header-dashboard-btn">
+                    <i data-lucide="layout-dashboard"></i>
+                    Dashboard
+                </a>
+
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="unitutor-menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <section class="unitutor-inner-hero pri-banner">
+            <div class="unitutor-inner-hero-overlay"></div>
+
+            <div class="container">
+                <div class="unitutor-inner-hero-content">
+
+                    <span class="unitutor-inner-hero-label">
+                        SIMPLE & TRANSPARENT PRICING
+                    </span>
+
+                    <h1>Choose the learning support <br> that works for you.</h1>
+
+                    <p>
+                        Have a question about tutors, sessions, subjects, or your
+                        learning journey? We’re here to help you find the right support.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="unitutor-pricing-plans" id="pricing-plans">
+            <div class="container">
+
+                <div class="unitutor-pricing-plans-head">
+                    <span class="unitutor-pricing-plans-label">
+                        PLANS & PRICING
+                    </span>
+
+                    <h2>
+                        Choose how you want to
+                        <span>learn.</span>
+                    </h2>
+
+                    <p>
+                        Whether you need help with one topic or ongoing academic
+                        support, choose a session option that fits your learning pace.
+                    </p>
+                </div>
+
+                <div class="unitutor-pricing-plans-grid">
+
+                    <!-- Single Session -->
+                    <div class="unitutor-pricing-plan">
+
+                        <div class="unitutor-pricing-plan-top">
+                            <span class="unitutor-pricing-plan-number">01</span>
+
+                            <div class="unitutor-pricing-plan-icon">
+                                <i data-lucide="book-open"></i>
+                            </div>
+                        </div>
+
+                        <div class="unitutor-pricing-plan-info">
+                            <h3>Single Session</h3>
+
+                            <p>
+                                Get focused help when you need support with a
+                                specific topic, assignment, or concept.
+                            </p>
+                        </div>
+
+                        <div class="unitutor-pricing-plan-price">
+                            <strong>$15</strong>
+                            <span>/ session</span>
+                        </div>
+
+                        <div class="unitutor-pricing-plan-divider"></div>
+
+                        <ul class="unitutor-pricing-plan-features">
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>One-to-one tutor session</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Subject-specific support</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Flexible session scheduling</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Session notes & guidance</span>
+                            </li>
+                        </ul>
+
+                        <a href="tutors-subjects.html" class="unitutor-pricing-plan-btn">
+                            <span>Choose Session</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Learning Pack -->
+                    <div class="unitutor-pricing-plan unitutor-pricing-plan-featured">
+
+                        <div class="unitutor-pricing-plan-badge">
+                            MOST FLEXIBLE
+                        </div>
+
+                        <div class="unitutor-pricing-plan-top">
+                            <span class="unitutor-pricing-plan-number">02</span>
+
+                            <div class="unitutor-pricing-plan-icon">
+                                <i data-lucide="layers-2"></i>
+                            </div>
+                        </div>
+
+                        <div class="unitutor-pricing-plan-info">
+                            <h3>Learning Pack</h3>
+
+                            <p>
+                                Build consistency with a flexible set of sessions
+                                for ongoing academic support.
+                            </p>
+                        </div>
+
+                        <div class="unitutor-pricing-plan-price">
+                            <strong>$55</strong>
+                            <span>/ 4 sessions</span>
+                        </div>
+
+                        <div class="unitutor-pricing-plan-divider"></div>
+
+                        <ul class="unitutor-pricing-plan-features">
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Four one-to-one sessions</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Priority session scheduling</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Personalized learning support</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Learning progress guidance</span>
+                            </li>
+                        </ul>
+
+                        <a href="tutors-subjects.html" class="unitutor-pricing-plan-btn">
+                            <span>Choose Learning Pack</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Focused Support -->
+                    <div class="unitutor-pricing-plan">
+
+                        <div class="unitutor-pricing-plan-top">
+                            <span class="unitutor-pricing-plan-number">03</span>
+
+                            <div class="unitutor-pricing-plan-icon">
+                                <i data-lucide="graduation-cap"></i>
+                            </div>
+                        </div>
+
+                        <div class="unitutor-pricing-plan-info">
+                            <h3>Focused Support</h3>
+
+                            <p>
+                                Stay supported throughout your academic journey
+                                with a larger session package.
+                            </p>
+                        </div>
+
+                        <div class="unitutor-pricing-plan-price">
+                            <strong>$100</strong>
+                            <span>/ 8 sessions</span>
+                        </div>
+
+                        <div class="unitutor-pricing-plan-divider"></div>
+
+                        <ul class="unitutor-pricing-plan-features">
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Eight one-to-one sessions</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Consistent tutor support</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Flexible learning schedule</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check"></i>
+                                <span>Ongoing academic guidance</span>
+                            </li>
+                        </ul>
+
+                        <a href="tutors-subjects.html" class="unitutor-pricing-plan-btn">
+                            <span>Choose Support</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="unitutor-pricing-plans-note">
+                    <i data-lucide="info"></i>
+                    <span>
+                        All sessions are one-to-one and can be scheduled based on
+                        tutor availability.
+                    </span>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="unitutor-pricing-included">
+            <div class="container">
+
+                <div class="unitutor-pricing-included-layout">
+
+                    <!-- Left Content -->
+                    <div class="unitutor-pricing-included-intro">
+
+                        <span class="unitutor-pricing-included-label">
+                            WHAT'S INCLUDED
+                        </span>
+
+                        <h2>
+                            More than a session.
+                            <span>Support that moves you forward.</span>
+                        </h2>
+
+                        <p>
+                            Every UniTutor session is designed to give you focused
+                            academic support, meaningful guidance, and a clearer
+                            path toward your learning goals.
+                        </p>
+
+                        <a href="tutors-subjects.html" class="primary-btn">
+                            <span>Find Your Tutor</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Benefits -->
+                    <div class="unitutor-pricing-included-list">
+
+                        <div class="unitutor-pricing-included-item">
+
+                            <span class="unitutor-pricing-included-number">
+                                01
+                            </span>
+
+                            <div class="unitutor-pricing-included-icon">
+                                <i data-lucide="user-check"></i>
+                            </div>
+
+                            <div class="unitutor-pricing-included-content">
+                                <h3>Verified Tutors</h3>
+                                <p>
+                                    Connect with tutors selected to support
+                                    university-level subjects and learning needs.
+                                </p>
+                            </div>
+
+                            <i class="unitutor-pricing-included-arrow" data-lucide="arrow-up-right">
+                            </i>
+
+                        </div>
+
+
+                        <div class="unitutor-pricing-included-item">
+
+                            <span class="unitutor-pricing-included-number">
+                                02
+                            </span>
+
+                            <div class="unitutor-pricing-included-icon">
+                                <i data-lucide="message-circle"></i>
+                            </div>
+
+                            <div class="unitutor-pricing-included-content">
+                                <h3>Personalized Attention</h3>
+                                <p>
+                                    Get one-to-one guidance focused on the topics
+                                    and concepts you need help understanding.
+                                </p>
+                            </div>
+
+                            <i class="unitutor-pricing-included-arrow" data-lucide="arrow-up-right">
+                            </i>
+
+                        </div>
+
+
+                        <div class="unitutor-pricing-included-item">
+
+                            <span class="unitutor-pricing-included-number">
+                                03
+                            </span>
+
+                            <div class="unitutor-pricing-included-icon">
+                                <i data-lucide="calendar-days"></i>
+                            </div>
+
+                            <div class="unitutor-pricing-included-content">
+                                <h3>Flexible Scheduling</h3>
+                                <p>
+                                    Choose session times that fit around your
+                                    university classes, assignments, and routine.
+                                </p>
+                            </div>
+
+                            <i class="unitutor-pricing-included-arrow" data-lucide="arrow-up-right">
+                            </i>
+
+                        </div>
+
+
+                        <div class="unitutor-pricing-included-item">
+
+                            <span class="unitutor-pricing-included-number">
+                                04
+                            </span>
+
+                            <div class="unitutor-pricing-included-icon">
+                                <i data-lucide="notebook-tabs"></i>
+                            </div>
+
+                            <div class="unitutor-pricing-included-content">
+                                <h3>Learning Resources</h3>
+                                <p>
+                                    Keep your learning organized with useful notes,
+                                    references, and materials from your sessions.
+                                </p>
+                            </div>
+
+                            <i class="unitutor-pricing-included-arrow" data-lucide="arrow-up-right">
+                            </i>
+
+                        </div>
+
+
+                        <div class="unitutor-pricing-included-item">
+
+                            <span class="unitutor-pricing-included-number">
+                                05
+                            </span>
+
+                            <div class="unitutor-pricing-included-icon">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+
+                            <div class="unitutor-pricing-included-content">
+                                <h3>Progress-Focused Support</h3>
+                                <p>
+                                    Use each session to build understanding,
+                                    strengthen skills, and keep moving forward.
+                                </p>
+                            </div>
+
+                            <i class="unitutor-pricing-included-arrow" data-lucide="arrow-up-right">
+                            </i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="unitutor-pricing-options">
+            <div class="container">
+
+                <div class="unitutor-pricing-options-head">
+                    <span class="unitutor-pricing-options-label">
+                        LEARN YOUR WAY
+                    </span>
+
+                    <h2>
+                        One goal.
+                        <span>Different ways to learn.</span>
+                    </h2>
+
+                    <p>
+                        Choose the learning approach that matches where you are
+                        and what you need from your next session.
+                    </p>
+                </div>
+
+                <div class="unitutor-pricing-options-track">
+
+                    <!-- Option 01 -->
+                    <div class="unitutor-pricing-option">
+
+                        <div class="unitutor-pricing-option-top">
+                            <span>01</span>
+
+                            <div class="unitutor-pricing-option-line"></div>
+
+                            <i data-lucide="message-square"></i>
+                        </div>
+
+                        <div class="unitutor-pricing-option-content">
+                            <h3>Ask & Understand</h3>
+
+                            <p>
+                                Bring the needed questions you are stuck on and work
+                                through them with a tutor.
+                            </p>
+                        </div>
+
+                        <span class="unitutor-pricing-option-tag">
+                            QUICK SUPPORT
+                        </span>
+
+                    </div>
+
+
+                    <!-- Option 02 -->
+                    <div class="unitutor-pricing-option">
+
+                        <div class="unitutor-pricing-option-top">
+                            <span>02</span>
+
+                            <div class="unitutor-pricing-option-line"></div>
+
+                            <i data-lucide="book-marked"></i>
+                        </div>
+
+                        <div class="unitutor-pricing-option-content">
+                            <h3>Study & Practice</h3>
+
+                            <p>
+                                Use guided sessions to strength concepts, guide mind and build confidence.
+                            </p>
+                        </div>
+
+                        <span class="unitutor-pricing-option-tag">
+                            SKILL BUILDING
+                        </span>
+
+                    </div>
+
+
+                    <!-- Option 03 -->
+                    <div class="unitutor-pricing-option">
+
+                        <div class="unitutor-pricing-option-top">
+                            <span>03</span>
+
+                            <div class="unitutor-pricing-option-line"></div>
+
+                            <i data-lucide="repeat-2"></i>
+                        </div>
+
+                        <div class="unitutor-pricing-option-content">
+                            <h3>Learn Consistently</h3>
+
+                            <p>
+                                Build a regular routine with recurring sessions
+                                around your university schedule.
+                            </p>
+                        </div>
+
+                        <span class="unitutor-pricing-option-tag">
+                            ONGOING SUPPORT
+                        </span>
+
+                    </div>
+
+
+                    <!-- Option 04 -->
+                    <div class="unitutor-pricing-option">
+
+                        <div class="unitutor-pricing-option-top">
+                            <span>04</span>
+
+                            <div class="unitutor-pricing-option-line"></div>
+
+                            <i data-lucide="target"></i>
+                        </div>
+
+                        <div class="unitutor-pricing-option-content">
+                            <h3>Focus on a Goal</h3>
+
+                            <p>
+                                Prepare for an exam, assignment, project, or
+                                another important academic milestone.
+                            </p>
+                        </div>
+
+                        <span class="unitutor-pricing-option-tag">
+                            GOAL FOCUSED
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="unitutor-pricing-options-bottom">
+
+                    <span>
+                        <i data-lucide="sparkles"></i>
+                        Your learning pace. Your choice.
+                    </span>
+
+                    <a href="tutors-subjects.html">
+                        Find a Tutor
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="unitutor-pricing-faq">
+            <div class="container">
+
+                <div class="unitutor-pricing-faq-head">
+                    <span class="unitutor-pricing-faq-label">
+                        PRICING FAQ
+                    </span>
+
+                    <h2>
+                        Questions about
+                        <span>pricing?</span>
+                    </h2>
+
+                    <p>
+                        Find quick answers to common questions about sessions,
+                        plans, scheduling, and payments.
+                    </p>
+                </div>
+
+                <div class="unitutor-pricing-faq-list">
+
+                    <!-- FAQ 01 -->
+                    <div class="unitutor-pricing-faq-item">
+
+                        <button class="unitutor-pricing-faq-question" type="button">
+                            <span>
+                                How does UniTutor pricing work?
+                            </span>
+
+                            <i data-lucide="plus"></i>
+                        </button>
+
+                        <div class="unitutor-pricing-faq-answer">
+                            <p>
+                                UniTutor offers flexible session options so students
+                                can choose between a single session or a multiple-session
+                                learning package based on their academic needs.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 02 -->
+                    <div class="unitutor-pricing-faq-item">
+
+                        <button class="unitutor-pricing-faq-question" type="button">
+                            <span>
+                                Can I choose my own tutor?
+                            </span>
+
+                            <i data-lucide="plus"></i>
+                        </button>
+
+                        <div class="unitutor-pricing-faq-answer">
+                            <p>
+                                Yes. You can explore tutors based on their subject
+                                expertise and choose a tutor that matches your
+                                learning requirements.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 03 -->
+                    <div class="unitutor-pricing-faq-item">
+
+                        <button class="unitutor-pricing-faq-question" type="button">
+                            <span>
+                                Can I schedule sessions around my classes?
+                            </span>
+
+                            <i data-lucide="plus"></i>
+                        </button>
+
+                        <div class="unitutor-pricing-faq-answer">
+                            <p>
+                                Sessions can be scheduled according to available
+                                tutor time slots, allowing you to plan learning
+                                around your university routine.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 04 -->
+                    <div class="unitutor-pricing-faq-item">
+
+                        <button class="unitutor-pricing-faq-question" type="button">
+                            <span>
+                                What happens if I need more sessions?
+                            </span>
+
+                            <i data-lucide="plus"></i>
+                        </button>
+
+                        <div class="unitutor-pricing-faq-answer">
+                            <p>
+                                You can choose another session or select a larger
+                                learning package whenever you need additional
+                                academic support.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 05 -->
+                    <div class="unitutor-pricing-faq-item">
+
+                        <button class="unitutor-pricing-faq-question" type="button">
+                            <span>
+                                Are learning materials included?
+                            </span>
+
+                            <i data-lucide="plus"></i>
+                        </button>
+
+                        <div class="unitutor-pricing-faq-answer">
+                            <p>
+                                Session notes, references, and other learning
+                                resources may be provided depending on the session
+                                and tutor.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 06 -->
+                    <div class="unitutor-pricing-faq-item">
+
+                        <button class="unitutor-pricing-faq-question" type="button">
+                            <span>
+                                How do I get started?
+                            </span>
+
+                            <i data-lucide="plus"></i>
+                        </button>
+
+                        <div class="unitutor-pricing-faq-answer">
+                            <p>
+                                Explore the available subjects, find a tutor that
+                                matches your needs, choose a suitable session option,
+                                and schedule your learning session.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="unitutor-pricing-final-cta">
+            <div class="container">
+
+                <div class="unitutor-pricing-final-cta-box">
+
+                    <div class="unitutor-pricing-final-cta-content">
+
+                        <span class="unitutor-pricing-final-cta-label">
+                            READY TO START?
+                        </span>
+
+                        <h2>
+                            Invest in your learning.
+                            <span>Start with the right support.</span>
+                        </h2>
+
+                        <p>
+                            Find a tutor who understands your subject, choose a
+                            session that fits your needs, and take your next
+                            learning step with confidence.
+                        </p>
+
+                        <div class="unitutor-pricing-final-cta-actions">
+
+                            <a href="tutors-subjects.html" class="primary-btn">
+                                <span>Find a Tutor</span>
+                                <i data-lucide="arrow-up-right"></i>
+                            </a>
+
+                            <a href="contact.html" class="secondary-btn">
+                                <span>Talk to Us</span>
+                                <i data-lucide="message-circle"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="unitutor-pricing-final-cta-note">
+
+                        <div class="unitutor-pricing-final-cta-note-icon">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+
+                        <div>
+                            <strong>Learn with purpose.</strong>
+                            <span>One session at a time.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================
+     UniTutor Footer
+========================= -->
+    <footer class="unitutor-footer">
+
+        <div class="container">
+
+            <div class="unitutor-footer-main">
+
+                <!-- Brand Column -->
+                <div class="unitutor-footer-brand">
+
+                    <a href="index.html" class="unitutor-footer-logo">
+                        <img src="images/logo-light.png" alt="UniTutor">
+                    </a>
+
+                    <p>
+                        Connect with verified university tutors and make
+                        every learning session more focused, flexible,
+                        and effective.
+                    </p>
+
+                    <div class="unitutor-footer-socials">
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Explore -->
+                <div class="unitutor-footer-column">
+
+                    <h3>Explore</h3>
+
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="tutors-subjects.html">Tutors & Subjects</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li>
+
+                        <li>
+                            <a href="how-it-works.html">How It Works</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Resources -->
+                <div class="unitutor-footer-column">
+
+                    <h3>Resources</h3>
+
+                    <ul>
+                        <li>
+                            <a href="pricing.html">Pricing</a>
+                        </li>
+
+                        <li>
+                            <a href="login.html">Student Login</a>
+                        </li>
+
+                        <li>
+                            <a href="dashboard.html">Dashboard</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Subjects -->
+                <div class="unitutor-footer-column">
+
+                    <h3>Subjects</h3>
+
+                    <ul>
+                        <li>
+                            <a href="tutors-subjects.html">Engineering</a>
+                        </li>
+
+                        <li>
+                            <a href="tutors-subjects.html">Commerce</a>
+                        </li>
+
+                        <li>
+                            <a href="tutors-subjects.html">Law</a>
+                        </li>
+
+                        <li>
+                            <a href="tutors-subjects.html">Science</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Contact -->
+                <div class="unitutor-footer-column unitutor-footer-contact">
+
+                    <h3>Get In Touch</h3>
+
+                    <a href="mailto:hello@unitutor.com" class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <i data-lucide="mail"></i>
+                        </span>
+
+                        <span>hello@unitutor.com</span>
+                    </a>
+
+                    <a href="tel:+1234567890" class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <i data-lucide="phone"></i>
+                        </span>
+
+                        <span>+1 234 567 890</span>
+                    </a>
+
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <i data-lucide="map-pin"></i>
+                        </span>
+
+                        <span>
+                            University District,<br>
+                            Learning Center
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer Bottom -->
+            <div class="unitutor-footer-bottom">
+
+                <p>
+                    © 2026 UniTutor. All rights reserved.
+                </p>
+
+                <div class="unitutor-footer-bottom-links">
+
+                    <a href="#">Privacy Policy</a>
+
+                    <a href="#">Terms of Service</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button class="unitutor-scroll-top" id="unitutorScrollTop" aria-label="Scroll to top" type="button">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

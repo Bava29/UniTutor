@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Dashboard Sidebar -->
+    <aside class="unitutor-dashboard-sidebar" id="dashboardSidebar">
+
+        <button type="button" class="unitutor-sidebar-close" aria-label="Close sidebar">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="unitutor-dashboard-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+        </div>
+
+        <nav class="unitutor-dashboard-nav">
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d2.html">
+                        <i data-lucide="users-round"></i>
+                        <span>Find a Tutor</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d3.html">
+                        <i data-lucide="calendar-days"></i>
+                        <span>My Sessions</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d4.html">
+                        <i data-lucide="notebook-tabs"></i>
+                        <span>My Materials</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d5.html" class="active">
+                        <i data-lucide="credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d6.html">
+                        <i data-lucide="messages-square"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d7.html">
+                        <i data-lucide="bookmark-check"></i>
+                        <span>Saved Tutors</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="unitutor-dashboard-logout">
+            <button type="button" id="dashboardLogoutBtn" class="unitutor-dashboard-logout-btn">
+                <i data-lucide="log-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+
+
+        <!-- Logout Confirmation Popup -->
+        <div class="unitutor-logout-modal" id="dashboardLogoutModal" aria-hidden="true">
+            <div class="unitutor-logout-modal-overlay" id="logoutModalOverlay"></div>
+
+            <div class="unitutor-logout-modal-box">
+
+                <button type="button" class="unitutor-logout-modal-close" id="logoutModalClose" aria-label="Close">
+                    <i data-lucide="x"></i>
+                </button>
+
+                <div class="unitutor-logout-modal-icon">
+                    <i data-lucide="log-out"></i>
+                </div>
+
+                <h2>Logout</h2>
+
+                <p>
+                    Are you sure you want to logout from your dashboard?
+                </p>
+
+                <div class="unitutor-logout-modal-actions">
+
+                    <button type="button" class="unitutor-logout-no" id="logoutNoBtn">
+                        No
+                    </button>
+
+                    <button type="button" class="unitutor-logout-yes" id="logoutYesBtn">
+                        Yes, Logout
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Dashboard Header -->
+    <header class="unitutor-dashboard-header">
+
+        <div class="unitutor-dashboard-header-left">
+
+            <!-- Mobile Menu Toggle -->
+            <button type="button" class="unitutor-dashboard-menu-toggle" id="dashboardMenuToggle" aria-label="Open menu"
+                aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <h1>Payments</h1>
+
+        </div>
+
+
+        <div class="unitutor-dashboard-header-right">
+
+            <!-- Notifications -->
+            <button type="button" class="unitutor-dashboard-header-icon notification-btn" aria-label="Notifications">
+                <i data-lucide="bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+
+
+            <!-- Settings -->
+            <button type="button" class="unitutor-dashboard-header-icon" aria-label="Settings">
+                <i data-lucide="settings-2"></i>
+            </button>
+
+
+            <!-- Dark Mode -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardThemeToggle"
+                aria-label="Toggle dark mode">
+                <i data-lucide="moon"></i>
+            </button>
+
+
+            <!-- RTL -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardRtlToggle"
+                aria-label="Toggle RTL">
+                <i data-lucide="arrow-left-right"></i>
+            </button>
+
+
+            <!-- Student Profile -->
+            <button type="button" class="unitutor-dashboard-profile" aria-label="Student profile">
+                <img src="images/student-profile.jpg" alt="Alex Morgan">
+
+                <span class="unitutor-dashboard-profile-info">
+                    <strong>Alex Morgan</strong>
+                    <small>Student</small>
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main class="unitutor-dashboard-main">
+
+        <!-- ==========================================
+     PAYMENTS — SECTION 1
+========================================== -->
+
+        <section class="unitutor-payments-overview">
+
+            <div class="unitutor-payments-overview-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        MY PAYMENTS
+                    </span>
+
+                    <h2>
+                        Manage your payments and billing
+                    </h2>
+
+                    <p>
+                        Keep track of your session payments, upcoming charges,
+                        and overall learning expenses.
+                    </p>
+
+                </div>
+
+                <a href="#payment-history" class="primary-btn">
+                    <i data-lucide="receipt"></i>
+                    View Payment History
+                </a>
+
+            </div>
+
+
+            <!-- ==========================================
+         PAYMENT SUMMARY
+    =========================================== -->
+
+            <div class="unitutor-payment-summary">
+
+
+                <!-- Total Spent -->
+
+                <div class="unitutor-payment-summary-card">
+
+                    <div class="unitutor-payment-summary-top">
+
+                        <div class="unitutor-payment-summary-icon">
+                            <i data-lucide="wallet"></i>
+                        </div>
+
+                        <span>
+                            TOTAL SPENT
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        $420
+                    </strong>
+
+                    <p>
+                        Total learning expenses
+                    </p>
+
+                </div>
+
+
+                <!-- This Month -->
+
+                <div class="unitutor-payment-summary-card">
+
+                    <div class="unitutor-payment-summary-top">
+
+                        <div class="unitutor-payment-summary-icon">
+                            <i data-lucide="calendar-days"></i>
+                        </div>
+
+                        <span>
+                            THIS MONTH
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        $95
+                    </strong>
+
+                    <p>
+                        Paid during September
+                    </p>
+
+                </div>
+
+
+                <!-- Completed -->
+
+                <div class="unitutor-payment-summary-card">
+
+                    <div class="unitutor-payment-summary-top">
+
+                        <div class="unitutor-payment-summary-icon">
+                            <i data-lucide="circle-check"></i>
+                        </div>
+
+                        <span>
+                            COMPLETED
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        12
+                    </strong>
+
+                    <p>
+                        Successful payments
+                    </p>
+
+                </div>
+
+
+                <!-- Pending -->
+
+                <div class="unitutor-payment-summary-card">
+
+                    <div class="unitutor-payment-summary-top">
+
+                        <div class="unitutor-payment-summary-icon pending">
+                            <i data-lucide="clock-3"></i>
+                        </div>
+
+                        <span>
+                            PENDING
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        01
+                    </strong>
+
+                    <p>
+                        Payment awaiting completion
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+         NEXT PAYMENT
+    =========================================== -->
+
+            <div class="unitutor-next-payment">
+
+                <div class="unitutor-next-payment-header">
+
+                    <div>
+
+                        <span>
+                            NEXT PAYMENT
+                        </span>
+
+                        <h3>
+                            Upcoming session payment
+                        </h3>
+
+                    </div>
+
+                    <div class="unitutor-payment-status">
+                        Pending
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-next-payment-content">
+
+
+                    <!-- Session Details -->
+
+                    <div class="unitutor-next-payment-session">
+
+                        <div class="unitutor-payment-session-icon">
+                            <i data-lucide="video"></i>
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Data Structures & Algorithms
+                            </h4>
+
+                            <p>
+                                Computer Science
+                            </p>
+
+                            <div class="unitutor-payment-session-meta">
+
+                                <span>
+                                    <i data-lucide="user"></i>
+                                    Dr. Emily Carter
+                                </span>
+
+                                <span>
+                                    <i data-lucide="calendar"></i>
+                                    Sep 28, 2026
+                                </span>
+
+                                <span>
+                                    <i data-lucide="clock-3"></i>
+                                    4:00 PM – 5:00 PM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Amount -->
+
+                    <div class="unitutor-next-payment-amount">
+
+                        <span>
+                            AMOUNT DUE
+                        </span>
+
+                        <strong>
+                            $28
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Action -->
+
+                    <div class="unitutor-next-payment-action">
+
+                        <button type="button" class="primary-btn">
+                            Pay Now
+                        </button>
+
+                        <button type="button" class="unitutor-payment-details-btn">
+                            <i data-lucide="eye"></i>
+                            Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     PAYMENTS — SECTION 2
+========================================== -->
+
+        <section class="unitutor-payment-history" id="payment-history">
+
+            <div class="unitutor-payment-history-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        PAYMENT HISTORY
+                    </span>
+
+                    <h2>
+                        Your recent transactions
+                    </h2>
+
+                    <p>
+                        Review your completed and pending payments for
+                        tutoring sessions and learning services.
+                    </p>
+
+                </div>
+
+
+                <div class="unitutor-payment-history-filters">
+
+                    <select>
+                        <option selected>All Status</option>
+                        <option>Paid</option>
+                        <option>Pending</option>
+                        <option>Failed</option>
+                    </select>
+
+                    <select>
+                        <option selected>September 2026</option>
+                        <option>August 2026</option>
+                        <option>July 2026</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+         PAYMENT HISTORY PANEL
+    =========================================== -->
+
+            <div class="unitutor-payment-history-panel">
+
+
+                <!-- Table Header -->
+
+                <div class="unitutor-payment-history-table-head">
+
+                    <span>
+                        DATE
+                    </span>
+
+                    <span>
+                        SESSION / SERVICE
+                    </span>
+
+                    <span>
+                        PAYMENT METHOD
+                    </span>
+
+                    <span>
+                        AMOUNT
+                    </span>
+
+                    <span>
+                        STATUS
+                    </span>
+
+                    <span>
+                        ACTION
+                    </span>
+
+                </div>
+
+
+                <!-- Payment 01 -->
+
+                <div class="unitutor-payment-history-row">
+
+                    <div class="unitutor-payment-history-date">
+
+                        <strong>
+                            21
+                        </strong>
+
+                        <span>
+                            SEP 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-service">
+
+                        <h3>
+                            Database Management Systems
+                        </h3>
+
+                        <span>
+                            Computer Science · Dr. Emily Carter
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-method">
+
+                        <div class="unitutor-payment-method-icon">
+                            <i data-lucide="credit-card"></i>
+                        </div>
+
+                        <span>
+                            Visa •••• 4242
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-amount">
+                        $28
+                    </div>
+
+
+                    <div>
+                        <span class="unitutor-history-payment-status paid">
+                            Paid
+                        </span>
+                    </div>
+
+
+                    <div class="unitutor-payment-history-action">
+
+                        <button type="button" class="unitutor-payment-receipt-btn">
+                            <i data-lucide="receipt"></i>
+                            Receipt
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Payment 02 -->
+
+                <div class="unitutor-payment-history-row">
+
+                    <div class="unitutor-payment-history-date">
+
+                        <strong>
+                            18
+                        </strong>
+
+                        <span>
+                            SEP 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-service">
+
+                        <h3>
+                            Engineering Mathematics
+                        </h3>
+
+                        <span>
+                            Engineering · James Wilson
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-method">
+
+                        <div class="unitutor-payment-method-icon">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+
+                        <span>
+                            UPI
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-amount">
+                        $24
+                    </div>
+
+
+                    <div>
+                        <span class="unitutor-history-payment-status paid">
+                            Paid
+                        </span>
+                    </div>
+
+
+                    <div class="unitutor-payment-history-action">
+
+                        <button type="button" class="unitutor-payment-receipt-btn">
+                            <i data-lucide="receipt"></i>
+                            Receipt
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Payment 03 -->
+
+                <div class="unitutor-payment-history-row">
+
+                    <div class="unitutor-payment-history-date">
+
+                        <strong>
+                            15
+                        </strong>
+
+                        <span>
+                            SEP 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-service">
+
+                        <h3>
+                            Financial Accounting
+                        </h3>
+
+                        <span>
+                            Commerce · Sophia Bennett
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-method">
+
+                        <div class="unitutor-payment-method-icon">
+                            <i data-lucide="credit-card"></i>
+                        </div>
+
+                        <span>
+                            Visa •••• 4242
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-amount">
+                        $26
+                    </div>
+
+
+                    <div>
+                        <span class="unitutor-history-payment-status paid">
+                            Paid
+                        </span>
+                    </div>
+
+
+                    <div class="unitutor-payment-history-action">
+
+                        <button type="button" class="unitutor-payment-receipt-btn">
+                            <i data-lucide="receipt"></i>
+                            Receipt
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Payment 04 -->
+
+                <div class="unitutor-payment-history-row">
+
+                    <div class="unitutor-payment-history-date">
+
+                        <strong>
+                            12
+                        </strong>
+
+                        <span>
+                            SEP 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-service">
+
+                        <h3>
+                            Contract Law
+                        </h3>
+
+                        <span>
+                            Law · Michael Anderson
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-method">
+
+                        <div class="unitutor-payment-method-icon">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+
+                        <span>
+                            UPI
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-amount">
+                        $25
+                    </div>
+
+
+                    <div>
+                        <span class="unitutor-history-payment-status paid">
+                            Paid
+                        </span>
+                    </div>
+
+
+                    <div class="unitutor-payment-history-action">
+
+                        <button type="button" class="unitutor-payment-receipt-btn">
+                            <i data-lucide="receipt"></i>
+                            Receipt
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Payment 05 -->
+
+                <div class="unitutor-payment-history-row">
+
+                    <div class="unitutor-payment-history-date">
+
+                        <strong>
+                            08
+                        </strong>
+
+                        <span>
+                            SEP 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-service">
+
+                        <h3>
+                            Data Analysis Fundamentals
+                        </h3>
+
+                        <span>
+                            Computer Science · Dr. Emily Carter
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-method">
+
+                        <div class="unitutor-payment-method-icon">
+                            <i data-lucide="credit-card"></i>
+                        </div>
+
+                        <span>
+                            Visa •••• 4242
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-payment-history-amount">
+                        $32
+                    </div>
+
+
+                    <div>
+                        <span class="unitutor-history-payment-status pending">
+                            Pending
+                        </span>
+                    </div>
+
+
+                    <div class="unitutor-payment-history-action">
+
+                        <button type="button" class="unitutor-payment-receipt-btn">
+                            <i data-lucide="eye"></i>
+                            Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+         HISTORY FOOTER
+    =========================================== -->
+
+            <div class="unitutor-payment-history-footer">
+
+                <span>
+                    Showing 5 recent transactions
+                </span>
+
+                <a href="#">
+                    View full payment history
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     PAYMENTS — SECTION 3
+========================================== -->
+
+        <section class="unitutor-payment-settings">
+
+            <div class="unitutor-payment-settings-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        PAYMENT SETTINGS
+                    </span>
+
+                    <h2>
+                        Payment methods & billing
+                    </h2>
+
+                    <p>
+                        Manage your saved payment methods and keep your billing
+                        information up to date.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="unitutor-payment-settings-grid">
+
+
+                <!-- ==========================================
+             SAVED PAYMENT METHODS
+        =========================================== -->
+
+                <div class="unitutor-payment-methods-panel">
+
+                    <div class="unitutor-payment-settings-panel-header">
+
+                        <div>
+
+                            <h3>
+                                Saved payment methods
+                            </h3>
+
+                            <p>
+                                Choose how you want to pay for your sessions.
+                            </p>
+
+                        </div>
+
+                        <span class="unitutor-payment-method-count">
+                            2 Saved
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-saved-payment-list">
+
+
+                        <!-- Visa -->
+
+                        <div class="unitutor-saved-payment-card">
+
+                            <div class="unitutor-saved-payment-card-icon">
+                                <i data-lucide="credit-card"></i>
+                            </div>
+
+                            <div class="unitutor-saved-payment-info">
+
+                                <h4>
+                                    Visa ending in 4242
+                                </h4>
+
+                                <span>
+                                    Expires 09/28
+                                </span>
+
+                            </div>
+
+                            <span class="unitutor-payment-default">
+                                Default
+                            </span>
+
+                            <button type="button" class="unitutor-payment-method-more" title="Payment method options">
+                                <i data-lucide="more-horizontal"></i>
+                            </button>
+
+                        </div>
+
+
+                        <!-- UPI -->
+
+                        <div class="unitutor-saved-payment-card">
+
+                            <div class="unitutor-saved-payment-card-icon">
+                                <i data-lucide="smartphone"></i>
+                            </div>
+
+                            <div class="unitutor-saved-payment-info">
+
+                                <h4>
+                                    UPI
+                                </h4>
+
+                                <span>
+                                    student@upi
+                                </span>
+
+                            </div>
+
+                            <span class="unitutor-payment-secondary">
+                                Available
+                            </span>
+
+                            <button type="button" class="unitutor-payment-method-more" title="Payment method options">
+                                <i data-lucide="more-horizontal"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button" class="unitutor-add-payment-method">
+                        <i data-lucide="plus"></i>
+                        Add New Payment Method
+                    </button>
+
+                </div>
+
+
+                <!-- ==========================================
+             BILLING INFORMATION
+        =========================================== -->
+
+                <div class="unitutor-billing-panel">
+
+                    <div class="unitutor-payment-settings-panel-header">
+
+                        <div>
+
+                            <h3>
+                                Billing information
+                            </h3>
+
+                            <p>
+                                Details used for your payment receipts.
+                            </p>
+
+                        </div>
+
+                        <button type="button" class="unitutor-edit-billing-btn">
+                            <i data-lucide="pencil"></i>
+                            Edit
+                        </button>
+
+                    </div>
+
+
+                    <div class="unitutor-billing-details">
+
+
+                        <div class="unitutor-billing-detail">
+
+                            <span>
+                                FULL NAME
+                            </span>
+
+                            <strong>
+                                Alex Johnson
+                            </strong>
+
+                        </div>
+
+
+                        <div class="unitutor-billing-detail">
+
+                            <span>
+                                EMAIL ADDRESS
+                            </span>
+
+                            <strong>
+                                alex.johnson@email.com
+                            </strong>
+
+                        </div>
+
+
+                        <div class="unitutor-billing-detail">
+
+                            <span>
+                                BILLING ADDRESS
+                            </span>
+
+                            <strong>
+                                24 University Road, Chennai
+                            </strong>
+
+                        </div>
+
+
+                        <div class="unitutor-billing-detail">
+
+                            <span>
+                                COUNTRY
+                            </span>
+
+                            <strong>
+                                India
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+         SECURITY NOTE
+    =========================================== -->
+
+            <div class="unitutor-payment-security">
+
+                <div class="unitutor-payment-security-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+
+                <div class="unitutor-payment-security-content">
+
+                    <h3>
+                        Your payment information is secure
+                    </h3>
+
+                    <p>
+                        Your payment details are securely handled and protected
+                        during the payment process.
+                    </p>
+
+                </div>
+
+                <a href="#" class="unitutor-payment-security-link">
+                    Payment & billing help
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="unitutor-dashboard-sidebar-overlay" id="dashboardSidebarOverlay"></div>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

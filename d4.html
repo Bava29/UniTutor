@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Dashboard Sidebar -->
+    <aside class="unitutor-dashboard-sidebar" id="dashboardSidebar">
+
+        <button type="button" class="unitutor-sidebar-close" aria-label="Close sidebar">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="unitutor-dashboard-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+        </div>
+
+        <nav class="unitutor-dashboard-nav">
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d2.html">
+                        <i data-lucide="users-round"></i>
+                        <span>Find a Tutor</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d3.html">
+                        <i data-lucide="calendar-days"></i>
+                        <span>My Sessions</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d4.html" class="active">
+                        <i data-lucide="notebook-tabs"></i>
+                        <span>My Materials</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d5.html">
+                        <i data-lucide="credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d6.html">
+                        <i data-lucide="messages-square"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d7.html">
+                        <i data-lucide="bookmark-check"></i>
+                        <span>Saved Tutors</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="unitutor-dashboard-logout">
+            <button type="button" id="dashboardLogoutBtn" class="unitutor-dashboard-logout-btn">
+                <i data-lucide="log-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+
+
+        <!-- Logout Confirmation Popup -->
+        <div class="unitutor-logout-modal" id="dashboardLogoutModal" aria-hidden="true">
+            <div class="unitutor-logout-modal-overlay" id="logoutModalOverlay"></div>
+
+            <div class="unitutor-logout-modal-box">
+
+                <button type="button" class="unitutor-logout-modal-close" id="logoutModalClose" aria-label="Close">
+                    <i data-lucide="x"></i>
+                </button>
+
+                <div class="unitutor-logout-modal-icon">
+                    <i data-lucide="log-out"></i>
+                </div>
+
+                <h2>Logout</h2>
+
+                <p>
+                    Are you sure you want to logout from your dashboard?
+                </p>
+
+                <div class="unitutor-logout-modal-actions">
+
+                    <button type="button" class="unitutor-logout-no" id="logoutNoBtn">
+                        No
+                    </button>
+
+                    <button type="button" class="unitutor-logout-yes" id="logoutYesBtn">
+                        Yes, Logout
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Dashboard Header -->
+    <header class="unitutor-dashboard-header">
+
+        <div class="unitutor-dashboard-header-left">
+
+            <!-- Mobile Menu Toggle -->
+            <button type="button" class="unitutor-dashboard-menu-toggle" id="dashboardMenuToggle" aria-label="Open menu"
+                aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <h1>My Materials</h1>
+
+        </div>
+
+
+        <div class="unitutor-dashboard-header-right">
+
+            <!-- Notifications -->
+            <button type="button" class="unitutor-dashboard-header-icon notification-btn" aria-label="Notifications">
+                <i data-lucide="bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+
+
+            <!-- Settings -->
+            <button type="button" class="unitutor-dashboard-header-icon" aria-label="Settings">
+                <i data-lucide="settings-2"></i>
+            </button>
+
+
+            <!-- Dark Mode -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardThemeToggle"
+                aria-label="Toggle dark mode">
+                <i data-lucide="moon"></i>
+            </button>
+
+
+            <!-- RTL -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardRtlToggle"
+                aria-label="Toggle RTL">
+                <i data-lucide="arrow-left-right"></i>
+            </button>
+
+
+            <!-- Student Profile -->
+            <button type="button" class="unitutor-dashboard-profile" aria-label="Student profile">
+                <img src="images/student-profile.jpg" alt="Alex Morgan">
+
+                <span class="unitutor-dashboard-profile-info">
+                    <strong>Alex Morgan</strong>
+                    <small>Student</small>
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main class="unitutor-dashboard-main">
+
+        <!-- ==========================================
+     MY MATERIALS — SECTION 1
+========================================== -->
+
+        <section class="unitutor-materials-overview">
+
+            <div class="unitutor-materials-overview-header">
+
+                <div>
+                    <span class="unitutor-dashboard-section-label">
+                        MY MATERIALS
+                    </span>
+
+                    <h2>
+                        Everything you need for your learning
+                    </h2>
+
+                    <p>
+                        Access your study materials, class resources, and saved
+                        learning files in one place.
+                    </p>
+                </div>
+
+                <a href="#recent-materials" class="primary-btn">
+                    <i data-lucide="folder-open"></i>
+                    Browse Materials
+                </a>
+
+            </div>
+
+
+            <!-- ==========================================
+         MATERIAL SUMMARY CARDS
+    =========================================== -->
+
+            <div class="unitutor-materials-summary">
+
+                <!-- Total Materials -->
+
+                <div class="unitutor-material-summary-card">
+
+                    <div class="unitutor-material-summary-top">
+
+                        <div class="unitutor-material-summary-icon">
+                            <i data-lucide="files"></i>
+                        </div>
+
+                        <span>
+                            ALL MATERIALS
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        42
+                    </strong>
+
+                    <p>
+                        Study resources available
+                    </p>
+
+                </div>
+
+
+                <!-- Recent Materials -->
+
+                <div class="unitutor-material-summary-card">
+
+                    <div class="unitutor-material-summary-top">
+
+                        <div class="unitutor-material-summary-icon">
+                            <i data-lucide="clock-3"></i>
+                        </div>
+
+                        <span>
+                            RECENTLY ADDED
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        08
+                    </strong>
+
+                    <p>
+                        Materials added this month
+                    </p>
+
+                </div>
+
+
+                <!-- Saved Materials -->
+
+                <div class="unitutor-material-summary-card">
+
+                    <div class="unitutor-material-summary-top">
+
+                        <div class="unitutor-material-summary-icon">
+                            <i data-lucide="bookmark"></i>
+                        </div>
+
+                        <span>
+                            SAVED
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        12
+                    </strong>
+
+                    <p>
+                        Materials saved for later
+                    </p>
+
+                </div>
+
+
+                <!-- Subjects -->
+
+                <div class="unitutor-material-summary-card">
+
+                    <div class="unitutor-material-summary-top">
+
+                        <div class="unitutor-material-summary-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+
+                        <span>
+                            SUBJECTS
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        04
+                    </strong>
+
+                    <p>
+                        Subjects with available resources
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+         MATERIAL SEARCH PANEL
+    =========================================== -->
+
+            <div class="unitutor-materials-search-panel">
+
+                <div class="unitutor-materials-search-content">
+
+                    <div class="unitutor-materials-search-icon">
+                        <i data-lucide="search"></i>
+                    </div>
+
+                    <div>
+                        <h3>
+                            Find a learning material
+                        </h3>
+
+                        <p>
+                            Search your resources by topic, subject, or material name.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-materials-search-form">
+
+                    <div class="unitutor-materials-search-input">
+
+                        <i data-lucide="search"></i>
+
+                        <input type="text" placeholder="Search materials...">
+
+                    </div>
+
+
+                    <div class="unitutor-materials-select">
+
+                        <select>
+                            <option selected>All Subjects</option>
+                            <option>Computer Science</option>
+                            <option>Engineering</option>
+                            <option>Commerce</option>
+                            <option>Law</option>
+                        </select>
+
+                    </div>
+
+
+                    <button type="button" class="primary-btn">
+                        Search
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     MY MATERIALS — SECTION 2
+========================================== -->
+
+        <section class="unitutor-recent-materials" id="recent-materials">
+
+            <div class="unitutor-recent-materials-header">
+
+                <div>
+                    <span class="unitutor-dashboard-section-label">
+                        RECENT MATERIALS
+                    </span>
+
+                    <h2>
+                        Your latest learning resources
+                    </h2>
+
+                    <p>
+                        Quickly access the materials shared by your tutors
+                        during your recent learning sessions.
+                    </p>
+                </div>
+
+                <a href="#" class="unitutor-materials-view-all">
+                    View all materials
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="unitutor-recent-materials-panel">
+
+                <!-- Material 01 -->
+
+                <div class="unitutor-material-item">
+
+                    <div class="unitutor-material-file-icon pdf">
+                        <i data-lucide="file-text"></i>
+                    </div>
+
+                    <div class="unitutor-material-info">
+
+                        <h3>
+                            Data Structures & Algorithms Notes
+                        </h3>
+
+                        <div class="unitutor-material-meta">
+                            <span>
+                                <i data-lucide="book-open"></i>
+                                Computer Science
+                            </span>
+
+                            <span>
+                                <i data-lucide="user"></i>
+                                Dr. Emily Carter
+                            </span>
+
+                            <span>
+                                12 Sep 2026
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <span class="unitutor-material-type">
+                        PDF
+                    </span>
+
+                    <span class="unitutor-material-size">
+                        2.4 MB
+                    </span>
+
+                    <div class="unitutor-material-actions">
+
+                        <button type="button" class="unitutor-material-action" title="View Material">
+                            <i data-lucide="eye"></i>
+                        </button>
+
+                        <button type="button" class="unitutor-material-action" title="Download Material">
+                            <i data-lucide="download"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Material 02 -->
+
+                <div class="unitutor-material-item">
+
+                    <div class="unitutor-material-file-icon doc">
+                        <i data-lucide="file"></i>
+                    </div>
+
+                    <div class="unitutor-material-info">
+
+                        <h3>
+                            Engineering Mathematics — Unit 3
+                        </h3>
+
+                        <div class="unitutor-material-meta">
+                            <span>
+                                <i data-lucide="book-open"></i>
+                                Engineering
+                            </span>
+
+                            <span>
+                                <i data-lucide="user"></i>
+                                James Wilson
+                            </span>
+
+                            <span>
+                                10 Sep 2026
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <span class="unitutor-material-type">
+                        DOC
+                    </span>
+
+                    <span class="unitutor-material-size">
+                        1.8 MB
+                    </span>
+
+                    <div class="unitutor-material-actions">
+
+                        <button type="button" class="unitutor-material-action" title="View Material">
+                            <i data-lucide="eye"></i>
+                        </button>
+
+                        <button type="button" class="unitutor-material-action" title="Download Material">
+                            <i data-lucide="download"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Material 03 -->
+
+                <div class="unitutor-material-item">
+
+                    <div class="unitutor-material-file-icon pdf">
+                        <i data-lucide="file-text"></i>
+                    </div>
+
+                    <div class="unitutor-material-info">
+
+                        <h3>
+                            Financial Accounting Revision Guide
+                        </h3>
+
+                        <div class="unitutor-material-meta">
+                            <span>
+                                <i data-lucide="book-open"></i>
+                                Commerce
+                            </span>
+
+                            <span>
+                                <i data-lucide="user"></i>
+                                Sophia Bennett
+                            </span>
+
+                            <span>
+                                08 Sep 2026
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <span class="unitutor-material-type">
+                        PDF
+                    </span>
+
+                    <span class="unitutor-material-size">
+                        3.1 MB
+                    </span>
+
+                    <div class="unitutor-material-actions">
+
+                        <button type="button" class="unitutor-material-action" title="View Material">
+                            <i data-lucide="eye"></i>
+                        </button>
+
+                        <button type="button" class="unitutor-material-action" title="Download Material">
+                            <i data-lucide="download"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Material 04 -->
+
+                <div class="unitutor-material-item">
+
+                    <div class="unitutor-material-file-icon pdf">
+                        <i data-lucide="file-text"></i>
+                    </div>
+
+                    <div class="unitutor-material-info">
+
+                        <h3>
+                            Constitutional Law Case Studies
+                        </h3>
+
+                        <div class="unitutor-material-meta">
+                            <span>
+                                <i data-lucide="book-open"></i>
+                                Law
+                            </span>
+
+                            <span>
+                                <i data-lucide="user"></i>
+                                Michael Anderson
+                            </span>
+
+                            <span>
+                                05 Sep 2026
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <span class="unitutor-material-type">
+                        PDF
+                    </span>
+
+                    <span class="unitutor-material-size">
+                        4.2 MB
+                    </span>
+
+                    <div class="unitutor-material-actions">
+
+                        <button type="button" class="unitutor-material-action" title="View Material">
+                            <i data-lucide="eye"></i>
+                        </button>
+
+                        <button type="button" class="unitutor-material-action" title="Download Material">
+                            <i data-lucide="download"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="unitutor-recent-materials-footer">
+
+                <span>
+                    Showing 4 recently added materials
+                </span>
+
+                <a href="#">
+                    Explore all resources
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+     MY MATERIALS — SECTION 3
+========================================== -->
+
+        <section class="unitutor-material-subjects">
+
+            <div class="unitutor-material-subjects-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        BROWSE BY SUBJECT
+                    </span>
+
+                    <h2>
+                        Explore materials by subject
+                    </h2>
+
+                    <p>
+                        Find notes, guides, practice resources, and study materials
+                        organized around your subjects.
+                    </p>
+
+                </div>
+
+                <a href="#" class="unitutor-material-subjects-link">
+                    View all subjects
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <!-- ==========================================
+         SUBJECT GRID
+    =========================================== -->
+
+            <div class="unitutor-material-subject-grid">
+
+
+                <!-- Computer Science -->
+
+                <div class="unitutor-material-subject-card">
+
+                    <div class="unitutor-material-subject-top">
+
+                        <div class="unitutor-material-subject-icon">
+                            <i data-lucide="monitor"></i>
+                        </div>
+
+                        <span class="unitutor-material-subject-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="unitutor-material-subject-content">
+
+                        <h3>
+                            Computer Science
+                        </h3>
+
+                        <p>
+                            Programming, algorithms, databases, and core
+                            computing resources.
+                        </p>
+
+                    </div>
+
+                    <div class="unitutor-material-subject-footer">
+
+                        <span>
+                            16 Materials
+                        </span>
+
+                        <span>
+                            8 Recent
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Engineering -->
+
+                <div class="unitutor-material-subject-card">
+
+                    <div class="unitutor-material-subject-top">
+
+                        <div class="unitutor-material-subject-icon">
+                            <i data-lucide="settings-2"></i>
+                        </div>
+
+                        <span class="unitutor-material-subject-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="unitutor-material-subject-content">
+
+                        <h3>
+                            Engineering
+                        </h3>
+
+                        <p>
+                            Mathematics, technical concepts, problem solving,
+                            and engineering notes.
+                        </p>
+
+                    </div>
+
+                    <div class="unitutor-material-subject-footer">
+
+                        <span>
+                            11 Materials
+                        </span>
+
+                        <span>
+                            4 Recent
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Commerce -->
+
+                <div class="unitutor-material-subject-card">
+
+                    <div class="unitutor-material-subject-top">
+
+                        <div class="unitutor-material-subject-icon">
+                            <i data-lucide="calculator"></i>
+                        </div>
+
+                        <span class="unitutor-material-subject-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="unitutor-material-subject-content">
+
+                        <h3>
+                            Commerce
+                        </h3>
+
+                        <p>
+                            Accounting, finance, business studies, and
+                            commerce learning resources.
+                        </p>
+
+                    </div>
+
+                    <div class="unitutor-material-subject-footer">
+
+                        <span>
+                            09 Materials
+                        </span>
+
+                        <span>
+                            3 Recent
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Law -->
+
+                <div class="unitutor-material-subject-card">
+
+                    <div class="unitutor-material-subject-top">
+
+                        <div class="unitutor-material-subject-icon">
+                            <i data-lucide="scale"></i>
+                        </div>
+
+                        <span class="unitutor-material-subject-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="unitutor-material-subject-content">
+
+                        <h3>
+                            Law
+                        </h3>
+
+                        <p>
+                            Case studies, legal concepts, constitutional law,
+                            and contract law resources.
+                        </p>
+
+                    </div>
+
+                    <div class="unitutor-material-subject-footer">
+
+                        <span>
+                            06 Materials
+                        </span>
+
+                        <span>
+                            2 Recent
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+         RESOURCE TYPES
+    =========================================== -->
+
+            <div class="unitutor-material-resource-panel">
+
+                <div class="unitutor-material-resource-heading">
+
+                    <div class="unitutor-material-resource-icon">
+                        <i data-lucide="layers-3"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Browse by resource type
+                        </h3>
+
+                        <p>
+                            Quickly find the type of material you need.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-material-resource-list">
+
+                    <a href="#" class="unitutor-material-resource-item">
+
+                        <i data-lucide="file-text"></i>
+
+                        <span>
+                            Lecture Notes
+                        </span>
+
+                        <small>
+                            18
+                        </small>
+
+                    </a>
+
+
+                    <a href="#" class="unitutor-material-resource-item">
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Practice Sheets
+                        </span>
+
+                        <small>
+                            09
+                        </small>
+
+                    </a>
+
+
+                    <a href="#" class="unitutor-material-resource-item">
+
+                        <i data-lucide="presentation"></i>
+
+                        <span>
+                            Study Guides
+                        </span>
+
+                        <small>
+                            07
+                        </small>
+
+                    </a>
+
+
+                    <a href="#" class="unitutor-material-resource-item">
+
+                        <i data-lucide="file-question"></i>
+
+                        <span>
+                            Question Papers
+                        </span>
+
+                        <small>
+                            08
+                        </small>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     MY MATERIALS — SECTION 4
+========================================== -->
+
+        <section class="unitutor-saved-recommended">
+
+            <div class="unitutor-saved-recommended-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        SAVED & RECOMMENDED
+                    </span>
+
+                    <h2>
+                        Resources worth keeping close
+                    </h2>
+
+                    <p>
+                        Revisit your saved materials or discover resources
+                        that can support your upcoming learning sessions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="unitutor-saved-recommended-grid">
+
+
+                <!-- ==========================================
+             SAVED MATERIALS
+        =========================================== -->
+
+                <div class="unitutor-saved-materials-panel">
+
+                    <div class="unitutor-saved-panel-header">
+
+                        <div>
+                            <h3>
+                                Saved materials
+                            </h3>
+
+                            <p>
+                                Your bookmarked resources
+                            </p>
+                        </div>
+
+                        <a href="#">
+                            View all
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="unitutor-saved-material-list">
+
+                        <!-- Saved Item 01 -->
+
+                        <div class="unitutor-saved-material-item">
+
+                            <div class="unitutor-saved-file-icon">
+                                <i data-lucide="file-text"></i>
+                            </div>
+
+                            <div class="unitutor-saved-material-info">
+
+                                <h4>
+                                    Database Management Systems Notes
+                                </h4>
+
+                                <span>
+                                    Computer Science
+                                </span>
+
+                            </div>
+
+                            <button type="button" class="unitutor-remove-save" title="Remove from saved">
+                                <i data-lucide="bookmark-check"></i>
+                            </button>
+
+                        </div>
+
+
+                        <!-- Saved Item 02 -->
+
+                        <div class="unitutor-saved-material-item">
+
+                            <div class="unitutor-saved-file-icon">
+                                <i data-lucide="file-text"></i>
+                            </div>
+
+                            <div class="unitutor-saved-material-info">
+
+                                <h4>
+                                    Engineering Mathematics Formula Guide
+                                </h4>
+
+                                <span>
+                                    Engineering
+                                </span>
+
+                            </div>
+
+                            <button type="button" class="unitutor-remove-save" title="Remove from saved">
+                                <i data-lucide="bookmark-check"></i>
+                            </button>
+
+                        </div>
+
+
+                        <!-- Saved Item 03 -->
+
+                        <div class="unitutor-saved-material-item">
+
+                            <div class="unitutor-saved-file-icon">
+                                <i data-lucide="file-text"></i>
+                            </div>
+
+                            <div class="unitutor-saved-material-info">
+
+                                <h4>
+                                    Contract Law Quick Revision
+                                </h4>
+
+                                <span>
+                                    Law
+                                </span>
+
+                            </div>
+
+                            <button type="button" class="unitutor-remove-save" title="Remove from saved">
+                                <i data-lucide="bookmark-check"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+             RECOMMENDED MATERIALS
+        =========================================== -->
+
+                <div class="unitutor-recommended-materials-panel">
+
+                    <div class="unitutor-recommended-panel-header">
+
+                        <div>
+                            <h3>
+                                Recommended for you
+                            </h3>
+
+                            <p>
+                                Based on your learning subjects
+                            </p>
+                        </div>
+
+                        <span class="unitutor-recommended-badge">
+                            <i data-lucide="sparkles"></i>
+                            For you
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-recommended-list">
+
+                        <!-- Recommended 01 -->
+
+                        <div class="unitutor-recommended-item">
+
+                            <div class="unitutor-recommended-icon">
+                                <i data-lucide="book-open"></i>
+                            </div>
+
+                            <div class="unitutor-recommended-info">
+
+                                <h4>
+                                    Algorithms Practice Workbook
+                                </h4>
+
+                                <span>
+                                    Computer Science · 24 pages
+                                </span>
+
+                            </div>
+
+                            <button type="button" class="unitutor-recommended-view">
+                                View
+                            </button>
+
+                        </div>
+
+
+                        <!-- Recommended 02 -->
+
+                        <div class="unitutor-recommended-item">
+
+                            <div class="unitutor-recommended-icon">
+                                <i data-lucide="book-open"></i>
+                            </div>
+
+                            <div class="unitutor-recommended-info">
+
+                                <h4>
+                                    Advanced Accounting Exercises
+                                </h4>
+
+                                <span>
+                                    Commerce · 18 pages
+                                </span>
+
+                            </div>
+
+                            <button type="button" class="unitutor-recommended-view">
+                                View
+                            </button>
+
+                        </div>
+
+
+                        <!-- Recommended 03 -->
+
+                        <div class="unitutor-recommended-item">
+
+                            <div class="unitutor-recommended-icon">
+                                <i data-lucide="book-open"></i>
+                            </div>
+
+                            <div class="unitutor-recommended-info">
+
+                                <h4>
+                                    Constitutional Law Case Guide
+                                </h4>
+
+                                <span>
+                                    Law · 32 pages
+                                </span>
+
+                            </div>
+
+                            <button type="button" class="unitutor-recommended-view">
+                                View
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+         SUPPORT CTA
+    =========================================== -->
+
+            <div class="unitutor-materials-support">
+
+                <div class="unitutor-materials-support-icon">
+                    <i data-lucide="messages-square"></i>
+                </div>
+
+                <div class="unitutor-materials-support-content">
+
+                    <span>
+                        NEED MORE RESOURCES?
+                    </span>
+
+                    <h3>
+                        Ask your tutor for additional study materials.
+                    </h3>
+
+                    <p>
+                        Your tutor can share resources that match your current
+                        topics, assignments, and learning goals.
+                    </p>
+
+                </div>
+
+                <a href="messages.html" class="secondary-btn">
+                    Message Tutor
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="unitutor-dashboard-sidebar-overlay" id="dashboardSidebarOverlay"></div>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Dashboard Sidebar -->
+    <aside class="unitutor-dashboard-sidebar" id="dashboardSidebar">
+
+        <button type="button" class="unitutor-sidebar-close" aria-label="Close sidebar">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="unitutor-dashboard-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+        </div>
+
+        <nav class="unitutor-dashboard-nav">
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d2.html">
+                        <i data-lucide="users-round"></i>
+                        <span>Find a Tutor</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d3.html">
+                        <i data-lucide="calendar-days"></i>
+                        <span>My Sessions</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d4.html">
+                        <i data-lucide="notebook-tabs"></i>
+                        <span>My Materials</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d5.html">
+                        <i data-lucide="credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d6.html">
+                        <i data-lucide="messages-square"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d7.html" class="active">
+                        <i data-lucide="bookmark-check"></i>
+                        <span>Saved Tutors</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="unitutor-dashboard-logout">
+            <button type="button" id="dashboardLogoutBtn" class="unitutor-dashboard-logout-btn">
+                <i data-lucide="log-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+
+
+        <!-- Logout Confirmation Popup -->
+        <div class="unitutor-logout-modal" id="dashboardLogoutModal" aria-hidden="true">
+            <div class="unitutor-logout-modal-overlay" id="logoutModalOverlay"></div>
+
+            <div class="unitutor-logout-modal-box">
+
+                <button type="button" class="unitutor-logout-modal-close" id="logoutModalClose" aria-label="Close">
+                    <i data-lucide="x"></i>
+                </button>
+
+                <div class="unitutor-logout-modal-icon">
+                    <i data-lucide="log-out"></i>
+                </div>
+
+                <h2>Logout</h2>
+
+                <p>
+                    Are you sure you want to logout from your dashboard?
+                </p>
+
+                <div class="unitutor-logout-modal-actions">
+
+                    <button type="button" class="unitutor-logout-no" id="logoutNoBtn">
+                        No
+                    </button>
+
+                    <button type="button" class="unitutor-logout-yes" id="logoutYesBtn">
+                        Yes, Logout
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Dashboard Header -->
+    <header class="unitutor-dashboard-header">
+
+        <div class="unitutor-dashboard-header-left">
+
+            <!-- Mobile Menu Toggle -->
+            <button type="button" class="unitutor-dashboard-menu-toggle" id="dashboardMenuToggle" aria-label="Open menu"
+                aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <h1>Saved Tutors</h1>
+
+        </div>
+
+
+        <div class="unitutor-dashboard-header-right">
+
+            <!-- Notifications -->
+            <button type="button" class="unitutor-dashboard-header-icon notification-btn" aria-label="Notifications">
+                <i data-lucide="bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+
+
+            <!-- Settings -->
+            <button type="button" class="unitutor-dashboard-header-icon" aria-label="Settings">
+                <i data-lucide="settings-2"></i>
+            </button>
+
+
+            <!-- Dark Mode -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardThemeToggle"
+                aria-label="Toggle dark mode">
+                <i data-lucide="moon"></i>
+            </button>
+
+
+            <!-- RTL -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardRtlToggle"
+                aria-label="Toggle RTL">
+                <i data-lucide="arrow-left-right"></i>
+            </button>
+
+
+            <!-- Student Profile -->
+            <button type="button" class="unitutor-dashboard-profile" aria-label="Student profile">
+                <img src="images/student-profile.jpg" alt="Alex Morgan">
+
+                <span class="unitutor-dashboard-profile-info">
+                    <strong>Alex Morgan</strong>
+                    <small>Student</small>
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main class="unitutor-dashboard-main">
+
+        <!-- Saved Tutors Section 1 -->
+        <section class="unitutor-saved-tutors-overview">
+            <div class="unitutor-saved-tutors-overview-header">
+                <div class="unitutor-saved-tutors-overview-heading">
+                    <span class="unitutor-saved-tutors-label">SAVED TUTORS</span>
+
+                    <h2>Your trusted tutors, all in one place</h2>
+
+                    <p>
+                        Keep your favorite tutors close and easily return to them
+                        whenever you need another learning session.
+                    </p>
+                </div>
+
+                <a href="#" class="unitutor-saved-tutor-browse-btn">
+                    <i data-lucide="search"></i>
+                    Find More Tutors
+                </a>
+            </div>
+
+
+            <!-- Summary Cards -->
+            <div class="unitutor-saved-tutors-summary">
+
+                <!-- Card 1 -->
+                <div class="unitutor-saved-tutor-summary-card">
+                    <div class="unitutor-saved-tutor-summary-top">
+                        <div class="unitutor-saved-tutor-summary-icon">
+                            <i data-lucide="heart"></i>
+                        </div>
+
+                        <span class="unitutor-saved-tutor-summary-label">
+                            Saved Tutors
+                        </span>
+                    </div>
+
+                    <div class="unitutor-saved-tutor-summary-value">06</div>
+
+                    <span class="unitutor-saved-tutor-summary-note">
+                        Tutors in your list
+                    </span>
+                </div>
+
+
+                <!-- Card 2 -->
+                <div class="unitutor-saved-tutor-summary-card">
+                    <div class="unitutor-saved-tutor-summary-top">
+                        <div class="unitutor-saved-tutor-summary-icon">
+                            <i data-lucide="circle-check"></i>
+                        </div>
+
+                        <span class="unitutor-saved-tutor-summary-label">
+                            Available Now
+                        </span>
+                    </div>
+
+                    <div class="unitutor-saved-tutor-summary-value">04</div>
+
+                    <span class="unitutor-saved-tutor-summary-note">
+                        Ready for a session
+                    </span>
+                </div>
+
+
+                <!-- Card 3 -->
+                <div class="unitutor-saved-tutor-summary-card">
+                    <div class="unitutor-saved-tutor-summary-top">
+                        <div class="unitutor-saved-tutor-summary-icon">
+                            <i data-lucide="calendar-days"></i>
+                        </div>
+
+                        <span class="unitutor-saved-tutor-summary-label">
+                            Upcoming Sessions
+                        </span>
+                    </div>
+
+                    <div class="unitutor-saved-tutor-summary-value">03</div>
+
+                    <span class="unitutor-saved-tutor-summary-note">
+                        With saved tutors
+                    </span>
+                </div>
+
+
+                <!-- Card 4 -->
+                <div class="unitutor-saved-tutor-summary-card">
+                    <div class="unitutor-saved-tutor-summary-top">
+                        <div class="unitutor-saved-tutor-summary-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+
+                        <span class="unitutor-saved-tutor-summary-label">
+                            Favorite Subject
+                        </span>
+                    </div>
+
+                    <div class="unitutor-saved-tutor-summary-value unitutor-saved-tutor-subject-value">
+                        Computer Science
+                    </div>
+
+                    <span class="unitutor-saved-tutor-summary-note">
+                        Your most saved subject
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- Search & Filter Panel -->
+            <div class="unitutor-saved-tutors-search-panel">
+
+                <div class="unitutor-saved-tutors-search-heading">
+                    <div class="unitutor-saved-tutors-search-icon">
+                        <i data-lucide="sliders-horizontal"></i>
+                    </div>
+
+                    <div>
+                        <h3>Find a saved tutor</h3>
+                        <p>Search through your saved tutors by name or subject.</p>
+                    </div>
+                </div>
+
+                <div class="unitutor-saved-tutors-search-form">
+
+                    <div class="unitutor-saved-tutor-search-input">
+                        <i data-lucide="search"></i>
+
+                        <input type="text" placeholder="Search tutor or subject...">
+                    </div>
+
+                    <div class="unitutor-saved-tutor-select">
+                        <select>
+                            <option selected>All Subjects</option>
+                            <option>Computer Science</option>
+                            <option>Engineering</option>
+                            <option>Commerce</option>
+                            <option>Law</option>
+                        </select>
+
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+
+                    <button type="button" class="unitutor-saved-tutor-search-btn">
+                        Search
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Saved Tutors Section 2 -->
+        <section class="unitutor-saved-tutors-list">
+
+            <div class="unitutor-saved-tutors-list-header">
+                <div>
+                    <span class="unitutor-saved-tutors-list-label">YOUR SAVED TUTORS</span>
+                    <h2>Tutors you’ve saved</h2>
+                    <p>
+                        Quickly connect with tutors you trust for your upcoming
+                        learning sessions.
+                    </p>
+                </div>
+
+                <span class="unitutor-saved-tutors-count">
+                    6 tutors saved
+                </span>
+            </div>
+
+
+            <div class="unitutor-saved-tutors-grid">
+
+                <!-- Tutor 1 -->
+                <article class="unitutor-saved-tutor-card">
+
+                    <button type="button" class="unitutor-saved-tutor-remove" aria-label="Remove tutor">
+                        <i data-lucide="heart"></i>
+                    </button>
+
+                    <div class="unitutor-saved-tutor-main">
+
+                        <div class="unitutor-saved-tutor-image-wrap">
+                            <img src="images/tutor-emily.jpg" alt="Dr. Emily Carter" class="unitutor-saved-tutor-image">
+
+                            <span class="unitutor-saved-tutor-online">
+                                Available
+                            </span>
+                        </div>
+
+                        <div class="unitutor-saved-tutor-info">
+
+                            <div class="unitutor-saved-tutor-name-row">
+                                <h3>Dr. Emily Carter</h3>
+
+                                <span class="unitutor-saved-tutor-verified">
+                                    <i data-lucide="badge-check"></i>
+                                    Verified
+                                </span>
+                            </div>
+
+                            <span class="unitutor-saved-tutor-subject">
+                                Computer Science
+                            </span>
+
+                            <p class="unitutor-saved-tutor-expertise">
+                                Data Structures, Algorithms & Programming
+                            </p>
+
+                            <div class="unitutor-saved-tutor-meta">
+                                <span>
+                                    <i data-lucide="star"></i>
+                                    4.9
+                                </span>
+
+                                <span>
+                                    <i data-lucide="briefcase"></i>
+                                    6+ Years
+                                </span>
+
+                                <span>
+                                    <i data-lucide="calendar-check"></i>
+                                    120+ Sessions
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-saved-tutor-footer">
+
+                        <div class="unitutor-saved-tutor-price">
+                            <strong>$28</strong>
+                            <span>/ hour</span>
+                        </div>
+
+                        <div class="unitutor-saved-tutor-actions">
+                            <a href="#" class="unitutor-saved-tutor-message-btn">
+                                <i data-lucide="message-circle"></i>
+                                Message
+                            </a>
+
+                            <a href="#" class="unitutor-saved-tutor-book-btn">
+                                Book Session
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Tutor 2 -->
+                <article class="unitutor-saved-tutor-card">
+
+                    <button type="button" class="unitutor-saved-tutor-remove" aria-label="Remove tutor">
+                        <i data-lucide="heart"></i>
+                    </button>
+
+                    <div class="unitutor-saved-tutor-main">
+
+                        <div class="unitutor-saved-tutor-image-wrap">
+                            <img src="images/tutor-james.jpg" alt="James Wilson" class="unitutor-saved-tutor-image">
+
+                            <span class="unitutor-saved-tutor-online">
+                                Available
+                            </span>
+                        </div>
+
+                        <div class="unitutor-saved-tutor-info">
+
+                            <div class="unitutor-saved-tutor-name-row">
+                                <h3>James Wilson</h3>
+
+                                <span class="unitutor-saved-tutor-verified">
+                                    <i data-lucide="badge-check"></i>
+                                    Verified
+                                </span>
+                            </div>
+
+                            <span class="unitutor-saved-tutor-subject">
+                                Engineering
+                            </span>
+
+                            <p class="unitutor-saved-tutor-expertise">
+                                Engineering Mathematics & Mechanical Engg
+                            </p>
+
+                            <div class="unitutor-saved-tutor-meta">
+                                <span>
+                                    <i data-lucide="star"></i>
+                                    4.8
+                                </span>
+
+                                <span>
+                                    <i data-lucide="briefcase"></i>
+                                    5+ Years
+                                </span>
+
+                                <span>
+                                    <i data-lucide="calendar-check"></i>
+                                    98+ Sessions
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-saved-tutor-footer">
+
+                        <div class="unitutor-saved-tutor-price">
+                            <strong>$24</strong>
+                            <span>/ hour</span>
+                        </div>
+
+                        <div class="unitutor-saved-tutor-actions">
+                            <a href="#" class="unitutor-saved-tutor-message-btn">
+                                <i data-lucide="message-circle"></i>
+                                Message
+                            </a>
+
+                            <a href="#" class="unitutor-saved-tutor-book-btn">
+                                Book Session
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Tutor 3 -->
+                <article class="unitutor-saved-tutor-card">
+
+                    <button type="button" class="unitutor-saved-tutor-remove" aria-label="Remove tutor">
+                        <i data-lucide="heart"></i>
+                    </button>
+
+                    <div class="unitutor-saved-tutor-main">
+
+                        <div class="unitutor-saved-tutor-image-wrap">
+                            <img src="images/tutor-sophia.jpg" alt="Sophia Bennett" class="unitutor-saved-tutor-image">
+
+                            <span class="unitutor-saved-tutor-online">
+                                Available
+                            </span>
+                        </div>
+
+                        <div class="unitutor-saved-tutor-info">
+
+                            <div class="unitutor-saved-tutor-name-row">
+                                <h3>Sophia Bennett</h3>
+
+                                <span class="unitutor-saved-tutor-verified">
+                                    <i data-lucide="badge-check"></i>
+                                    Verified
+                                </span>
+                            </div>
+
+                            <span class="unitutor-saved-tutor-subject">
+                                Commerce
+                            </span>
+
+                            <p class="unitutor-saved-tutor-expertise">
+                                Accounting & Financial Management
+                            </p>
+
+                            <div class="unitutor-saved-tutor-meta">
+                                <span>
+                                    <i data-lucide="star"></i>
+                                    4.9
+                                </span>
+
+                                <span>
+                                    <i data-lucide="briefcase"></i>
+                                    7+ Years
+                                </span>
+
+                                <span>
+                                    <i data-lucide="calendar-check"></i>
+                                    145+ Sessions
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-saved-tutor-footer">
+
+                        <div class="unitutor-saved-tutor-price">
+                            <strong>$26</strong>
+                            <span>/ hour</span>
+                        </div>
+
+                        <div class="unitutor-saved-tutor-actions">
+                            <a href="#" class="unitutor-saved-tutor-message-btn">
+                                <i data-lucide="message-circle"></i>
+                                Message
+                            </a>
+
+                            <a href="#" class="unitutor-saved-tutor-book-btn">
+                                Book Session
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Tutor 4 -->
+                <article class="unitutor-saved-tutor-card">
+
+                    <button type="button" class="unitutor-saved-tutor-remove" aria-label="Remove tutor">
+                        <i data-lucide="heart"></i>
+                    </button>
+
+                    <div class="unitutor-saved-tutor-main">
+
+                        <div class="unitutor-saved-tutor-image-wrap">
+                            <img src="images/tutor-michael.jpg" alt="Michael Anderson"
+                                class="unitutor-saved-tutor-image">
+
+                            <span class="unitutor-saved-tutor-online">
+                                Available
+                            </span>
+                        </div>
+
+                        <div class="unitutor-saved-tutor-info">
+
+                            <div class="unitutor-saved-tutor-name-row">
+                                <h3>Michael Anderson</h3>
+
+                                <span class="unitutor-saved-tutor-verified">
+                                    <i data-lucide="badge-check"></i>
+                                    Verified
+                                </span>
+                            </div>
+
+                            <span class="unitutor-saved-tutor-subject">
+                                Law
+                            </span>
+
+                            <p class="unitutor-saved-tutor-expertise">
+                                Constitutional & Contract Law
+                            </p>
+
+                            <div class="unitutor-saved-tutor-meta">
+                                <span>
+                                    <i data-lucide="star"></i>
+                                    4.8
+                                </span>
+
+                                <span>
+                                    <i data-lucide="briefcase"></i>
+                                    6+ Years
+                                </span>
+
+                                <span>
+                                    <i data-lucide="calendar-check"></i>
+                                    110+ Sessions
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-saved-tutor-footer">
+
+                        <div class="unitutor-saved-tutor-price">
+                            <strong>$25</strong>
+                            <span>/ hour</span>
+                        </div>
+
+                        <div class="unitutor-saved-tutor-actions">
+                            <a href="#" class="unitutor-saved-tutor-message-btn">
+                                <i data-lucide="message-circle"></i>
+                                Message
+                            </a>
+
+                            <a href="#" class="unitutor-saved-tutor-book-btn">
+                                Book Session
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="unitutor-saved-tutors-list-footer">
+                <span>
+                    Showing 4 of 6 saved tutors
+                </span>
+
+                <a href="#">
+                    View all saved tutors
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Saved Tutors Section 3 -->
+        <section class="unitutor-saved-tutor-shortcuts">
+
+            <div class="unitutor-saved-tutor-shortcuts-header">
+                <span class="unitutor-saved-tutor-shortcuts-label">
+                    TUTOR SHORTCUTS
+                </span>
+
+                <h2>Make your next learning step easier</h2>
+
+                <p>
+                    Quickly access your sessions, messages, materials, or discover
+                    another tutor based on your learning needs.
+                </p>
+            </div>
+
+
+            <div class="unitutor-saved-tutor-shortcuts-grid">
+
+                <!-- Quick Actions -->
+                <div class="unitutor-saved-tutor-actions-panel">
+
+                    <div class="unitutor-saved-tutor-panel-heading">
+                        <div class="unitutor-saved-tutor-panel-icon">
+                            <i data-lucide="zap"></i>
+                        </div>
+
+                        <div>
+                            <h3>Quick actions</h3>
+                            <p>Access your most-used learning tools.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="unitutor-saved-tutor-action-list">
+
+                        <a href="#" class="unitutor-saved-tutor-action-item">
+                            <div class="unitutor-saved-tutor-action-icon">
+                                <i data-lucide="calendar-plus"></i>
+                            </div>
+
+                            <div class="unitutor-saved-tutor-action-content">
+                                <strong>Book a Session</strong>
+                                <span>Schedule time with a saved tutor</span>
+                            </div>
+
+                            <i data-lucide="chevron-right" class="unitutor-saved-tutor-action-arrow"></i>
+                        </a>
+
+
+                        <a href="#" class="unitutor-saved-tutor-action-item">
+                            <div class="unitutor-saved-tutor-action-icon">
+                                <i data-lucide="message-circle"></i>
+                            </div>
+
+                            <div class="unitutor-saved-tutor-action-content">
+                                <strong>Send a Message</strong>
+                                <span>Continue a conversation with your tutor</span>
+                            </div>
+
+                            <i data-lucide="chevron-right" class="unitutor-saved-tutor-action-arrow"></i>
+                        </a>
+
+
+                        <a href="#" class="unitutor-saved-tutor-action-item">
+                            <div class="unitutor-saved-tutor-action-icon">
+                                <i data-lucide="calendar-check"></i>
+                            </div>
+
+                            <div class="unitutor-saved-tutor-action-content">
+                                <strong>View My Sessions</strong>
+                                <span>Check upcoming and completed sessions</span>
+                            </div>
+
+                            <i data-lucide="chevron-right" class="unitutor-saved-tutor-action-arrow"></i>
+                        </a>
+
+
+                        <a href="#" class="unitutor-saved-tutor-action-item">
+                            <div class="unitutor-saved-tutor-action-icon">
+                                <i data-lucide="folder-open"></i>
+                            </div>
+
+                            <div class="unitutor-saved-tutor-action-content">
+                                <strong>Browse Materials</strong>
+                                <span>Find resources shared by your tutors</span>
+                            </div>
+
+                            <i data-lucide="chevron-right" class="unitutor-saved-tutor-action-arrow"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Find Another Tutor -->
+                <div class="unitutor-saved-tutor-discover-panel">
+
+                    <div class="unitutor-saved-tutor-discover-top">
+                        <div class="unitutor-saved-tutor-discover-icon">
+                            <i data-lucide="users-round"></i>
+                        </div>
+
+                        <span class="unitutor-saved-tutor-discover-badge">
+                            RECOMMENDED
+                        </span>
+                    </div>
+
+                    <div class="unitutor-saved-tutor-discover-content">
+
+                        <h3>Looking for another tutor?</h3>
+
+                        <p>
+                            Explore more verified tutors across different subjects
+                            and find someone who matches your learning goals.
+                        </p>
+
+                        <div class="unitutor-saved-tutor-discover-points">
+
+                            <span>
+                                <i data-lucide="badge-check"></i>
+                                Verified tutors
+                            </span>
+
+                            <span>
+                                <i data-lucide="book-open"></i>
+                                Multiple subjects
+                            </span>
+
+                            <span>
+                                <i data-lucide="clock-3"></i>
+                                Flexible sessions
+                            </span>
+
+                        </div>
+
+                        <a href="#" class="unitutor-saved-tutor-discover-btn">
+                            <i data-lucide="search"></i>
+                            Find a New Tutor
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Support Strip -->
+            <div class="unitutor-saved-tutor-support">
+
+                <div class="unitutor-saved-tutor-support-icon">
+                    <i data-lucide="messages-square"></i>
+                </div>
+
+                <div class="unitutor-saved-tutor-support-content">
+                    <span>NEED HELP?</span>
+
+                    <h3>Not sure which tutor to choose?</h3>
+
+                    <p>
+                        Get help finding a tutor based on your subject, learning
+                        level, and study goals.
+                    </p>
+                </div>
+
+                <a href="#" class="unitutor-saved-tutor-support-btn">
+                    Get Tutor Help
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="unitutor-dashboard-sidebar-overlay" id="dashboardSidebarOverlay"></div>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

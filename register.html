@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- =========================================
+     REGISTER PAGE
+========================================= -->
+
+<body class="unitutor-auth-body">
+
+    <!-- Top Actions -->
+    <div class="unitutor-auth-actions">
+
+        <button class="unitutor-auth-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode"
+            title="Dark Mode">
+            <i data-lucide="moon"></i>
+        </button>
+
+        <button class="unitutor-auth-toggle" id="rtlToggle" type="button" aria-label="Toggle RTL mode" title="RTL Mode">
+            <i data-lucide="arrow-left-right"></i>
+        </button>
+
+    </div>
+
+
+    <!-- Register Wrapper -->
+    <main class="unitutor-auth-wrapper">
+
+        <div class="unitutor-auth-card unitutor-register-card">
+
+            <!-- Logo -->
+            <a href="index.html" class="unitutor-auth-logo">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+
+
+            <!-- Heading -->
+            <div class="unitutor-auth-heading">
+
+                <h1>Create Your Account</h1>
+
+                <p>
+                    Join UniTutor and start learning with the right support.
+                </p>
+
+            </div>
+
+
+            <!-- Register Form -->
+            <form class="unitutor-auth-form">
+
+                <!-- Full Name -->
+                <div class="unitutor-auth-field">
+
+                    <label for="registerName">
+                        Full Name
+                    </label>
+
+                    <input type="text" id="registerName" name="name" placeholder="Enter your full name" required>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="unitutor-auth-field">
+
+                    <label for="registerEmail">
+                        Email Address
+                    </label>
+
+                    <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+
+                </div>
+
+
+                <div class="unitutor-auth-field">
+                    <label for="registerPassword">Password</label>
+
+                    <div class="unitutor-password-wrapper">
+                        <input type="password" id="registerPassword" name="password" placeholder="Create password"
+                            required>
+
+                        <button type="button" class="unitutor-password-toggle" data-password-target="registerPassword"
+                            aria-label="Show password">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="unitutor-auth-field">
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <div class="unitutor-password-wrapper">
+                        <input type="password" id="confirmPassword" name="confirm_password"
+                            placeholder="Confirm password" required>
+
+                        <button type="button" class="unitutor-password-toggle" data-password-target="confirmPassword"
+                            aria-label="Show password">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Terms -->
+                <label class="unitutor-register-terms">
+
+                    <input type="checkbox" name="terms" required>
+
+                    <span>
+                        I agree to the
+                        <a href="#">Terms of Service</a>
+                        and
+                        <a href="#">Privacy Policy</a>.
+                    </span>
+
+                </label>
+
+
+                <!-- Register -->
+                <button type="submit" class="primary-btn unitutor-auth-submit">
+
+                    <span>Create Account</span>
+
+                    <i data-lucide="arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- Divider -->
+            <div class="unitutor-auth-divider">
+                <span>OR CONTINUE WITH</span>
+            </div>
+
+
+            <!-- Social Login -->
+            <div class="unitutor-auth-socials">
+
+                <!-- Google -->
+                <a href="#" class="unitutor-social-google">
+
+                    <img src="images/google-logo.svg" alt="Google">
+
+                    <span>Google</span>
+
+                </a>
+
+
+                <!-- Facebook -->
+                <a href="#" class="unitutor-social-facebook">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                    <span>Facebook</span>
+
+                </a>
+
+
+                <a href="#" class="unitutor-social-x">
+
+                    <i class="fa-brands fa-apple"></i>
+
+                    <span>Apple</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Login -->
+            <p class="unitutor-auth-bottom-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login here
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

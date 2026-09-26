@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Dashboard Sidebar -->
+    <aside class="unitutor-dashboard-sidebar" id="dashboardSidebar">
+
+        <button type="button" class="unitutor-sidebar-close" aria-label="Close sidebar">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="unitutor-dashboard-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+        </div>
+
+        <nav class="unitutor-dashboard-nav">
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d2.html">
+                        <i data-lucide="users-round"></i>
+                        <span>Find a Tutor</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d3.html">
+                        <i data-lucide="calendar-days"></i>
+                        <span>My Sessions</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d4.html">
+                        <i data-lucide="notebook-tabs"></i>
+                        <span>My Materials</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d5.html">
+                        <i data-lucide="credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d6.html" class="active">
+                        <i data-lucide="messages-square"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d7.html">
+                        <i data-lucide="bookmark-check"></i>
+                        <span>Saved Tutors</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="unitutor-dashboard-logout">
+            <button type="button" id="dashboardLogoutBtn" class="unitutor-dashboard-logout-btn">
+                <i data-lucide="log-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+
+
+        <!-- Logout Confirmation Popup -->
+        <div class="unitutor-logout-modal" id="dashboardLogoutModal" aria-hidden="true">
+            <div class="unitutor-logout-modal-overlay" id="logoutModalOverlay"></div>
+
+            <div class="unitutor-logout-modal-box">
+
+                <button type="button" class="unitutor-logout-modal-close" id="logoutModalClose" aria-label="Close">
+                    <i data-lucide="x"></i>
+                </button>
+
+                <div class="unitutor-logout-modal-icon">
+                    <i data-lucide="log-out"></i>
+                </div>
+
+                <h2>Logout</h2>
+
+                <p>
+                    Are you sure you want to logout from your dashboard?
+                </p>
+
+                <div class="unitutor-logout-modal-actions">
+
+                    <button type="button" class="unitutor-logout-no" id="logoutNoBtn">
+                        No
+                    </button>
+
+                    <button type="button" class="unitutor-logout-yes" id="logoutYesBtn">
+                        Yes, Logout
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Dashboard Header -->
+    <header class="unitutor-dashboard-header">
+
+        <div class="unitutor-dashboard-header-left">
+
+            <!-- Mobile Menu Toggle -->
+            <button type="button" class="unitutor-dashboard-menu-toggle" id="dashboardMenuToggle" aria-label="Open menu"
+                aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <h1>Messages</h1>
+
+        </div>
+
+
+        <div class="unitutor-dashboard-header-right">
+
+            <!-- Notifications -->
+            <button type="button" class="unitutor-dashboard-header-icon notification-btn" aria-label="Notifications">
+                <i data-lucide="bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+
+
+            <!-- Settings -->
+            <button type="button" class="unitutor-dashboard-header-icon" aria-label="Settings">
+                <i data-lucide="settings-2"></i>
+            </button>
+
+
+            <!-- Dark Mode -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardThemeToggle"
+                aria-label="Toggle dark mode">
+                <i data-lucide="moon"></i>
+            </button>
+
+
+            <!-- RTL -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardRtlToggle"
+                aria-label="Toggle RTL">
+                <i data-lucide="arrow-left-right"></i>
+            </button>
+
+
+            <!-- Student Profile -->
+            <button type="button" class="unitutor-dashboard-profile" aria-label="Student profile">
+                <img src="images/student-profile.jpg" alt="Alex Morgan">
+
+                <span class="unitutor-dashboard-profile-info">
+                    <strong>Alex Morgan</strong>
+                    <small>Student</small>
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main class="unitutor-dashboard-main">
+
+
+        <!-- ==========================================
+     MESSAGES — SECTION 1
+========================================== -->
+
+        <section class="unitutor-messages-overview">
+
+            <div class="unitutor-messages-overview-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        MESSAGES
+                    </span>
+
+                    <h2>
+                        Stay connected with your tutors
+                    </h2>
+
+                    <p>
+                        Keep your learning conversations, tutor updates, and
+                        session-related messages in one place.
+                    </p>
+
+                </div>
+
+                <button type="button" class="primary-btn unitutor-new-message-btn">
+                    <i data-lucide="square-pen"></i>
+                    New Message
+                </button>
+
+            </div>
+
+
+            <!-- ==========================================
+         MESSAGE SUMMARY
+    =========================================== -->
+
+            <div class="unitutor-message-summary">
+
+
+                <!-- Total -->
+
+                <div class="unitutor-message-summary-card">
+
+                    <div class="unitutor-message-summary-top">
+
+                        <div class="unitutor-message-summary-icon">
+                            <i data-lucide="messages-square"></i>
+                        </div>
+
+                        <span>
+                            CONVERSATIONS
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        08
+                    </strong>
+
+                    <p>
+                        Total active conversations
+                    </p>
+
+                </div>
+
+
+                <!-- Unread -->
+
+                <div class="unitutor-message-summary-card">
+
+                    <div class="unitutor-message-summary-top">
+
+                        <div class="unitutor-message-summary-icon">
+                            <i data-lucide="mail"></i>
+                        </div>
+
+                        <span>
+                            UNREAD
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        03
+                    </strong>
+
+                    <p>
+                        Messages waiting for you
+                    </p>
+
+                </div>
+
+
+                <!-- Active Tutors -->
+
+                <div class="unitutor-message-summary-card">
+
+                    <div class="unitutor-message-summary-top">
+
+                        <div class="unitutor-message-summary-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+
+                        <span>
+                            TUTORS
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        04
+                    </strong>
+
+                    <p>
+                        Tutors you've contacted
+                    </p>
+
+                </div>
+
+
+                <!-- Recent -->
+
+                <div class="unitutor-message-summary-card">
+
+                    <div class="unitutor-message-summary-top">
+
+                        <div class="unitutor-message-summary-icon">
+                            <i data-lucide="clock-3"></i>
+                        </div>
+
+                        <span>
+                            RECENT
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        2m
+                    </strong>
+
+                    <p>
+                        Last message received
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+         RECENT CONVERSATIONS
+    =========================================== -->
+
+            <div class="unitutor-message-inbox">
+
+                <div class="unitutor-message-inbox-header">
+
+                    <div>
+
+                        <h3>
+                            Recent conversations
+                        </h3>
+
+                        <p>
+                            Continue your latest tutor conversations.
+                        </p>
+
+                    </div>
+
+
+                    <div class="unitutor-message-search">
+
+                        <i data-lucide="search"></i>
+
+                        <input type="text" placeholder="Search conversations...">
+
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-message-conversation-list">
+
+
+                    <!-- Conversation 01 -->
+
+                    <div class="unitutor-message-conversation unread">
+
+                        <div class="unitutor-message-avatar">
+
+                            <img src="images/tutor-emily.jpg" alt="Dr. Emily Carter">
+
+                            <span class="unitutor-message-online"></span>
+
+                        </div>
+
+
+                        <div class="unitutor-message-conversation-info">
+
+                            <div class="unitutor-message-name-row">
+
+                                <h4>
+                                    Dr. Emily Carter
+                                </h4>
+
+                                <span>
+                                    2 min ago
+                                </span>
+
+                            </div>
+
+                            <p class="unitutor-message-subject">
+                                Computer Science · Data Structures
+                            </p>
+
+                            <p class="unitutor-message-preview">
+                                I've shared the practice material for your
+                                upcoming session. Please review it before Monday.
+                            </p>
+
+                        </div>
+
+
+                        <div class="unitutor-message-conversation-meta">
+
+                            <span class="unitutor-unread-count">
+                                2
+                            </span>
+
+                            <i data-lucide="chevron-right"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Conversation 02 -->
+
+                    <div class="unitutor-message-conversation unread">
+
+                        <div class="unitutor-message-avatar">
+
+                            <img src="images/tutor-james.jpg" alt="James Wilson">
+
+                            <span class="unitutor-message-online"></span>
+
+                        </div>
+
+
+                        <div class="unitutor-message-conversation-info">
+
+                            <div class="unitutor-message-name-row">
+
+                                <h4>
+                                    James Wilson
+                                </h4>
+
+                                <span>
+                                    18 min ago
+                                </span>
+
+                            </div>
+
+                            <p class="unitutor-message-subject">
+                                Engineering · Mathematics
+                            </p>
+
+                            <p class="unitutor-message-preview">
+                                We can focus on the differential equations
+                                problems during our next session.
+                            </p>
+
+                        </div>
+
+
+                        <div class="unitutor-message-conversation-meta">
+
+                            <span class="unitutor-unread-count">
+                                1
+                            </span>
+
+                            <i data-lucide="chevron-right"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Conversation 03 -->
+
+                    <div class="unitutor-message-conversation unread">
+
+                        <div class="unitutor-message-avatar">
+
+                            <img src="images/tutor-sophia.jpg" alt="Sophia Bennett">
+
+                            <span class="unitutor-message-online"></span>
+
+                        </div>
+
+
+                        <div class="unitutor-message-conversation-info">
+
+                            <div class="unitutor-message-name-row">
+
+                                <h4>
+                                    Sophia Bennett
+                                </h4>
+
+                                <span>
+                                    1 hr ago
+                                </span>
+
+                            </div>
+
+                            <p class="unitutor-message-subject">
+                                Commerce · Financial Accounting
+                            </p>
+
+                            <p class="unitutor-message-preview">
+                                Your revision worksheet is ready. Let me know
+                                if you need help with any of the questions.
+                            </p>
+
+                        </div>
+
+
+                        <div class="unitutor-message-conversation-meta">
+
+                            <span class="unitutor-unread-count">
+                                3
+                            </span>
+
+                            <i data-lucide="chevron-right"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Conversation 04 -->
+
+                    <div class="unitutor-message-conversation">
+
+                        <div class="unitutor-message-avatar">
+
+                            <img src="images/tutor-michael.jpg" alt="Michael Anderson">
+
+                        </div>
+
+
+                        <div class="unitutor-message-conversation-info">
+
+                            <div class="unitutor-message-name-row">
+
+                                <h4>
+                                    Michael Anderson
+                                </h4>
+
+                                <span>
+                                    Yesterday
+                                </span>
+
+                            </div>
+
+                            <p class="unitutor-message-subject">
+                                Law · Constitutional Law
+                            </p>
+
+                            <p class="unitutor-message-preview">
+                                I've added the case study notes we discussed
+                                during yesterday's session.
+                            </p>
+
+                        </div>
+
+
+                        <div class="unitutor-message-conversation-meta">
+
+                            <i data-lucide="chevron-right"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-message-inbox-footer">
+
+                    <span>
+                        Showing 4 recent conversations
+                    </span>
+
+                    <a href="#">
+                        View all messages
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     MESSAGES — SECTION 2
+========================================== -->
+
+        <section class="unitutor-message-center">
+
+            <div class="unitutor-message-center-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        MESSAGE CENTER
+                    </span>
+
+                    <h2>
+                        Continue your conversation
+                    </h2>
+
+                    <p>
+                        Stay connected with your tutor before, during, and after
+                        your learning sessions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="unitutor-message-center-layout">
+
+
+                <!-- ==========================================
+             ACTIVE CONVERSATION
+        =========================================== -->
+
+                <div class="unitutor-active-conversation">
+
+
+                    <!-- Conversation Header -->
+
+                    <div class="unitutor-conversation-header">
+
+                        <div class="unitutor-conversation-person">
+
+                            <div class="unitutor-conversation-avatar">
+
+                                <img src="images/tutor-emily.jpg" alt="Dr. Emily Carter">
+
+                                <span class="unitutor-conversation-online"></span>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Dr. Emily Carter
+                                </h3>
+
+                                <span>
+                                    Online · Computer Science Tutor
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button type="button" class="unitutor-conversation-menu">
+                            <i data-lucide="more-horizontal"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Session Context -->
+
+                    <div class="unitutor-conversation-context">
+
+                        <div class="unitutor-context-icon">
+                            <i data-lucide="video"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                UPCOMING SESSION
+                            </span>
+
+                            <strong>
+                                Data Structures & Algorithms
+                            </strong>
+
+                            <small>
+                                Sep 28 · 4:00 PM – 5:00 PM
+                            </small>
+
+                        </div>
+
+                        <a href="d3.html">
+                            View Session
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Message Area -->
+
+                    <div class="unitutor-conversation-messages">
+
+
+                        <div class="unitutor-message-date-divider">
+                            <span>
+                                Today
+                            </span>
+                        </div>
+
+
+                        <!-- Tutor Message -->
+
+                        <div class="unitutor-chat-message tutor">
+
+                            <div class="unitutor-chat-avatar">
+
+                                <img src="images/tutor-emily.jpg" alt="Dr. Emily Carter">
+
+                            </div>
+
+                            <div class="unitutor-chat-message-content">
+
+                                <div class="unitutor-chat-bubble">
+
+                                    <p>
+                                        Hi! I've shared the practice material
+                                        for your upcoming Data Structures session.
+                                    </p>
+
+                                </div>
+
+                                <span class="unitutor-chat-time">
+                                    10:24 AM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Student Message -->
+
+                        <div class="unitutor-chat-message student">
+
+                            <div class="unitutor-chat-message-content">
+
+                                <div class="unitutor-chat-bubble">
+
+                                    <p>
+                                        Thank you! I'll go through the material
+                                        before our session.
+                                    </p>
+
+                                </div>
+
+                                <span class="unitutor-chat-time">
+                                    10:26 AM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Tutor Message -->
+
+                        <div class="unitutor-chat-message tutor">
+
+                            <div class="unitutor-chat-avatar">
+
+                                <img src="images/tutor-emily.jpg" alt="Dr. Emily Carter">
+
+                            </div>
+
+                            <div class="unitutor-chat-message-content">
+
+                                <div class="unitutor-chat-bubble">
+
+                                    <p>
+                                        Perfect. If you have any questions while
+                                        reviewing it, feel free to message me here.
+                                    </p>
+
+                                </div>
+
+                                <span class="unitutor-chat-time">
+                                    10:28 AM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Student Message -->
+
+                        <div class="unitutor-chat-message student">
+
+                            <div class="unitutor-chat-message-content">
+
+                                <div class="unitutor-chat-bubble">
+
+                                    <p>
+                                        I'll also bring the questions I found
+                                        difficult to our next session.
+                                    </p>
+
+                                </div>
+
+                                <span class="unitutor-chat-time">
+                                    10:30 AM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Message Composer -->
+
+                    <div class="unitutor-message-composer">
+
+                        <button type="button" class="unitutor-composer-action" title="Attach file">
+                            <i data-lucide="paperclip"></i>
+                        </button>
+
+                        <input type="text" placeholder="Write a message...">
+
+                        <button type="button" class="unitutor-composer-send" title="Send message">
+                            <i data-lucide="send"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+             CONVERSATION DETAILS
+        =========================================== -->
+
+                <aside class="unitutor-conversation-details">
+
+
+                    <div class="unitutor-conversation-details-head">
+
+                        <div class="unitutor-details-avatar">
+
+                            <img src="images/tutor-emily.jpg" alt="Dr. Emily Carter">
+
+                            <span></span>
+
+                        </div>
+
+                        <h3>
+                            Dr. Emily Carter
+                        </h3>
+
+                        <p>
+                            Computer Science Tutor
+                        </p>
+
+                    </div>
+
+
+                    <!-- Tutor Details -->
+
+                    <div class="unitutor-conversation-detail-group">
+
+                        <span>
+                            SUBJECT
+                        </span>
+
+                        <strong>
+                            Computer Science
+                        </strong>
+
+                    </div>
+
+
+                    <div class="unitutor-conversation-detail-group">
+
+                        <span>
+                            EXPERTISE
+                        </span>
+
+                        <strong>
+                            Data Structures & Algorithms
+                        </strong>
+
+                    </div>
+
+
+                    <div class="unitutor-conversation-detail-group">
+
+                        <span>
+                            SESSIONS
+                        </span>
+
+                        <strong>
+                            8 completed
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Quick Actions -->
+
+                    <div class="unitutor-conversation-quick-actions">
+
+                        <span>
+                            QUICK ACTIONS
+                        </span>
+
+                        <a href="d3.html">
+                            <i data-lucide="calendar"></i>
+                            View Sessions
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+
+                        <a href="d4.html">
+                            <i data-lucide="folder-open"></i>
+                            View Materials
+                            <i data-lucide="chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     MESSAGES — SECTION 3
+========================================== -->
+
+        <section class="unitutor-message-contacts">
+
+            <div class="unitutor-message-contacts-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        TUTOR CONNECTIONS
+                    </span>
+
+                    <h2>
+                        Your tutor contacts
+                    </h2>
+
+                    <p>
+                        Connect with tutors you've learned from and start
+                        a conversation whenever you need academic support.
+                    </p>
+
+                </div>
+
+                <a href="find-tutor.html" class="primary-btn">
+                    <i data-lucide="user-plus"></i>
+                    Find a Tutor
+                </a>
+
+            </div>
+
+
+            <div class="unitutor-message-contacts-grid">
+
+
+                <!-- ==========================================
+             TUTOR CONTACTS
+        =========================================== -->
+
+                <div class="unitutor-tutor-contacts-panel">
+
+                    <div class="unitutor-contacts-panel-header">
+
+                        <div>
+
+                            <h3>
+                                Your tutors
+                            </h3>
+
+                            <p>
+                                Tutors you've recently learned with
+                            </p>
+
+                        </div>
+
+                        <span>
+                            4 Tutors
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-tutor-contact-list">
+
+
+                        <!-- Tutor 01 -->
+
+                        <div class="unitutor-tutor-contact">
+
+                            <div class="unitutor-tutor-contact-avatar">
+
+                                <img src="images/tutor-emily.jpg" alt="Dr. Emily Carter">
+
+                                <span></span>
+
+                            </div>
+
+                            <div class="unitutor-tutor-contact-info">
+
+                                <h4>
+                                    Dr. Emily Carter
+                                </h4>
+
+                                <p>
+                                    Computer Science
+                                </p>
+
+                            </div>
+
+                            <button type="button" class="unitutor-contact-message-btn">
+                                <i data-lucide="message-circle"></i>
+                                Message
+                            </button>
+
+                        </div>
+
+
+                        <!-- Tutor 02 -->
+
+                        <div class="unitutor-tutor-contact">
+
+                            <div class="unitutor-tutor-contact-avatar">
+
+                                <img src="images/tutor-james.jpg" alt="James Wilson">
+
+                                <span></span>
+
+                            </div>
+
+                            <div class="unitutor-tutor-contact-info">
+
+                                <h4>
+                                    James Wilson
+                                </h4>
+
+                                <p>
+                                    Engineering
+                                </p>
+
+                            </div>
+
+                            <button type="button" class="unitutor-contact-message-btn">
+                                <i data-lucide="message-circle"></i>
+                                Message
+                            </button>
+
+                        </div>
+
+
+                        <!-- Tutor 03 -->
+
+                        <div class="unitutor-tutor-contact">
+
+                            <div class="unitutor-tutor-contact-avatar">
+
+                                <img src="images/tutor-sophia.jpg" alt="Sophia Bennett">
+
+                                <span></span>
+
+                            </div>
+
+                            <div class="unitutor-tutor-contact-info">
+
+                                <h4>
+                                    Sophia Bennett
+                                </h4>
+
+                                <p>
+                                    Commerce
+                                </p>
+
+                            </div>
+
+                            <button type="button" class="unitutor-contact-message-btn">
+                                <i data-lucide="message-circle"></i>
+                                Message
+                            </button>
+
+                        </div>
+
+
+                        <!-- Tutor 04 -->
+
+                        <div class="unitutor-tutor-contact">
+
+                            <div class="unitutor-tutor-contact-avatar">
+
+                                <img src="images/tutor-michael.jpg" alt="Michael Anderson">
+
+                            </div>
+
+                            <div class="unitutor-tutor-contact-info">
+
+                                <h4>
+                                    Michael Anderson
+                                </h4>
+
+                                <p>
+                                    Law
+                                </p>
+
+                            </div>
+
+                            <button type="button" class="unitutor-contact-message-btn">
+                                <i data-lucide="message-circle"></i>
+                                Message
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+             MESSAGE REQUESTS
+        =========================================== -->
+
+                <div class="unitutor-message-requests-panel">
+
+                    <div class="unitutor-requests-panel-header">
+
+                        <div>
+
+                            <h3>
+                                Message requests
+                            </h3>
+
+                            <p>
+                                New requests from your learning network
+                            </p>
+
+                        </div>
+
+                        <span class="unitutor-request-count">
+                            02 New
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-message-request-list">
+
+
+                        <!-- Request 01 -->
+
+                        <div class="unitutor-message-request">
+
+                            <div class="unitutor-request-avatar">
+
+                                <div>
+                                    <i data-lucide="user"></i>
+                                </div>
+
+                            </div>
+
+                            <div class="unitutor-request-info">
+
+                                <h4>
+                                    Dr. Emily Carter
+                                </h4>
+
+                                <p>
+                                    Shared a new resource with you.
+                                </p>
+
+                                <span>
+                                    15 min ago
+                                </span>
+
+                            </div>
+
+                            <button type="button" class="unitutor-request-view-btn">
+                                View
+                            </button>
+
+                        </div>
+
+
+                        <!-- Request 02 -->
+
+                        <div class="unitutor-message-request">
+
+                            <div class="unitutor-request-avatar">
+
+                                <div>
+                                    <i data-lucide="user"></i>
+                                </div>
+
+                            </div>
+
+                            <div class="unitutor-request-info">
+
+                                <h4>
+                                    James Wilson
+                                </h4>
+
+                                <p>
+                                    Sent you a session follow-up message.
+                                </p>
+
+                                <span>
+                                    1 hr ago
+                                </span>
+
+                            </div>
+
+                            <button type="button" class="unitutor-request-view-btn">
+                                View
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-message-request-footer">
+
+                        <i data-lucide="info"></i>
+
+                        <span>
+                            You can manage new message requests from here.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+         SUPPORT CTA
+    =========================================== -->
+
+            <div class="unitutor-message-support">
+
+                <div class="unitutor-message-support-icon">
+                    <i data-lucide="headphones"></i>
+                </div>
+
+                <div class="unitutor-message-support-content">
+
+                    <span>
+                        NEED HELP?
+                    </span>
+
+                    <h3>
+                        Have a question about your learning journey?
+                    </h3>
+
+                    <p>
+                        Reach out to your tutor or contact UniTutor support
+                        for help with your sessions and learning experience.
+                    </p>
+
+                </div>
+
+                <a href="#" class="secondary-btn">
+                    Contact Support
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="unitutor-dashboard-sidebar-overlay" id="dashboardSidebarOverlay"></div>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

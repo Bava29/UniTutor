@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+     UniTutor Header
+========================= -->
+    <header class="unitutor-header">
+        <div class="unitutor-header-inner">
+
+            <!-- Logo -->
+            <a href="index.html" class="unitutor-logo">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="unitutor-nav" id="unitutorNav">
+                <ul class="unitutor-menu">
+
+                    <li class="unitutor-dropdown">
+                        <a href="javascript:void(0);" class="unitutor-dropdown-link active">
+                            <span class="unitutor-nav-label">Home</span>
+                            <i data-lucide="chevron-down"></i>
+                        </a>
+
+                        <ul class="unitutor-dropdown-menu">
+                            <li>
+                                <a href="index.html">Home 1</a>
+                            </li>
+                            <li>
+                                <a href="home-2.html" class="active">Home 2</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="tutors-subjects.html"><span class="unitutor-nav-label">Tutors &amp; Subjects</span></a>
+                    </li>
+
+                    <li>
+                        <a href="about.html"><span class="unitutor-nav-label">About</span></a>
+                    </li>
+
+                    <li>
+                        <a href="how-it-works.html"><span class="unitutor-nav-label">How It Works</span></a>
+                    </li>
+
+                    <li>
+                        <a href="pricing.html"><span class="unitutor-nav-label">Pricing</span></a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html"><span class="unitutor-nav-label">Contact</span></a>
+                    </li>
+
+                </ul>
+
+                <!-- Mobile Actions -->
+                <div class="mobile-menu-actions">
+
+                    <button class="header-toggle-btn" id="mobileThemeToggle" type="button">
+                        <i data-lucide="moon"></i>
+                        <span>Dark Mode</span>
+                    </button>
+
+                    <button class="header-toggle-btn" id="mobileRtlToggle" type="button">
+                        <i data-lucide="arrow-left-right"></i>
+                        <span>RTL Mode</span>
+                    </button>
+
+                    <a href="login.html" class="mobile-login-btn">
+                        <span>Login</span>
+                    </a>
+
+                    <a href="dashboard.html" class="mobile-dashboard-btn">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                </div>
+            </nav>
+
+            <!-- Desktop Actions -->
+            <div class="unitutor-header-actions">
+
+                <!-- Dark Mode -->
+                <button class="header-icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode"
+                    title="Dark Mode">
+                    <i data-lucide="moon"></i>
+                </button>
+
+                <!-- RTL -->
+                <button class="header-icon-btn" id="rtlToggle" type="button" aria-label="Toggle RTL mode"
+                    title="RTL Mode">
+                    <i data-lucide="arrow-left-right"></i>
+                </button>
+
+                <!-- Login -->
+                <a href="login.html" class="header-login-btn">
+                    Login
+                </a>
+
+                <!-- Dashboard -->
+                <a href="dashboard.html" class="header-dashboard-btn">
+                    <i data-lucide="layout-dashboard"></i>
+                    Dashboard
+                </a>
+
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="unitutor-menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- =========================================
+     HOME 2 HERO
+========================================= -->
+
+        <section class="unitutor-home2-hero">
+
+            <!-- Left Content -->
+            <div class="unitutor-home2-hero-content">
+
+                <div class="unitutor-home2-eyebrow">
+                    <span class="unitutor-home2-eyebrow-line"></span>
+                    <span>UNIVERSITY LEARNING, REDEFINED</span>
+                </div>
+
+                <h1>
+                    Learn with
+                    <span>clarity.</span>
+                    Grow with confidence.
+                </h1>
+
+                <p>
+                    Connect with verified university tutors who understand your
+                    subjects, your challenges and the way you learn best.
+                </p>
+
+                <div class="unitutor-home2-hero-actions">
+
+                    <a href="tutors-subjects.html" class="primary-btn">
+                        <span>Find Your Tutor</span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                    <a href="how-it-works.html" class="secondary-btn">
+                        <span>Explore UniTutor</span>
+                        <i data-lucide="play"></i>
+                    </a>
+
+                </div>
+
+                <div class="unitutor-home2-hero-trust">
+
+                    <div class="unitutor-home2-trust-avatars">
+                        <div class="unitutor-home2-avatar">
+                            <img src="images/student-1.jpg" alt="Student">
+                        </div>
+
+                        <div class="unitutor-home2-avatar">
+                            <img src="images/student-2.jpg" alt="Student">
+                        </div>
+
+                        <div class="unitutor-home2-avatar">
+                            <img src="images/student-3.jpg" alt="Student">
+                        </div>
+
+                        <div class="unitutor-home2-avatar unitutor-home2-avatar-more">
+                            <span>+</span>
+                        </div>
+                    </div>
+
+                    <div class="unitutor-home2-trust-text">
+                        <strong>Trusted by students</strong>
+                        <span>Across multiple university subjects</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Visual -->
+            <div class="unitutor-home2-hero-visual">
+
+                <img src="images/home2-hero-tutor.jpg" alt="University student learning with a tutor"
+                    class="unitutor-home2-hero-image">
+
+                <div class="unitutor-home2-image-overlay"></div>
+
+
+                <!-- Floating Session Card -->
+                <div class="unitutor-home2-session-card">
+
+                    <div class="unitutor-home2-session-top">
+
+                        <div class="unitutor-home2-session-icon">
+                            <i data-lucide="video"></i>
+                        </div>
+
+                        <span>UPCOMING SESSION</span>
+
+                    </div>
+
+                    <div class="unitutor-home2-session-info">
+
+                        <div>
+                            <strong>Data Structures</strong>
+                            <span>Today · 4:00 PM</span>
+                        </div>
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </div>
+
+                    <div class="unitutor-home2-session-tutor">
+
+                        <div class="unitutor-home2-session-avatar">
+                            <img src="images/tutor-featured.jpg" alt="Tutor">
+                        </div>
+
+                        <div>
+                            <strong>Dr. Emily Carter</strong>
+                            <span>Computer Science</span>
+                        </div>
+
+                        <span class="unitutor-home2-status">
+                            Confirmed
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Floating Rating -->
+                <div class="unitutor-home2-rating-card">
+
+                    <div class="unitutor-home2-rating-icon">
+                        <i data-lucide="star"></i>
+                    </div>
+
+                    <div>
+                        <strong>4.9 / 5</strong>
+                        <span>Student rating</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Floating Subject Tag -->
+                <div class="unitutor-home2-subject-tag">
+                    <i data-lucide="graduation-cap"></i>
+                    <span>Expert University Tutors</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+     HOME 2 WHY UNITUTOR
+========================================= -->
+
+        <section class="unitutor-home2-why">
+            <div class="container">
+
+                <div class="unitutor-home2-why-header">
+
+                    <div class="unitutor-home2-why-label">
+                        <span>WHY UNITUTOR</span>
+                    </div>
+
+                    <div class="unitutor-home2-why-heading">
+                        <h2>
+                            More than tutoring.
+                            <span>A better way to learn.</span>
+                        </h2>
+
+                        <p>
+                            UniTutor brings expert guidance, flexible learning and
+                            meaningful academic support together in one place.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-home2-why-content">
+
+                    <!-- Large Visual -->
+                    <div class="unitutor-home2-why-visual">
+
+                        <img src="images/home2-why-learning.jpg" alt="University student studying">
+
+                        <div class="unitutor-home2-why-number">
+                            <strong>01</strong>
+                            <span>Focused<br>learning</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Features -->
+                    <div class="unitutor-home2-why-list">
+
+                        <div class="unitutor-home2-why-item">
+
+                            <div class="unitutor-home2-why-item-number">
+                                01
+                            </div>
+
+                            <div class="unitutor-home2-why-item-content">
+                                <h3>Learn from verified experts</h3>
+
+                                <p>
+                                    Connect with tutors who have strong academic
+                                    knowledge and experience in your subject.
+                                </p>
+                            </div>
+
+                            <div class="unitutor-home2-why-item-icon">
+                                <i data-lucide="badge-check"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="unitutor-home2-why-item">
+
+                            <div class="unitutor-home2-why-item-number">
+                                02
+                            </div>
+
+                            <div class="unitutor-home2-why-item-content">
+                                <h3>Study around your schedule</h3>
+
+                                <p>
+                                    Choose session times that work around your
+                                    university classes, assignments and routine.
+                                </p>
+                            </div>
+
+                            <div class="unitutor-home2-why-item-icon">
+                                <i data-lucide="calendar-clock"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="unitutor-home2-why-item">
+
+                            <div class="unitutor-home2-why-item-number">
+                                03
+                            </div>
+
+                            <div class="unitutor-home2-why-item-content">
+                                <h3>Understand, don't just memorize</h3>
+
+                                <p>
+                                    Get personalised explanations that help you
+                                    understand concepts and apply them with confidence.
+                                </p>
+                            </div>
+
+                            <div class="unitutor-home2-why-item-icon">
+                                <i data-lucide="lightbulb"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="unitutor-home2-why-item">
+
+                            <div class="unitutor-home2-why-item-number">
+                                04
+                            </div>
+
+                            <div class="unitutor-home2-why-item-content">
+                                <h3>Keep your learning organised</h3>
+
+                                <p>
+                                    Manage sessions, materials, messages and payments
+                                    from one convenient student dashboard.
+                                </p>
+                            </div>
+
+                            <div class="unitutor-home2-why-item-icon">
+                                <i data-lucide="layout-dashboard"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+     HOME 2 - STATS SECTION
+========================================= -->
+
+        <section class="unitutor-home2-stats">
+            <div class="container">
+
+                <div class="unitutor-home2-stats-header">
+
+                    <span class="unitutor-home2-stats-label">
+                        THE UNITUTOR DIFFERENCE
+                    </span>
+
+                    <h2>
+                        Built around the way
+                        <span>university students learn.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="unitutor-home2-stats-row">
+
+                    <!-- Stat 1 -->
+                    <div class="unitutor-home2-stat">
+
+                        <div class="unitutor-home2-stat-number">
+                            <strong>500</strong>
+                            <span>+</span>
+                        </div>
+
+                        <h3>Verified Tutors</h3>
+
+                        <p>
+                            Experienced tutors across university-level subjects.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Stat 2 -->
+                    <div class="unitutor-home2-stat">
+
+                        <div class="unitutor-home2-stat-number">
+                            <strong>25</strong>
+                            <span>+</span>
+                        </div>
+
+                        <h3>Academic Subjects</h3>
+
+                        <p>
+                            Support across diverse fields and university disciplines.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Stat 3 -->
+                    <div class="unitutor-home2-stat">
+
+                        <div class="unitutor-home2-stat-number">
+                            <strong>10k</strong>
+                            <span>+</span>
+                        </div>
+
+                        <h3>Learning Sessions</h3>
+
+                        <p>
+                            One-to-one sessions designed around student needs.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Stat 4 -->
+                    <div class="unitutor-home2-stat">
+
+                        <div class="unitutor-home2-stat-number">
+                            <strong>4.9</strong>
+                            <span>/5</span>
+                        </div>
+
+                        <h3>Student Rating</h3>
+
+                        <p>
+                            Highly rated learning experiences from our students.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-home2-stats-bottom">
+
+                    <div class="unitutor-home2-stats-line"></div>
+
+                    <div class="unitutor-home2-stats-note">
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Focused support. Flexible learning. Better understanding.
+                        </span>
+                    </div>
+
+                    <div class="unitutor-home2-stats-line"></div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+     HOME 2 - ACADEMIC EXPERTISE
+========================================= -->
+
+        <section class="unitutor-home2-academic">
+            <div class="container">
+
+                <!-- Section Heading -->
+                <div class="unitutor-home2-academic-head">
+
+                    <span class="unitutor-home2-academic-label">
+                        ACADEMIC EXPERTISE
+                    </span>
+
+                    <div class="unitutor-home2-academic-intro">
+                        <h2>
+                            One platform.
+                            <span>Multiple paths to progress.</span>
+                        </h2>
+
+                        <p>
+                            Explore expert tutoring across the subjects that shape
+                            your university journey.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Academic Subjects -->
+                <div class="unitutor-home2-academic-list">
+
+                    <!-- Engineering -->
+                    <a href="tutors-subjects.html" class="unitutor-home2-academic-item">
+
+                        <div class="unitutor-home2-academic-number">
+                            01
+                        </div>
+
+                        <div class="unitutor-home2-academic-name">
+                            <h3>Engineering</h3>
+                            <span>
+                                Mathematics · Mechanics · Electronics
+                            </span>
+                        </div>
+
+                        <div class="unitutor-home2-academic-image">
+                            <img src="images/subject-engg.jpg" alt="Engineering">
+                        </div>
+
+                        <div class="unitutor-home2-academic-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+
+                    </a>
+
+
+                    <!-- Computer Science -->
+                    <a href="tutors-subjects.html" class="unitutor-home2-academic-item">
+
+                        <div class="unitutor-home2-academic-number">
+                            02
+                        </div>
+
+                        <div class="unitutor-home2-academic-name">
+                            <h3>Computer Science</h3>
+                            <span>
+                                Programming · Data Science · Algorithms
+                            </span>
+                        </div>
+
+                        <div class="unitutor-home2-academic-image">
+                            <img src="images/subject-computer.jpg" alt="Computer Science">
+                        </div>
+
+                        <div class="unitutor-home2-academic-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+
+                    </a>
+
+
+                    <!-- Commerce -->
+                    <a href="tutors-subjects.html" class="unitutor-home2-academic-item">
+
+                        <div class="unitutor-home2-academic-number">
+                            03
+                        </div>
+
+                        <div class="unitutor-home2-academic-name">
+                            <h3>Commerce</h3>
+                            <span>
+                                Accounting · Finance · Business Studies
+                            </span>
+                        </div>
+
+                        <div class="unitutor-home2-academic-image">
+                            <img src="images/subject-commerce.jpg" alt="Commerce">
+                        </div>
+
+                        <div class="unitutor-home2-academic-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+
+                    </a>
+
+
+                    <!-- Law -->
+                    <a href="tutors-subjects.html" class="unitutor-home2-academic-item">
+
+                        <div class="unitutor-home2-academic-number">
+                            04
+                        </div>
+
+                        <div class="unitutor-home2-academic-name">
+                            <h3>Law</h3>
+                            <span>
+                                Legal Studies · Research · Case Analysis
+                            </span>
+                        </div>
+
+                        <div class="unitutor-home2-academic-image">
+                            <img src="images/subject-law.jpg" alt="Law">
+                        </div>
+
+                        <div class="unitutor-home2-academic-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+
+                    </a>
+
+
+                    <!-- Science -->
+                    <a href="tutors-subjects.html" class="unitutor-home2-academic-item">
+
+                        <div class="unitutor-home2-academic-number">
+                            05
+                        </div>
+
+                        <div class="unitutor-home2-academic-name">
+                            <h3>Science</h3>
+                            <span>
+                                Physics · Chemistry · Biology
+                            </span>
+                        </div>
+
+                        <div class="unitutor-home2-academic-image">
+                            <img src="images/subject-science.jpg" alt="Science">
+                        </div>
+
+                        <div class="unitutor-home2-academic-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Bottom Link -->
+                <div class="unitutor-home2-academic-footer">
+
+                    <p>Can't find your subject?</p>
+
+                    <a href="tutors-subjects.html">
+                        Explore all subjects
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+     HOME 2 - SESSION EXPERIENCE
+========================================= -->
+
+        <section class="unitutor-home2-session">
+            <div class="container">
+
+                <div class="unitutor-home2-session-layout">
+
+                    <!-- Left Visual -->
+                    <div class="unitutor-home2-session-visual">
+
+                        <img src="images/home2-session.jpg" alt="Student attending an online tutoring session">
+
+                        <div class="unitutor-home2-session-overlay"></div>
+
+                        <!-- Floating Session Info -->
+                        <div class="unitutor-home2-session-info-card">
+
+                            <div class="unitutor-home2-session-info-top">
+                                <span>LIVE SESSION</span>
+
+                                <div class="unitutor-home2-live">
+                                    <span></span>
+                                    Live
+                                </div>
+                            </div>
+
+                            <div class="unitutor-home2-session-subject">
+                                <i data-lucide="monitor-play"></i>
+
+                                <div>
+                                    <strong>Computer Science</strong>
+                                    <span>Data Structures & Algorithms</span>
+                                </div>
+                            </div>
+
+                            <div class="unitutor-home2-session-progress">
+
+                                <div class="unitutor-home2-progress-head">
+                                    <span>Session progress</span>
+                                    <strong>72%</strong>
+                                </div>
+
+                                <div class="unitutor-home2-progress-bar">
+                                    <span></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Right Content -->
+                    <div class="unitutor-home2-session-content">
+
+                        <span class="unitutor-home2-session-label">
+                            THE LEARNING EXPERIENCE
+                        </span>
+
+                        <h2>
+                            Every session is built
+                            <span>around you.</span>
+                        </h2>
+
+                        <p>
+                            Get focused one-to-one support with a tutor who understands
+                            your subject, your questions and your learning goals.
+                        </p>
+
+
+                        <div class="unitutor-home2-session-points">
+
+                            <div class="unitutor-home2-session-point">
+
+                                <div class="unitutor-home2-point-icon">
+                                    <i data-lucide="user-round-check"></i>
+                                </div>
+
+                                <div>
+                                    <h3>Personalised attention</h3>
+                                    <p>
+                                        Focus entirely on the topics you need help with.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="unitutor-home2-session-point">
+
+                                <div class="unitutor-home2-point-icon">
+                                    <i data-lucide="message-circle-more"></i>
+                                </div>
+
+                                <div>
+                                    <h3>Ask without hesitation</h3>
+                                    <p>
+                                        Discuss concepts, questions and problems freely
+                                        with your tutor.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="unitutor-home2-session-point">
+
+                                <div class="unitutor-home2-point-icon">
+                                    <i data-lucide="notebook-pen"></i>
+                                </div>
+
+                                <div>
+                                    <h3>Learn at your pace</h3>
+                                    <p>
+                                        Move through difficult topics with explanations
+                                        that make sense to you.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <a href="how-it-works.html" class="primary-btn">
+                            <span>Explore The Experience</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+     HOME 2 - TUTOR NETWORK
+========================================= -->
+
+        <section class="unitutor-home2-tutors">
+            <div class="container">
+
+                <!-- Heading -->
+                <div class="unitutor-home2-tutors-head">
+
+                    <span class="unitutor-home2-tutors-label">
+                        OUR TUTOR NETWORK
+                    </span>
+
+                    <h2>
+                        Learn from people who
+                        <span>know their subject.</span>
+                    </h2>
+
+                    <p>
+                        Discover knowledgeable tutors ready to help you understand
+                        concepts, solve problems and move forward with confidence.
+                    </p>
+
+                </div>
+
+
+                <!-- Tutor Showcase -->
+                <div class="unitutor-home2-tutor-grid">
+
+                    <!-- Tutor 1 -->
+                    <a href="tutors-subjects.html" class="unitutor-home2-tutor-card">
+
+                        <img src="images/tutor-1.jpg" alt="Dr. Emily Carter">
+
+                        <div class="unitutor-home2-tutor-overlay"></div>
+
+                        <div class="unitutor-home2-tutor-availability">
+                            <span></span>
+                            Available
+                        </div>
+
+                        <div class="unitutor-home2-tutor-content">
+
+                            <div>
+                                <span>Computer Science</span>
+                                <h3>Dr. Emily Carter</h3>
+                            </div>
+
+                            <div class="unitutor-home2-tutor-arrow">
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Tutor 2 -->
+                    <a href="tutors-subjects.html" class="unitutor-home2-tutor-card">
+
+                        <img src="images/tutor-2.jpg" alt="James Anderson">
+
+                        <div class="unitutor-home2-tutor-overlay"></div>
+
+                        <div class="unitutor-home2-tutor-availability">
+                            <span></span>
+                            Available
+                        </div>
+
+                        <div class="unitutor-home2-tutor-content">
+
+                            <div>
+                                <span>Engineering</span>
+                                <h3>James Anderson</h3>
+                            </div>
+
+                            <div class="unitutor-home2-tutor-arrow">
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Tutor 3 -->
+                    <a href="tutors-subjects.html" class="unitutor-home2-tutor-card">
+
+                        <img src="images/tutor-3.jpg" alt="Sophia Williams">
+
+                        <div class="unitutor-home2-tutor-overlay"></div>
+
+                        <div class="unitutor-home2-tutor-availability">
+                            <span></span>
+                            Available
+                        </div>
+
+                        <div class="unitutor-home2-tutor-content">
+
+                            <div>
+                                <span>Commerce</span>
+                                <h3>Sophia Williams</h3>
+                            </div>
+
+                            <div class="unitutor-home2-tutor-arrow">
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Tutor 4 -->
+                    <a href="tutors-subjects.html" class="unitutor-home2-tutor-card">
+
+                        <img src="images/tutor-4.jpg" alt="Michael Bennett">
+
+                        <div class="unitutor-home2-tutor-overlay"></div>
+
+                        <div class="unitutor-home2-tutor-availability">
+                            <span></span>
+                            Available
+                        </div>
+
+                        <div class="unitutor-home2-tutor-content">
+
+                            <div>
+                                <span>Law</span>
+                                <h3>Michael Bennett</h3>
+                            </div>
+
+                            <div class="unitutor-home2-tutor-arrow">
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Bottom CTA -->
+                <div class="unitutor-home2-tutors-footer">
+
+                    <span>
+                        Explore more verified tutors across your subject.
+                    </span>
+
+                    <a href="tutors-subjects.html">
+                        Find your tutor
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+     HOME 2 - LEARNING RESOURCES
+========================================= -->
+
+        <section class="unitutor-home2-resources">
+            <div class="container">
+
+                <!-- Heading -->
+                <div class="unitutor-home2-resources-head">
+
+                    <span class="unitutor-home2-resources-label">
+                        LEARNING RESOURCES
+                    </span>
+
+                    <h2>
+                        Keep learning
+                        <span>beyond every session.</span>
+                    </h2>
+
+                    <p>
+                        Access useful study materials, notes and resources that help
+                        you review concepts and stay prepared.
+                    </p>
+
+                </div>
+
+
+                <div class="unitutor-home2-resources-layout">
+
+                    <!-- Featured Resource -->
+                    <div class="unitutor-home2-resource-featured">
+
+                        <img src="images/home2-resource-featured.jpg" alt="University study materials">
+
+                        <div class="unitutor-home2-resource-featured-overlay"></div>
+
+                        <div class="unitutor-home2-resource-featured-content">
+
+                            <span>FEATURED RESOURCE</span>
+
+                            <h3>
+                                Build stronger understanding
+                                with focused study materials.
+                            </h3>
+
+                            <a href="login.html" class="primary-btn">
+                                <span>Access Resources</span>
+                                <i data-lucide="arrow-up-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Resource List -->
+                    <div class="unitutor-home2-resource-list">
+
+                        <!-- Resource 1 -->
+                        <a href="login.html" class="unitutor-home2-resource-item">
+
+                            <div class="unitutor-home2-resource-icon">
+                                <i data-lucide="notebook-pen"></i>
+                            </div>
+
+                            <div class="unitutor-home2-resource-content">
+                                <span>01 · STUDY NOTES</span>
+                                <h3>Subject Notes</h3>
+                                <p>
+                                    Organised notes to help you review important
+                                    concepts after your sessions.
+                                </p>
+                            </div>
+
+                            <div class="unitutor-home2-resource-arrow">
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+
+                        </a>
+
+
+                        <!-- Resource 2 -->
+                        <a href="login.html" class="unitutor-home2-resource-item">
+
+                            <div class="unitutor-home2-resource-icon">
+                                <i data-lucide="file-text"></i>
+                            </div>
+
+                            <div class="unitutor-home2-resource-content">
+                                <span>02 · REFERENCE</span>
+                                <h3>Reference Materials</h3>
+                                <p>
+                                    Useful resources to support deeper learning and
+                                    independent study.
+                                </p>
+                            </div>
+
+                            <div class="unitutor-home2-resource-arrow">
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+
+                        </a>
+
+
+                        <!-- Resource 3 -->
+                        <a href="login.html" class="unitutor-home2-resource-item">
+
+                            <div class="unitutor-home2-resource-icon">
+                                <i data-lucide="clipboard-check"></i>
+                            </div>
+
+                            <div class="unitutor-home2-resource-content">
+                                <span>03 · PRACTICE</span>
+                                <h3>Practice Resources</h3>
+                                <p>
+                                    Reinforce what you learn with focused practice
+                                    and revision resources.
+                                </p>
+                            </div>
+
+                            <div class="unitutor-home2-resource-arrow">
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+
+                        </a>
+
+
+                        <!-- Resource 4 -->
+                        <a href="login.html" class="unitutor-home2-resource-item">
+
+                            <div class="unitutor-home2-resource-icon">
+                                <i data-lucide="bookmark"></i>
+                            </div>
+
+                            <div class="unitutor-home2-resource-content">
+                                <span>04 · SAVED LEARNING</span>
+                                <h3>Resource Library</h3>
+                                <p>
+                                    Keep your important learning materials organised
+                                    and easy to access.
+                                </p>
+                            </div>
+
+                            <div class="unitutor-home2-resource-arrow">
+                                <i data-lucide="arrow-up-right"></i>
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================
+     HOME 2 - FINAL CTA
+========================================= -->
+
+        <section class="unitutor-home2-final-cta">
+            <div class="container">
+
+                <div class="unitutor-home2-final-cta-box">
+
+                    <!-- Left Content -->
+                    <div class="unitutor-home2-final-cta-content">
+
+                        <span class="unitutor-home2-final-cta-label">
+                            YOUR NEXT STEP STARTS HERE
+                        </span>
+
+                        <h2>
+                            Don't study harder.
+                            <span>Learn better.</span>
+                        </h2>
+
+                        <p>
+                            Find a tutor who understands your subject and get the
+                            focused support you need to move forward with confidence.
+                        </p>
+
+                        <div class="unitutor-home2-final-cta-actions">
+
+                            <a href="tutors-subjects.html" class="primary-btn">
+                                <span>Find a Tutor</span>
+                                <i data-lucide="arrow-up-right"></i>
+                            </a>
+
+                            <a href="pricing.html" class="secondary-btn">
+                                <span>View Plans</span>
+                                <i data-lucide="arrow-up-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Right Visual -->
+                    <div class="unitutor-home2-final-cta-visual">
+
+                        <div class="unitutor-home2-final-cta-circle"></div>
+
+                        <img src="images/home2-cta-student.jpg" alt="University student learning">
+
+                        <div class="unitutor-home2-final-cta-badge">
+
+                            <i data-lucide="graduation-cap"></i>
+
+                            <div>
+                                <strong>Learn with confidence</strong>
+                                <span>One session at a time</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================
+     UniTutor Footer
+========================= -->
+    <footer class="unitutor-footer">
+
+        <div class="container">
+
+            <div class="unitutor-footer-main">
+
+                <!-- Brand Column -->
+                <div class="unitutor-footer-brand">
+
+                    <a href="index.html" class="unitutor-footer-logo">
+                        <img src="images/logo-light.png" alt="UniTutor">
+                    </a>
+
+                    <p>
+                        Connect with verified university tutors and make
+                        every learning session more focused, flexible,
+                        and effective.
+                    </p>
+
+                    <div class="unitutor-footer-socials">
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <a href="#" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Explore -->
+                <div class="unitutor-footer-column">
+
+                    <h3>Explore</h3>
+
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="tutors-subjects.html">Tutors & Subjects</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li>
+
+                        <li>
+                            <a href="how-it-works.html">How It Works</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Resources -->
+                <div class="unitutor-footer-column">
+
+                    <h3>Resources</h3>
+
+                    <ul>
+                        <li>
+                            <a href="pricing.html">Pricing</a>
+                        </li>
+
+                        <li>
+                            <a href="login.html">Student Login</a>
+                        </li>
+
+                        <li>
+                            <a href="dashboard.html">Dashboard</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Subjects -->
+                <div class="unitutor-footer-column">
+
+                    <h3>Subjects</h3>
+
+                    <ul>
+                        <li>
+                            <a href="tutors-subjects.html">Engineering</a>
+                        </li>
+
+                        <li>
+                            <a href="tutors-subjects.html">Commerce</a>
+                        </li>
+
+                        <li>
+                            <a href="tutors-subjects.html">Law</a>
+                        </li>
+
+                        <li>
+                            <a href="tutors-subjects.html">Science</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Contact -->
+                <div class="unitutor-footer-column unitutor-footer-contact">
+
+                    <h3>Get In Touch</h3>
+
+                    <a href="mailto:hello@unitutor.com" class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <i data-lucide="mail"></i>
+                        </span>
+
+                        <span>hello@unitutor.com</span>
+                    </a>
+
+                    <a href="tel:+1234567890" class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <i data-lucide="phone"></i>
+                        </span>
+
+                        <span>+1 234 567 890</span>
+                    </a>
+
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <i data-lucide="map-pin"></i>
+                        </span>
+
+                        <span>
+                            University District,<br>
+                            Learning Center
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer Bottom -->
+            <div class="unitutor-footer-bottom">
+
+                <p>
+                    © 2026 UniTutor. All rights reserved.
+                </p>
+
+                <div class="unitutor-footer-bottom-links">
+
+                    <a href="#">Privacy Policy</a>
+
+                    <a href="#">Terms of Service</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button class="unitutor-scroll-top" id="unitutorScrollTop" aria-label="Scroll to top" type="button">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

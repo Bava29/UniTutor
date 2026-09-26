@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Dashboard Sidebar -->
+    <aside class="unitutor-dashboard-sidebar" id="dashboardSidebar">
+
+        <button type="button" class="unitutor-sidebar-close" aria-label="Close sidebar">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="unitutor-dashboard-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+        </div>
+
+        <nav class="unitutor-dashboard-nav">
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d2.html" class="active">
+                        <i data-lucide="users-round"></i>
+                        <span>Find a Tutor</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d3.html">
+                        <i data-lucide="calendar-days"></i>
+                        <span>My Sessions</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d4.html">
+                        <i data-lucide="notebook-tabs"></i>
+                        <span>My Materials</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d5.html">
+                        <i data-lucide="credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d6.html">
+                        <i data-lucide="messages-square"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d7.html">
+                        <i data-lucide="bookmark-check"></i>
+                        <span>Saved Tutors</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="unitutor-dashboard-logout">
+            <button type="button" id="dashboardLogoutBtn" class="unitutor-dashboard-logout-btn">
+                <i data-lucide="log-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+
+
+        <!-- Logout Confirmation Popup -->
+        <div class="unitutor-logout-modal" id="dashboardLogoutModal" aria-hidden="true">
+            <div class="unitutor-logout-modal-overlay" id="logoutModalOverlay"></div>
+
+            <div class="unitutor-logout-modal-box">
+
+                <button type="button" class="unitutor-logout-modal-close" id="logoutModalClose" aria-label="Close">
+                    <i data-lucide="x"></i>
+                </button>
+
+                <div class="unitutor-logout-modal-icon">
+                    <i data-lucide="log-out"></i>
+                </div>
+
+                <h2>Logout</h2>
+
+                <p>
+                    Are you sure you want to logout from your dashboard?
+                </p>
+
+                <div class="unitutor-logout-modal-actions">
+
+                    <button type="button" class="unitutor-logout-no" id="logoutNoBtn">
+                        No
+                    </button>
+
+                    <button type="button" class="unitutor-logout-yes" id="logoutYesBtn">
+                        Yes, Logout
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Dashboard Header -->
+    <header class="unitutor-dashboard-header">
+
+        <div class="unitutor-dashboard-header-left">
+
+            <!-- Mobile Menu Toggle -->
+            <button type="button" class="unitutor-dashboard-menu-toggle" id="dashboardMenuToggle" aria-label="Open menu"
+                aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <h1>Find Your Tutor</h1>
+
+        </div>
+
+
+        <div class="unitutor-dashboard-header-right">
+
+            <!-- Notifications -->
+            <button type="button" class="unitutor-dashboard-header-icon notification-btn" aria-label="Notifications">
+                <i data-lucide="bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+
+
+            <!-- Settings -->
+            <button type="button" class="unitutor-dashboard-header-icon" aria-label="Settings">
+                <i data-lucide="settings-2"></i>
+            </button>
+
+
+            <!-- Dark Mode -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardThemeToggle"
+                aria-label="Toggle dark mode">
+                <i data-lucide="moon"></i>
+            </button>
+
+
+            <!-- RTL -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardRtlToggle"
+                aria-label="Toggle RTL">
+                <i data-lucide="arrow-left-right"></i>
+            </button>
+
+
+            <!-- Student Profile -->
+            <button type="button" class="unitutor-dashboard-profile" aria-label="Student profile">
+                <img src="images/student-profile.jpg" alt="Alex Morgan">
+
+                <span class="unitutor-dashboard-profile-info">
+                    <strong>Alex Morgan</strong>
+                    <small>Student</small>
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main class="unitutor-dashboard-main">
+
+        <!-- ==========================================
+     FIND A TUTOR — SECTION 1
+========================================== -->
+
+        <section class="unitutor-find-dashboard-section">
+
+            <div class="container">
+
+                <!-- Section Header -->
+
+                <div class="unitutor-find-dashboard-header">
+
+                    <div>
+                        <span class="unitutor-find-dashboard-label">
+                            FIND A TUTOR
+                        </span>
+
+                        <h1>
+                            Find the right tutor for you
+                        </h1>
+
+                        <p>
+                            Search for verified tutors based on your subject,
+                            learning needs, and preferred study level.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Search Panel -->
+
+                <div class="unitutor-find-dashboard-panel">
+
+                    <div class="unitutor-find-dashboard-panel-head">
+
+                        <div>
+
+                            <h2>
+                                Search for a tutor
+                            </h2>
+
+                            <p>
+                                Start by choosing what you need help with.
+                            </p>
+
+                        </div>
+
+                        <div class="unitutor-find-dashboard-panel-icon">
+                            <i data-lucide="search"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-find-dashboard-fields">
+
+                        <!-- Subject -->
+
+                        <div class="unitutor-find-dashboard-field">
+
+                            <label for="findTutorSubject">
+                                Subject
+                            </label>
+
+                            <div class="unitutor-find-dashboard-input">
+
+                                <i data-lucide="book-open"></i>
+
+                                <select id="findTutorSubject">
+
+                                    <option value="">
+                                        Select subject
+                                    </option>
+
+                                    <option>
+                                        Computer Science
+                                    </option>
+
+                                    <option>
+                                        Engineering
+                                    </option>
+
+                                    <option>
+                                        Commerce
+                                    </option>
+
+                                    <option>
+                                        Law
+                                    </option>
+
+                                    <option>
+                                        Science
+                                    </option>
+
+                                </select>
+
+                                <i data-lucide="chevron-down"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Learning Need -->
+
+                        <div class="unitutor-find-dashboard-field">
+
+                            <label for="findTutorNeed">
+                                Learning need
+                            </label>
+
+                            <div class="unitutor-find-dashboard-input">
+
+                                <i data-lucide="lightbulb"></i>
+
+                                <select id="findTutorNeed">
+
+                                    <option value="">
+                                        Select learning need
+                                    </option>
+
+                                    <option>
+                                        Exam Preparation
+                                    </option>
+
+                                    <option>
+                                        Assignment Support
+                                    </option>
+
+                                    <option>
+                                        Concept Clarification
+                                    </option>
+
+                                    <option>
+                                        Project Guidance
+                                    </option>
+
+                                    <option>
+                                        Regular Academic Support
+                                    </option>
+
+                                </select>
+
+                                <i data-lucide="chevron-down"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Study Level -->
+
+                        <div class="unitutor-find-dashboard-field">
+
+                            <label for="findTutorLevel">
+                                Study level
+                            </label>
+
+                            <div class="unitutor-find-dashboard-input">
+
+                                <i data-lucide="graduation-cap"></i>
+
+                                <select id="findTutorLevel">
+
+                                    <option value="">
+                                        Select study level
+                                    </option>
+
+                                    <option>
+                                        Undergraduate
+                                    </option>
+
+                                    <option>
+                                        Postgraduate
+                                    </option>
+
+                                    <option>
+                                        Diploma
+                                    </option>
+
+                                </select>
+
+                                <i data-lucide="chevron-down"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Search Button -->
+
+                        <button type="button" class="primary-btn unitutor-find-dashboard-search-btn">
+                            Search Tutors
+                            <i data-lucide="search"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Quick Search -->
+
+                    <div class="unitutor-find-dashboard-quick">
+
+                        <span>
+                            Popular subjects
+                        </span>
+
+                        <a href="#">
+                            <i data-lucide="monitor"></i>
+                            Computer Science
+                        </a>
+
+                        <a href="#">
+                            <i data-lucide="settings-2"></i>
+                            Engineering
+                        </a>
+
+                        <a href="#">
+                            <i data-lucide="briefcase-business"></i>
+                            Commerce
+                        </a>
+
+                        <a href="#">
+                            <i data-lucide="scale"></i>
+                            Law
+                        </a>
+
+                        <a href="#">
+                            <i data-lucide="flask-conical"></i>
+                            Science
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     FIND A TUTOR — SECTION 2
+========================================== -->
+
+        <section class="unitutor-find-results">
+
+            <div class="unitutor-find-results-head">
+
+                <div>
+                    <span class="unitutor-dashboard-section-label">
+                        TUTOR RESULTS
+                    </span>
+
+                    <h2>Tutors you may like</h2>
+
+                    <p>
+                        Browse verified tutors based on your subject and learning needs.
+                    </p>
+                </div>
+
+                <div class="unitutor-find-results-count">
+                    <strong>24</strong>
+                    <span>tutors found</span>
+                </div>
+
+            </div>
+
+
+            <div class="unitutor-find-results-layout">
+
+                <!-- Tutor 1 -->
+
+                <article class="unitutor-find-result-card">
+
+                    <div class="unitutor-find-result-profile">
+
+                        <div class="unitutor-find-result-image">
+
+                            <img src="images/tutor-1.jpg" alt="Dr. Emily Carter">
+
+                            <span class="unitutor-find-result-online">
+                                <span></span>
+                                Available
+                            </span>
+
+                        </div>
+
+
+                        <div class="unitutor-find-result-info">
+
+                            <div class="unitutor-find-result-name">
+
+                                <h3>Dr. Emily Carter</h3>
+
+                                <span>
+                                    <i data-lucide="badge-check"></i>
+                                    Verified
+                                </span>
+
+                            </div>
+
+                            <p class="unitutor-find-result-subject">
+                                Computer Science
+                            </p>
+
+                            <p class="unitutor-find-result-expertise">
+                                Data Structures, Algorithms & Programming
+                            </p>
+
+                            <div class="unitutor-find-result-meta">
+
+                                <span>
+                                    <i data-lucide="star"></i>
+                                    4.9
+                                </span>
+
+                                <span>
+                                    <i data-lucide="briefcase-business"></i>
+                                    6+ Years
+                                </span>
+
+                                <span>
+                                    <i data-lucide="users-round"></i>
+                                    120+ Sessions
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-find-result-action">
+
+                        <strong>
+                            $28
+                            <small>/hour</small>
+                        </strong>
+
+                        <a href="#" class="unitutor-find-result-btn">
+                            View Profile
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Tutor 2 -->
+
+                <article class="unitutor-find-result-card">
+
+                    <div class="unitutor-find-result-profile">
+
+                        <div class="unitutor-find-result-image">
+
+                            <img src="images/tutor-2.jpg" alt="James Wilson">
+
+                            <span class="unitutor-find-result-online">
+                                <span></span>
+                                Available
+                            </span>
+
+                        </div>
+
+
+                        <div class="unitutor-find-result-info">
+
+                            <div class="unitutor-find-result-name">
+
+                                <h3>James Wilson</h3>
+
+                                <span>
+                                    <i data-lucide="badge-check"></i>
+                                    Verified
+                                </span>
+
+                            </div>
+
+                            <p class="unitutor-find-result-subject">
+                                Engineering
+                            </p>
+
+                            <p class="unitutor-find-result-expertise">
+                                Engineering Mathematics & Mechanical Engineering
+                            </p>
+
+                            <div class="unitutor-find-result-meta">
+
+                                <span>
+                                    <i data-lucide="star"></i>
+                                    4.8
+                                </span>
+
+                                <span>
+                                    <i data-lucide="briefcase-business"></i>
+                                    5+ Years
+                                </span>
+
+                                <span>
+                                    <i data-lucide="users-round"></i>
+                                    98+ Sessions
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-find-result-action">
+
+                        <strong>
+                            $24
+                            <small>/hour</small>
+                        </strong>
+
+                        <a href="#" class="unitutor-find-result-btn">
+                            View Profile
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Tutor 3 -->
+
+                <article class="unitutor-find-result-card">
+
+                    <div class="unitutor-find-result-profile">
+
+                        <div class="unitutor-find-result-image">
+
+                            <img src="images/tutor-3.jpg" alt="Sophia Bennett">
+
+                            <span class="unitutor-find-result-online">
+                                <span></span>
+                                Available
+                            </span>
+
+                        </div>
+
+
+                        <div class="unitutor-find-result-info">
+
+                            <div class="unitutor-find-result-name">
+
+                                <h3>Sophia Bennett</h3>
+
+                                <span>
+                                    <i data-lucide="badge-check"></i>
+                                    Verified
+                                </span>
+
+                            </div>
+
+                            <p class="unitutor-find-result-subject">
+                                Commerce
+                            </p>
+
+                            <p class="unitutor-find-result-expertise">
+                                Accounting & Financial Management
+                            </p>
+
+                            <div class="unitutor-find-result-meta">
+
+                                <span>
+                                    <i data-lucide="star"></i>
+                                    4.9
+                                </span>
+
+                                <span>
+                                    <i data-lucide="briefcase-business"></i>
+                                    7+ Years
+                                </span>
+
+                                <span>
+                                    <i data-lucide="users-round"></i>
+                                    145+ Sessions
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-find-result-action">
+
+                        <strong>
+                            $26
+                            <small>/hour</small>
+                        </strong>
+
+                        <a href="#" class="unitutor-find-result-btn">
+                            View Profile
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Tutor 4 -->
+
+                <article class="unitutor-find-result-card">
+
+                    <div class="unitutor-find-result-profile">
+
+                        <div class="unitutor-find-result-image">
+
+                            <img src="images/tutor-4.jpg" alt="Michael Anderson">
+
+                            <span class="unitutor-find-result-online">
+                                <span></span>
+                                Available
+                            </span>
+
+                        </div>
+
+
+                        <div class="unitutor-find-result-info">
+
+                            <div class="unitutor-find-result-name">
+
+                                <h3>Michael Anderson</h3>
+
+                                <span>
+                                    <i data-lucide="badge-check"></i>
+                                    Verified
+                                </span>
+
+                            </div>
+
+                            <p class="unitutor-find-result-subject">
+                                Law
+                            </p>
+
+                            <p class="unitutor-find-result-expertise">
+                                Constitutional & Contract Law
+                            </p>
+
+                            <div class="unitutor-find-result-meta">
+
+                                <span>
+                                    <i data-lucide="star"></i>
+                                    4.8
+                                </span>
+
+                                <span>
+                                    <i data-lucide="briefcase-business"></i>
+                                    6+ Years
+                                </span>
+
+                                <span>
+                                    <i data-lucide="users-round"></i>
+                                    110+ Sessions
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-find-result-action">
+
+                        <strong>
+                            $25
+                            <small>/hour</small>
+                        </strong>
+
+                        <a href="#" class="unitutor-find-result-btn">
+                            View Profile
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="unitutor-find-results-footer">
+
+                <span>
+                    Showing 4 of 24 tutors
+                </span>
+
+                <button type="button" class="unitutor-find-view-all">
+                    View all tutors
+                    <i data-lucide="arrow-right"></i>
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     FIND A TUTOR — SECTION 3
+========================================== -->
+
+        <section class="unitutor-find-categories">
+
+            <div class="unitutor-find-categories-head">
+
+                <div>
+                    <span class="unitutor-dashboard-section-label">
+                        EXPLORE BY SUBJECT
+                    </span>
+
+                    <h2>Find tutors by subject</h2>
+
+                    <p>
+                        Explore tutors who specialise in the subject you are studying.
+                    </p>
+                </div>
+
+                <a href="#" class="unitutor-find-category-view">
+                    View all subjects
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="unitutor-find-category-grid">
+
+                <!-- Computer Science -->
+
+                <a href="#" class="unitutor-find-category-card">
+
+                    <div class="unitutor-find-category-icon">
+                        <i data-lucide="monitor"></i>
+                    </div>
+
+                    <div class="unitutor-find-category-content">
+
+                        <h3>Computer Science</h3>
+
+                        <p>
+                            Programming, algorithms, data and software development.
+                        </p>
+
+                        <span>
+                            8 tutors available
+                        </span>
+
+                    </div>
+
+                    <div class="unitutor-find-category-arrow">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+
+                </a>
+
+
+                <!-- Engineering -->
+
+                <a href="#" class="unitutor-find-category-card">
+
+                    <div class="unitutor-find-category-icon">
+                        <i data-lucide="settings-2"></i>
+                    </div>
+
+                    <div class="unitutor-find-category-content">
+
+                        <h3>Engineering</h3>
+
+                        <p>
+                            Mathematics, mechanical, electrical and technical subjects.
+                        </p>
+
+                        <span>
+                            6 tutors available
+                        </span>
+
+                    </div>
+
+                    <div class="unitutor-find-category-arrow">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+
+                </a>
+
+
+                <!-- Commerce -->
+
+                <a href="#" class="unitutor-find-category-card">
+
+                    <div class="unitutor-find-category-icon">
+                        <i data-lucide="briefcase-business"></i>
+                    </div>
+
+                    <div class="unitutor-find-category-content">
+
+                        <h3>Commerce</h3>
+
+                        <p>
+                            Accounting, finance, economics and business studies.
+                        </p>
+
+                        <span>
+                            5 tutors available
+                        </span>
+
+                    </div>
+
+                    <div class="unitutor-find-category-arrow">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+
+                </a>
+
+
+                <!-- Law -->
+
+                <a href="#" class="unitutor-find-category-card">
+
+                    <div class="unitutor-find-category-icon">
+                        <i data-lucide="scale"></i>
+                    </div>
+
+                    <div class="unitutor-find-category-content">
+
+                        <h3>Law</h3>
+
+                        <p>
+                            Constitutional law, contracts, legal research and more.
+                        </p>
+
+                        <span>
+                            4 tutors available
+                        </span>
+
+                    </div>
+
+                    <div class="unitutor-find-category-arrow">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     FIND A TUTOR — SECTION 4
+========================================== -->
+
+        <section class="unitutor-find-support">
+
+            <div class="unitutor-find-support-panel">
+
+                <div class="unitutor-find-support-content">
+
+                    <span class="unitutor-dashboard-section-label">
+                        NEED HELP CHOOSING?
+                    </span>
+
+                    <h2>
+                        Not sure which tutor is right for you?
+                    </h2>
+
+                    <p>
+                        Tell us what you are studying and what kind of support
+                        you need. You can then explore tutors who match your
+                        learning goals.
+                    </p>
+
+                    <div class="unitutor-find-support-actions">
+
+                        <a href="#" class="primary-btn">
+                            Find My Tutor
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+
+                        <a href="how-it-works.html" class="secondary-btn">
+                            How It Works
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-find-support-side">
+
+                    <div class="unitutor-find-support-icon">
+                        <i data-lucide="messages-square"></i>
+                    </div>
+
+                    <div>
+                        <strong>Personal learning support</strong>
+
+                        <span>
+                            Find tutors based on your subject and needs.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="unitutor-dashboard-sidebar-overlay" id="dashboardSidebarOverlay"></div>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

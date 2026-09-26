@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTutor</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description"
+        content="UniTutor connects university students with verified tutors for personalized one-on-one learning sessions.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Dashboard Sidebar -->
+    <aside class="unitutor-dashboard-sidebar" id="dashboardSidebar">
+
+        <button type="button" class="unitutor-sidebar-close" aria-label="Close sidebar">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="unitutor-dashboard-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="UniTutor">
+            </a>
+        </div>
+
+        <nav class="unitutor-dashboard-nav">
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d2.html">
+                        <i data-lucide="users-round"></i>
+                        <span>Find a Tutor</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d3.html" class="active">
+                        <i data-lucide="calendar-days"></i>
+                        <span>My Sessions</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d4.html">
+                        <i data-lucide="notebook-tabs"></i>
+                        <span>My Materials</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d5.html">
+                        <i data-lucide="credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d6.html">
+                        <i data-lucide="messages-square"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="d7.html">
+                        <i data-lucide="bookmark-check"></i>
+                        <span>Saved Tutors</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="unitutor-dashboard-logout">
+            <button type="button" id="dashboardLogoutBtn" class="unitutor-dashboard-logout-btn">
+                <i data-lucide="log-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+
+
+        <!-- Logout Confirmation Popup -->
+        <div class="unitutor-logout-modal" id="dashboardLogoutModal" aria-hidden="true">
+            <div class="unitutor-logout-modal-overlay" id="logoutModalOverlay"></div>
+
+            <div class="unitutor-logout-modal-box">
+
+                <button type="button" class="unitutor-logout-modal-close" id="logoutModalClose" aria-label="Close">
+                    <i data-lucide="x"></i>
+                </button>
+
+                <div class="unitutor-logout-modal-icon">
+                    <i data-lucide="log-out"></i>
+                </div>
+
+                <h2>Logout</h2>
+
+                <p>
+                    Are you sure you want to logout from your dashboard?
+                </p>
+
+                <div class="unitutor-logout-modal-actions">
+
+                    <button type="button" class="unitutor-logout-no" id="logoutNoBtn">
+                        No
+                    </button>
+
+                    <button type="button" class="unitutor-logout-yes" id="logoutYesBtn">
+                        Yes, Logout
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Dashboard Header -->
+    <header class="unitutor-dashboard-header">
+
+        <div class="unitutor-dashboard-header-left">
+
+            <!-- Mobile Menu Toggle -->
+            <button type="button" class="unitutor-dashboard-menu-toggle" id="dashboardMenuToggle" aria-label="Open menu"
+                aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <h1>My Sessions</h1>
+
+        </div>
+
+
+        <div class="unitutor-dashboard-header-right">
+
+            <!-- Notifications -->
+            <button type="button" class="unitutor-dashboard-header-icon notification-btn" aria-label="Notifications">
+                <i data-lucide="bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+
+
+            <!-- Settings -->
+            <button type="button" class="unitutor-dashboard-header-icon" aria-label="Settings">
+                <i data-lucide="settings-2"></i>
+            </button>
+
+
+            <!-- Dark Mode -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardThemeToggle"
+                aria-label="Toggle dark mode">
+                <i data-lucide="moon"></i>
+            </button>
+
+
+            <!-- RTL -->
+            <button type="button" class="unitutor-dashboard-header-icon" id="dashboardRtlToggle"
+                aria-label="Toggle RTL">
+                <i data-lucide="arrow-left-right"></i>
+            </button>
+
+
+            <!-- Student Profile -->
+            <button type="button" class="unitutor-dashboard-profile" aria-label="Student profile">
+                <img src="images/student-profile.jpg" alt="Alex Morgan">
+
+                <span class="unitutor-dashboard-profile-info">
+                    <strong>Alex Morgan</strong>
+                    <small>Student</small>
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <main class="unitutor-dashboard-main">
+
+        <!-- ==========================================
+     MY SESSIONS — SECTION 1
+========================================== -->
+
+        <section class="unitutor-sessions-overview">
+
+            <!-- Page Header -->
+
+            <div class="unitutor-sessions-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        MY SESSIONS
+                    </span>
+
+                    <h1>
+                        Keep track of your learning sessions
+                    </h1>
+
+                    <p>
+                        View your upcoming sessions, review completed lessons,
+                        and stay on top of your learning schedule.
+                    </p>
+
+                </div>
+
+                <a href="#" class="primary-btn">
+                    Book a Session
+                    <i data-lucide="plus"></i>
+                </a>
+
+            </div>
+
+
+            <!-- Session Summary -->
+
+            <div class="unitutor-sessions-summary">
+
+                <div class="unitutor-session-summary-card">
+
+                    <div class="unitutor-session-summary-icon">
+                        <i data-lucide="calendar-days"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Upcoming Sessions</span>
+
+                        <strong>03</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-session-summary-card">
+
+                    <div class="unitutor-session-summary-icon">
+                        <i data-lucide="circle-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Completed Sessions</span>
+
+                        <strong>18</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-session-summary-card">
+
+                    <div class="unitutor-session-summary-icon">
+                        <i data-lucide="clock-3"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Learning Hours</span>
+
+                        <strong>24.5</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="unitutor-session-summary-card">
+
+                    <div class="unitutor-session-summary-icon">
+                        <i data-lucide="calendar-check-2"></i>
+                    </div>
+
+                    <div>
+
+                        <span>This Month</span>
+
+                        <strong>08</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Next Session -->
+
+            <div class="unitutor-next-session">
+
+                <div class="unitutor-next-session-head">
+
+                    <div>
+
+                        <span class="unitutor-next-session-label">
+                            NEXT SESSION
+                        </span>
+
+                        <h2>
+                            Your upcoming learning session
+                        </h2>
+
+                    </div>
+
+                    <span class="unitutor-session-status">
+                        <span></span>
+                        Confirmed
+                    </span>
+
+                </div>
+
+
+                <div class="unitutor-next-session-content">
+
+                    <!-- Date -->
+
+                    <div class="unitutor-next-session-date">
+
+                        <span>SEP</span>
+
+                        <strong>28</strong>
+
+                        <small>Monday</small>
+
+                    </div>
+
+
+                    <!-- Session Details -->
+
+                    <div class="unitutor-next-session-details">
+
+                        <div class="unitutor-next-session-title">
+
+                            <h3>
+                                Data Structures & Algorithms
+                            </h3>
+
+                            <span>
+                                Computer Science
+                            </span>
+
+                        </div>
+
+
+                        <div class="unitutor-next-session-info">
+
+                            <span>
+                                <i data-lucide="user-round"></i>
+                                Dr. Emily Carter
+                            </span>
+
+                            <span>
+                                <i data-lucide="clock-3"></i>
+                                4:00 PM – 5:00 PM
+                            </span>
+
+                            <span>
+                                <i data-lucide="video"></i>
+                                Online Session
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Action -->
+
+                    <div class="unitutor-next-session-action">
+
+                        <a href="#" class="primary-btn">
+                            Join Session
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                        <button type="button" class="unitutor-session-more" aria-label="More session options">
+                            <i data-lucide="more-horizontal"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     MY SESSIONS — SECTION 2
+========================================== -->
+
+        <section class="unitutor-upcoming-sessions">
+
+            <div class="unitutor-upcoming-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        UPCOMING SESSIONS
+                    </span>
+
+                    <h2>
+                        Your upcoming learning sessions
+                    </h2>
+
+                    <p>
+                        Keep track of your scheduled sessions and join when it is time to learn.
+                    </p>
+
+                </div>
+
+
+                <div class="unitutor-upcoming-filter">
+
+                    <i data-lucide="calendar-days"></i>
+
+                    <select id="sessionMonth">
+
+                        <option>September 2026</option>
+                        <option>October 2026</option>
+                        <option>November 2026</option>
+
+                    </select>
+
+                    <i data-lucide="chevron-down"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="unitutor-upcoming-list">
+
+
+                <!-- Session 1 -->
+
+                <article class="unitutor-upcoming-card">
+
+                    <div class="unitutor-upcoming-date">
+
+                        <span>SEP</span>
+
+                        <strong>28</strong>
+
+                        <small>MON</small>
+
+                    </div>
+
+
+                    <div class="unitutor-upcoming-details">
+
+                        <div class="unitutor-upcoming-title">
+
+                            <h3>
+                                Data Structures & Algorithms
+                            </h3>
+
+                            <span class="unitutor-upcoming-subject">
+                                Computer Science
+                            </span>
+
+                        </div>
+
+
+                        <div class="unitutor-upcoming-info">
+
+                            <span>
+                                <i data-lucide="user-round"></i>
+                                Dr. Emily Carter
+                            </span>
+
+                            <span>
+                                <i data-lucide="clock-3"></i>
+                                4:00 PM – 5:00 PM
+                            </span>
+
+                            <span>
+                                <i data-lucide="video"></i>
+                                Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-upcoming-status">
+
+                        <span>
+                            <i data-lucide="circle-check"></i>
+                            Confirmed
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-upcoming-action">
+
+                        <a href="#" class="unitutor-session-join-btn">
+                            Join Session
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                        <button type="button" class="unitutor-upcoming-more" aria-label="Session options">
+                            <i data-lucide="more-horizontal"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Session 2 -->
+
+                <article class="unitutor-upcoming-card">
+
+                    <div class="unitutor-upcoming-date">
+
+                        <span>SEP</span>
+
+                        <strong>30</strong>
+
+                        <small>WED</small>
+
+                    </div>
+
+
+                    <div class="unitutor-upcoming-details">
+
+                        <div class="unitutor-upcoming-title">
+
+                            <h3>
+                                Financial Accounting
+                            </h3>
+
+                            <span class="unitutor-upcoming-subject">
+                                Commerce
+                            </span>
+
+                        </div>
+
+
+                        <div class="unitutor-upcoming-info">
+
+                            <span>
+                                <i data-lucide="user-round"></i>
+                                Sophia Bennett
+                            </span>
+
+                            <span>
+                                <i data-lucide="clock-3"></i>
+                                6:00 PM – 7:00 PM
+                            </span>
+
+                            <span>
+                                <i data-lucide="video"></i>
+                                Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-upcoming-status">
+
+                        <span>
+                            <i data-lucide="circle-check"></i>
+                            Confirmed
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-upcoming-action">
+
+                        <a href="#" class="unitutor-session-join-btn">
+                            Join Session
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                        <button type="button" class="unitutor-upcoming-more" aria-label="Session options">
+                            <i data-lucide="more-horizontal"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Session 3 -->
+
+                <article class="unitutor-upcoming-card">
+
+                    <div class="unitutor-upcoming-date">
+
+                        <span>OCT</span>
+
+                        <strong>02</strong>
+
+                        <small>FRI</small>
+
+                    </div>
+
+
+                    <div class="unitutor-upcoming-details">
+
+                        <div class="unitutor-upcoming-title">
+
+                            <h3>
+                                Constitutional Law
+                            </h3>
+
+                            <span class="unitutor-upcoming-subject">
+                                Law
+                            </span>
+
+                        </div>
+
+
+                        <div class="unitutor-upcoming-info">
+
+                            <span>
+                                <i data-lucide="user-round"></i>
+                                Michael Anderson
+                            </span>
+
+                            <span>
+                                <i data-lucide="clock-3"></i>
+                                3:00 PM – 4:00 PM
+                            </span>
+
+                            <span>
+                                <i data-lucide="video"></i>
+                                Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-upcoming-status">
+
+                        <span>
+                            <i data-lucide="circle-check"></i>
+                            Confirmed
+                        </span>
+
+                    </div>
+
+
+                    <div class="unitutor-upcoming-action">
+
+                        <a href="#" class="unitutor-session-join-btn">
+                            Join Session
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+
+                        <button type="button" class="unitutor-upcoming-more" aria-label="Session options">
+                            <i data-lucide="more-horizontal"></i>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="unitutor-upcoming-footer">
+
+                <a href="#">
+                    View all upcoming sessions
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     MY SESSIONS — SECTION 3
+========================================== -->
+
+        <section class="unitutor-session-history">
+
+            <div class="unitutor-session-history-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        SESSION HISTORY
+                    </span>
+
+                    <h2>
+                        Your completed sessions
+                    </h2>
+
+                    <p>
+                        Review your previous learning sessions and access the
+                        materials shared by your tutors.
+                    </p>
+
+                </div>
+
+                <div class="unitutor-session-history-filter">
+
+                    <i data-lucide="filter"></i>
+
+                    <select id="sessionHistoryFilter">
+
+                        <option>All Subjects</option>
+                        <option>Computer Science</option>
+                        <option>Engineering</option>
+                        <option>Commerce</option>
+                        <option>Law</option>
+
+                    </select>
+
+                    <i data-lucide="chevron-down"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="unitutor-session-history-list">
+
+
+                <!-- History Item 1 -->
+
+                <article class="unitutor-session-history-item">
+
+                    <div class="unitutor-history-date">
+
+                        <span>SEP</span>
+
+                        <strong>21</strong>
+
+                        <small>2026</small>
+
+                    </div>
+
+
+                    <div class="unitutor-history-details">
+
+                        <div class="unitutor-history-title">
+
+                            <h3>
+                                Database Management Systems
+                            </h3>
+
+                            <span>
+                                Computer Science
+                            </span>
+
+                        </div>
+
+                        <div class="unitutor-history-meta">
+
+                            <span>
+                                <i data-lucide="user-round"></i>
+                                Dr. Emily Carter
+                            </span>
+
+                            <span>
+                                <i data-lucide="clock-3"></i>
+                                1 Hour
+                            </span>
+
+                            <span>
+                                <i data-lucide="video"></i>
+                                Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-history-status">
+                        <i data-lucide="circle-check"></i>
+                        Completed
+                    </div>
+
+
+                    <a href="#" class="unitutor-history-materials">
+                        <i data-lucide="folder-open"></i>
+                        Materials
+                    </a>
+
+                </article>
+
+
+                <!-- History Item 2 -->
+
+                <article class="unitutor-session-history-item">
+
+                    <div class="unitutor-history-date">
+
+                        <span>SEP</span>
+
+                        <strong>18</strong>
+
+                        <small>2026</small>
+
+                    </div>
+
+
+                    <div class="unitutor-history-details">
+
+                        <div class="unitutor-history-title">
+
+                            <h3>
+                                Engineering Mathematics
+                            </h3>
+
+                            <span>
+                                Engineering
+                            </span>
+
+                        </div>
+
+                        <div class="unitutor-history-meta">
+
+                            <span>
+                                <i data-lucide="user-round"></i>
+                                James Wilson
+                            </span>
+
+                            <span>
+                                <i data-lucide="clock-3"></i>
+                                1 Hour
+                            </span>
+
+                            <span>
+                                <i data-lucide="video"></i>
+                                Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-history-status">
+                        <i data-lucide="circle-check"></i>
+                        Completed
+                    </div>
+
+
+                    <a href="#" class="unitutor-history-materials">
+                        <i data-lucide="folder-open"></i>
+                        Materials
+                    </a>
+
+                </article>
+
+
+                <!-- History Item 3 -->
+
+                <article class="unitutor-session-history-item">
+
+                    <div class="unitutor-history-date">
+
+                        <span>SEP</span>
+
+                        <strong>15</strong>
+
+                        <small>2026</small>
+
+                    </div>
+
+
+                    <div class="unitutor-history-details">
+
+                        <div class="unitutor-history-title">
+
+                            <h3>
+                                Financial Accounting
+                            </h3>
+
+                            <span>
+                                Commerce
+                            </span>
+
+                        </div>
+
+                        <div class="unitutor-history-meta">
+
+                            <span>
+                                <i data-lucide="user-round"></i>
+                                Sophia Bennett
+                            </span>
+
+                            <span>
+                                <i data-lucide="clock-3"></i>
+                                1 Hour
+                            </span>
+
+                            <span>
+                                <i data-lucide="video"></i>
+                                Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-history-status">
+                        <i data-lucide="circle-check"></i>
+                        Completed
+                    </div>
+
+
+                    <a href="#" class="unitutor-history-materials">
+                        <i data-lucide="folder-open"></i>
+                        Materials
+                    </a>
+
+                </article>
+
+
+                <!-- History Item 4 -->
+
+                <article class="unitutor-session-history-item">
+
+                    <div class="unitutor-history-date">
+
+                        <span>SEP</span>
+
+                        <strong>12</strong>
+
+                        <small>2026</small>
+
+                    </div>
+
+
+                    <div class="unitutor-history-details">
+
+                        <div class="unitutor-history-title">
+
+                            <h3>
+                                Contract Law
+                            </h3>
+
+                            <span>
+                                Law
+                            </span>
+
+                        </div>
+
+                        <div class="unitutor-history-meta">
+
+                            <span>
+                                <i data-lucide="user-round"></i>
+                                Michael Anderson
+                            </span>
+
+                            <span>
+                                <i data-lucide="clock-3"></i>
+                                1 Hour
+                            </span>
+
+                            <span>
+                                <i data-lucide="video"></i>
+                                Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="unitutor-history-status">
+                        <i data-lucide="circle-check"></i>
+                        Completed
+                    </div>
+
+
+                    <a href="#" class="unitutor-history-materials">
+                        <i data-lucide="folder-open"></i>
+                        Materials
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <div class="unitutor-session-history-footer">
+
+                <span>
+                    Showing 4 recent sessions
+                </span>
+
+                <a href="#">
+                    View full history
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     MY SESSIONS — SECTION 4
+========================================== -->
+
+        <section class="unitutor-session-progress">
+
+            <div class="unitutor-session-progress-header">
+
+                <div>
+
+                    <span class="unitutor-dashboard-section-label">
+                        LEARNING PROGRESS
+                    </span>
+
+                    <h2>
+                        Your learning progress
+                    </h2>
+
+                    <p>
+                        See how your sessions are helping you stay consistent
+                        and move forward with your studies.
+                    </p>
+
+                </div>
+
+                <span class="unitutor-progress-period">
+                    September 2026
+                </span>
+
+            </div>
+
+
+            <div class="unitutor-session-progress-grid">
+
+
+                <!-- Learning Hours -->
+
+                <div class="unitutor-progress-card">
+
+                    <div class="unitutor-progress-card-head">
+
+                        <div class="unitutor-progress-icon">
+                            <i data-lucide="clock-3"></i>
+                        </div>
+
+                        <span>
+                            This Month
+                        </span>
+
+                    </div>
+
+                    <strong class="unitutor-progress-value">
+                        12.5
+                        <small>hrs</small>
+                    </strong>
+
+                    <p>
+                        Learning hours completed
+                    </p>
+
+                    <div class="unitutor-progress-line">
+
+                        <span style="width: 72%;"></span>
+
+                    </div>
+
+                    <div class="unitutor-progress-bottom">
+                        <span>72% of monthly goal</span>
+                        <strong>17.5 hrs</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Completed Sessions -->
+
+                <div class="unitutor-progress-card">
+
+                    <div class="unitutor-progress-card-head">
+
+                        <div class="unitutor-progress-icon">
+                            <i data-lucide="circle-check"></i>
+                        </div>
+
+                        <span>
+                            Sessions
+                        </span>
+
+                    </div>
+
+                    <strong class="unitutor-progress-value">
+                        18
+                    </strong>
+
+                    <p>
+                        Sessions completed so far
+                    </p>
+
+                    <div class="unitutor-progress-line">
+
+                        <span style="width: 80%;"></span>
+
+                    </div>
+
+                    <div class="unitutor-progress-bottom">
+                        <span>80% completion</span>
+                        <strong>22 planned</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Subjects -->
+
+                <div class="unitutor-progress-card">
+
+                    <div class="unitutor-progress-card-head">
+
+                        <div class="unitutor-progress-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+
+                        <span>
+                            Subjects
+                        </span>
+
+                    </div>
+
+                    <strong class="unitutor-progress-value">
+                        4
+                    </strong>
+
+                    <p>
+                        Subjects you are learning
+                    </p>
+
+                    <div class="unitutor-progress-subjects">
+
+                        <span>CS</span>
+                        <span>ENG</span>
+                        <span>COM</span>
+                        <span>LAW</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Progress Message -->
+
+            <div class="unitutor-progress-message">
+
+                <div class="unitutor-progress-message-icon">
+                    <i data-lucide="sparkles"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        KEEP GOING
+                    </span>
+
+                    <h3>
+                        You're building a consistent learning routine.
+                    </h3>
+
+                    <p>
+                        Keep attending your scheduled sessions and reviewing
+                        your learning materials to stay on track.
+                    </p>
+
+                </div>
+
+                <a href="find-tutor.html" class="secondary-btn">
+                    Book Another Session
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="unitutor-dashboard-sidebar-overlay" id="dashboardSidebarOverlay"></div>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main JS -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
