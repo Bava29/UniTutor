@@ -1835,7 +1835,7 @@ body {
     position: absolute;
 
     left: 0;
-    bottom: 70px;
+    bottom: 150px;
 
     width: 300px;
 
@@ -28197,4 +28197,426 @@ html.dark-mode .unitutor-social-x i {
         width: 13px !important;
         height: 13px !important;
     }
+}
+
+/* =========================================================
+   UNITUTOR - RTL LEARNING MATCH SELECT FIX
+   Icon + Text RIGHT | Dropdown Arrow LEFT
+========================================================= */
+
+html[dir="rtl"] .unitutor-learning-match-selection {
+    direction: rtl;
+}
+
+/* Field */
+html[dir="rtl"] .unitutor-learning-match-field {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .unitutor-learning-match-field label {
+    text-align: right;
+}
+
+/* Select box */
+html[dir="rtl"] .unitutor-learning-match-select {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    direction: rtl;
+    text-align: right;
+}
+
+/* Main icon - RIGHT side */
+html[dir="rtl"] .unitutor-learning-match-select>svg:first-child {
+    position: static;
+    flex: 0 0 19px;
+    width: 19px;
+    height: 19px;
+    margin-left: 0;
+    margin-right: 17px;
+    order: 1;
+    color: var(--primary-color);
+}
+
+/* Select - middle */
+html[dir="rtl"] .unitutor-learning-match-select select {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+
+    height: 100%;
+
+    padding: 0 13px 0 42px;
+
+    direction: rtl;
+    text-align: right;
+
+    color: var(--secondary-color);
+    background: transparent;
+}
+
+/* Dropdown arrow - LEFT side */
+html[dir="rtl"] .unitutor-learning-match-select>svg:last-child {
+    position: absolute;
+
+    right: auto;
+    left: 16px;
+
+    width: 17px;
+    height: 17px;
+
+    margin: 0;
+
+    color: var(--muted-text);
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* =========================================================
+   UNITUTOR — LOGIN & REGISTER RTL
+   Append at the very bottom of style.css
+========================================================= */
+
+/* =========================
+   AUTH PAGE BASE
+========================= */
+
+html[dir="rtl"] .unitutor-auth-body {
+    direction: rtl;
+    text-align: right;
+}
+
+/* =========================
+   TOP ACTIONS
+   RTL -> buttons move to LEFT
+========================= */
+
+html[dir="rtl"] .unitutor-auth-actions {
+    right: auto;
+    left: 28px;
+    direction: rtl;
+}
+
+/* Keep toggle buttons in normal horizontal order */
+html[dir="rtl"] .unitutor-auth-toggle {
+    direction: rtl;
+}
+
+/* =========================
+   AUTH CARD
+========================= */
+
+html[dir="rtl"] .unitutor-auth-card {
+    direction: rtl;
+    text-align: right;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+html[dir="rtl"] .unitutor-auth-logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+html[dir="rtl"] .unitutor-auth-heading {
+    text-align: center;
+}
+
+html[dir="rtl"] .unitutor-auth-heading h1,
+html[dir="rtl"] .unitutor-auth-heading p {
+    direction: rtl;
+}
+
+/* =========================
+   FORM
+========================= */
+
+html[dir="rtl"] .unitutor-auth-form {
+    direction: rtl;
+    text-align: right;
+}
+
+/* =========================
+   LABELS
+========================= */
+
+html[dir="rtl"] .unitutor-auth-field {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .unitutor-auth-field label {
+    display: block;
+    text-align: right;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+html[dir="rtl"] .unitutor-auth-field input {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Placeholder */
+html[dir="rtl"] .unitutor-auth-field input::placeholder {
+    text-align: right;
+}
+
+/* =========================
+   PASSWORD FIELD
+   Eye icon -> LEFT
+========================= */
+
+html[dir="rtl"] .unitutor-password-wrapper {
+    direction: rtl;
+}
+
+html[dir="rtl"] .unitutor-password-wrapper input {
+    padding-right: 15px;
+    padding-left: 48px;
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .unitutor-password-toggle {
+    right: auto;
+    left: 14px;
+}
+
+/* =========================
+   LOGIN OPTIONS
+========================= */
+
+html[dir="rtl"] .unitutor-auth-options {
+    direction: rtl;
+    flex-direction: row;
+    text-align: right;
+}
+
+/* Remember checkbox + text */
+html[dir="rtl"] .unitutor-remember {
+    direction: rtl;
+    flex-direction: row;
+    text-align: right;
+}
+
+/* Forgot password stays on opposite side */
+html[dir="rtl"] .unitutor-auth-options>a {
+    direction: rtl;
+    text-align: left;
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+
+html[dir="rtl"] .unitutor-remember input {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* =========================
+   LOGIN / REGISTER BUTTON
+   Text -> RIGHT
+   Arrow -> LEFT
+========================= */
+
+html[dir="rtl"] .unitutor-auth-submit {
+    direction: rtl;
+    flex-direction: row;
+    justify-content: center;
+}
+
+html[dir="rtl"] .unitutor-auth-submit svg {
+    transform: rotate(180deg);
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+html[dir="rtl"] .unitutor-auth-divider {
+    direction: rtl;
+    text-align: center;
+}
+
+/* =========================
+   SOCIAL BUTTONS
+   Icon -> RIGHT
+   Text -> LEFT
+========================= */
+
+html[dir="rtl"] .unitutor-auth-socials {
+    direction: rtl;
+}
+
+html[dir="rtl"] .unitutor-auth-socials a {
+    direction: rtl;
+    flex-direction: row;
+}
+
+/* Google image */
+html[dir="rtl"] .unitutor-social-google img {
+    margin: 0;
+}
+
+/* =========================
+   BOTTOM LOGIN / REGISTER TEXT
+========================= */
+
+html[dir="rtl"] .unitutor-auth-bottom-text {
+    direction: rtl;
+    text-align: center;
+}
+
+/* =========================
+   REGISTER TERMS
+   Checkbox -> RIGHT
+   Text -> LEFT
+========================= */
+
+html[dir="rtl"] .unitutor-register-terms {
+    direction: rtl;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: right;
+}
+
+html[dir="rtl"] .unitutor-register-terms input {
+    margin-left: 0;
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+html[dir="rtl"] .unitutor-register-terms span {
+    text-align: right;
+}
+
+/* =========================
+   REGISTER LINKS
+========================= */
+
+html[dir="rtl"] .unitutor-register-terms a {
+    direction: rtl;
+}
+
+/* =========================
+   MOBILE RTL
+========================= */
+
+@media (max-width: 991px) {
+
+    html[dir="rtl"] .unitutor-auth-actions {
+        right: auto;
+        left: 18px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    html[dir="rtl"] .unitutor-auth-body {
+        direction: rtl;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .unitutor-auth-actions {
+        left: 15px;
+        right: auto;
+    }
+
+    html[dir="rtl"] .unitutor-auth-card {
+        direction: rtl;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .unitutor-auth-field input {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .unitutor-password-wrapper input {
+        padding-right: 13px;
+        padding-left: 44px;
+    }
+
+    html[dir="rtl"] .unitutor-password-toggle {
+        left: 11px;
+        right: auto;
+    }
+
+    html[dir="rtl"] .unitutor-auth-options {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    html[dir="rtl"] .unitutor-register-terms {
+        flex-direction: row;
+        text-align: right;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 575px) {
+
+    html[dir="rtl"] .unitutor-auth-actions {
+        left: 13px;
+        right: auto;
+    }
+
+    html[dir="rtl"] .unitutor-auth-options {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .unitutor-auth-field label {
+        text-align: right;
+    }
+
+    html[dir="rtl"] .unitutor-register-terms {
+        gap: 8px;
+        text-align: right;
+    }
+
+}
+
+/* =========================
+   EXTRA SMALL MOBILE
+========================= */
+
+@media (max-width: 399px) {
+
+    html[dir="rtl"] .unitutor-auth-actions {
+        left: 13px;
+        right: auto;
+    }
+
+    html[dir="rtl"] .unitutor-password-wrapper input {
+        padding-right: 12px;
+        padding-left: 43px;
+    }
+
+    html[dir="rtl"] .unitutor-password-toggle {
+        left: 11px;
+        right: auto;
+    }
+
+    html[dir="rtl"] .unitutor-auth-options {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
 }
