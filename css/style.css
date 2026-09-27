@@ -28620,3 +28620,253 @@ html[dir="rtl"] .unitutor-register-terms a {
     }
 
 }
+
+/* =========================================================
+   UNITUTOR CONTACT FORM — PROPER RTL INPUT OVERRIDE
+   Append at the very bottom of style.css
+========================================================= */
+
+html[dir="rtl"] .unitutor-contact-form,
+html[dir="rtl"] .unitutor-contact-form-box {
+    direction: rtl;
+}
+
+/* Form rows */
+html[dir="rtl"] .unitutor-contact-form-row {
+    direction: rtl;
+}
+
+/* Individual field */
+html[dir="rtl"] .unitutor-contact-field {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Labels */
+html[dir="rtl"] .unitutor-contact-field label {
+    display: block;
+    width: 100%;
+    text-align: right;
+    direction: rtl;
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+html[dir="rtl"] .unitutor-contact-field input {
+    width: 100%;
+    direction: rtl !important;
+    text-align: right !important;
+
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+
+    unicode-bidi: plaintext;
+}
+
+/* Placeholder */
+html[dir="rtl"] .unitutor-contact-field input::placeholder {
+    direction: rtl;
+    text-align: right;
+}
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+html[dir="rtl"] .unitutor-contact-field select {
+    width: 100%;
+    direction: rtl !important;
+    text-align: right !important;
+
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+
+/* Select options */
+html[dir="rtl"] .unitutor-contact-field select option {
+    direction: rtl;
+    text-align: right;
+}
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+html[dir="rtl"] .unitutor-contact-field textarea {
+    width: 100%;
+    direction: rtl !important;
+    text-align: right !important;
+
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+
+    unicode-bidi: plaintext;
+}
+
+/* Textarea placeholder */
+html[dir="rtl"] .unitutor-contact-field textarea::placeholder {
+    direction: rtl;
+    text-align: right;
+}
+
+/* =========================================================
+   EMAIL / PHONE
+   Keep actual email & phone values readable,
+   but align them to the RTL side.
+========================================================= */
+
+html[dir="rtl"] #contactEmail {
+    direction: ltr !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] #contactPhone {
+    direction: ltr !important;
+    text-align: right !important;
+}
+
+/* =========================================================
+   FOCUS — NO EXTRA SHADOW
+========================================================= */
+
+html[dir="rtl"] .unitutor-contact-field input:focus,
+html[dir="rtl"] .unitutor-contact-field select:focus,
+html[dir="rtl"] .unitutor-contact-field textarea:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+
+/* Remove focus-within shadow if existing CSS has one */
+html[dir="rtl"] .unitutor-contact-field:focus-within {
+    box-shadow: none;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+html[dir="rtl"] .unitutor-contact-submit {
+    direction: rtl;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+html[dir="rtl"] .unitutor-contact-submit svg {
+    transform: rotate(180deg);
+}
+
+/* =========================================================
+   PRICING — iPAD PRO BADGE CENTER
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1100px) {
+
+    .unitutor-pricing-plan-featured {
+        position: relative;
+    }
+
+    .unitutor-pricing-plan-badge {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+}
+
+/* =========================================================
+   HOME 2 — MOBILE SESSION CARD BELOW IMAGE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .unitutor-home2-session-visual {
+        min-height: auto;
+        overflow: visible;
+    }
+
+    /* Image should stay in normal flow */
+    .unitutor-home2-session-visual>img {
+        position: relative !important;
+        inset: auto !important;
+
+        width: 100% !important;
+        height: 300px !important;
+
+        display: block !important;
+
+        object-fit: cover !important;
+        object-position: center center !important;
+
+        border-radius: var(--large-radius);
+    }
+
+    /* Keep overlay only over image */
+    .unitutor-home2-session-overlay {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+
+        height: 300px;
+
+        border-radius: var(--large-radius);
+    }
+
+    /* Card below image */
+    .unitutor-home2-session-info-card {
+        position: relative;
+
+        left: auto;
+        right: auto;
+        bottom: auto;
+
+        width: 100%;
+
+        margin: 20px 0 0;
+
+        padding: 18px;
+
+        z-index: 3;
+    }
+
+}
+
+/* =========================================================
+   PRICING INCLUDED ITEMS
+   DARK MODE - REMOVE BOX LOOK
+========================================================= */
+
+html.dark-mode .unitutor-pricing-included-list {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+html.dark-mode .unitutor-pricing-included-item {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+html.dark-mode .unitutor-pricing-included-item:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Remove any inherited card effect */
+html.dark-mode .unitutor-pricing-included-item::before,
+html.dark-mode .unitutor-pricing-included-item::after {
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Keep only clean separators */
+html.dark-mode .unitutor-pricing-included-item {
+    border-bottom: 1px solid #353A40 !important;
+}
