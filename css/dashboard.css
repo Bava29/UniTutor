@@ -18536,3 +18536,58 @@ html.dark-mode .unitutor-saved-tutor-discover-btn:hover svg {
         white-space: nowrap !important;
     }
 }
+
+/* =========================================================
+   SUBJECT CARD — IMAGE INSTEAD OF ICON
+========================================================= */
+
+.unitutor-material-subject-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.unitutor-material-subject-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* =========================================================
+   FIND TUTOR DROPDOWN — RTL ALIGNMENT
+========================================================= */
+
+html[dir="rtl"] .unitutor-find-dashboard-input {
+    direction: rtl;
+}
+
+/* Text + main icon on RIGHT */
+html[dir="rtl"] .unitutor-find-dashboard-input>svg:first-child {
+    order: 1;
+    margin-left: 0;
+    margin-right: 13px;
+}
+
+/* Dropdown text */
+html[dir="rtl"] .unitutor-find-dashboard-input select {
+    order: 2;
+    direction: rtl;
+    text-align: right;
+    padding: 0 9px 0 32px;
+}
+
+/* Dropdown arrow on LEFT */
+html[dir="rtl"] .unitutor-find-dashboard-input>svg:last-child {
+    right: auto;
+    left: 11px;
+    order: 3;
+}

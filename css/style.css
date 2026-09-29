@@ -28870,3 +28870,30 @@ html.dark-mode .unitutor-pricing-included-item::after {
 html.dark-mode .unitutor-pricing-included-item {
     border-bottom: 1px solid #353A40 !important;
 }
+
+/* =========================================================
+   VERIFIED TUTORS - STATEMENT BACKGROUND IMAGE
+========================================================= */
+
+.unitutor-verified-statement {
+    position: relative;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(rgba(25, 29, 34, 0.90),
+            rgba(25, 29, 34, 0.90)),
+        url("../images/verified-tutor-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Reduce Mission & Vision top/bottom spacing */
+.unitutor-about-mission {
+    min-height: auto !important;
+}
+
+.unitutor-about-mission-content {
+    padding: 65px 0 !important;
+}
