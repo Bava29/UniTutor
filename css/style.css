@@ -452,7 +452,7 @@ body {
 
     position: absolute;
     left: 0;
-    bottom: -3px;
+    bottom: -7px;
 
     width: 100%;
     height: 2px;
@@ -4463,7 +4463,7 @@ html.dark-mode .unitutor-join-btn:hover svg {
 
 .ut2-hero__btn--secondary:hover {
     background: var(--ut2-secondary);
-    color: var(--ut2-primary);
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
