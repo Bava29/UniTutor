@@ -389,13 +389,16 @@ body {
 .unitutor-logo {
     display: inline-flex;
     align-items: center;
+    height: 40px;
     width: fit-content;
 }
 
 .unitutor-logo img {
     display: block;
     width: 178px;
-    height: auto;
+    height: 40px;
+    object-fit: contain;
+    transform: translateY(-3px);
 }
 
 
@@ -424,15 +427,17 @@ body {
     position: relative;
 
     display: inline-flex;
+    height: 40px;
     align-items: center;
     gap: 6px;
 
-    padding: 8px 0;
+    padding: 0;
 
     color: var(--text-color);
 
     font-size: 14px;
     font-weight: 500;
+    line-height: 1;
 
     white-space: nowrap;
 }
@@ -485,8 +490,7 @@ body {
     height: 14px;
     stroke-width: 1.8;
 
-    position: relative;
-    top: 2px;
+    flex-shrink: 0;
 
     transition: transform 0.3s ease;
 }
@@ -574,8 +578,8 @@ body {
    ========================================================= */
 
 .header-icon-btn {
-    width: 39px;
-    height: 39px;
+    width: 40px;
+    height: 40px;
 
     display: inline-flex;
     align-items: center;
@@ -608,7 +612,7 @@ body {
    ========================================================= */
 
 .header-login-btn {
-    min-height: 39px;
+    height: 40px;
 
     display: inline-flex;
     align-items: center;
@@ -616,10 +620,10 @@ body {
 
     padding: 0 16px;
 
-    color: var(--secondary-color);
-    background-color: transparent;
+    color: var(--white-color);
+    background-color: var(--primary-color);
 
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--primary-color);
     border-radius: var(--small-radius);
 
     font-size: 14px;
@@ -630,7 +634,9 @@ body {
 
 .header-login-btn:hover {
     color: var(--white-color);
-    background-color: var(--secondary-color);
+    background-color: #8F0628;
+    border-color: #8F0628;
+    transform: translateY(-1px);
 }
 
 
@@ -639,7 +645,7 @@ body {
    ========================================================= */
 
 .header-dashboard-btn {
-    min-height: 39px;
+    height: 40px;
 
     display: inline-flex;
     align-items: center;
@@ -648,10 +654,10 @@ body {
 
     padding: 0 17px;
 
-    color: var(--white-color);
-    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    background-color: transparent;
 
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--secondary-color);
     border-radius: var(--small-radius);
 
     font-size: 14px;
@@ -667,9 +673,8 @@ body {
 }
 
 .header-dashboard-btn:hover {
-    background-color: #8F0628;
-    border-color: #8F0628;
-    transform: translateY(-1px);
+    color: var(--white-color);
+    background-color: var(--secondary-color);
 }
 
 
@@ -680,8 +685,8 @@ body {
 .unitutor-menu-toggle {
     display: none;
 
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
 
     align-items: center;
     justify-content: center;
@@ -832,6 +837,8 @@ body {
         width: 100%;
 
         display: flex;
+        height: auto;
+        min-height: 48px;
 
         padding: 13px 0;
 
@@ -950,26 +957,27 @@ body {
     }
 
     .mobile-login-btn {
-        color: var(--secondary-color);
-        background-color: var(--white-color);
-
-        border: 1px solid var(--secondary-color);
-    }
-
-    .mobile-login-btn:hover {
-        color: var(--white-color);
-        background-color: var(--secondary-color);
-    }
-
-    .mobile-dashboard-btn {
         color: var(--white-color);
         background-color: var(--primary-color);
 
         border: 1px solid var(--primary-color);
     }
 
-    .mobile-dashboard-btn:hover {
+    .mobile-login-btn:hover {
+        color: var(--white-color);
         background-color: #8F0628;
+    }
+
+    .mobile-dashboard-btn {
+        color: var(--secondary-color);
+        background-color: var(--white-color);
+
+        border: 1px solid var(--secondary-color);
+    }
+
+    .mobile-dashboard-btn:hover {
+        color: var(--white-color);
+        background-color: var(--secondary-color);
     }
 
 }
@@ -1127,8 +1135,8 @@ body {
 }
 
 .unitutor-footer-socials a {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
 
     display: inline-flex;
     align-items: center;
@@ -3731,6 +3739,17 @@ body {
     border-color: var(--secondary-color);
 }
 
+html.dark-mode .unitutor-join-btn:hover {
+    color: #FFFFFF;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+html.dark-mode .unitutor-join-btn:hover svg {
+    color: #FFFFFF;
+    stroke: #FFFFFF;
+}
+
 
 /* =========================================================
    Materials
@@ -4281,7 +4300,9 @@ body {
 ========================================= */
 
 .unitutor-home2-hero {
-    min-height: calc(100vh - 82px);
+    height: calc(100vh + 48px);
+    height: calc(100svh + 48px);
+    min-height: 560px;
     display: grid;
     grid-template-columns: 46% 54%;
     background: var(--secondary-color);
@@ -4294,7 +4315,7 @@ body {
 ========================================= */
 
 .unitutor-home2-hero-content {
-    padding: 105px 70px 90px 8%;
+    padding: clamp(56px, 7vh, 80px) 70px clamp(28px, 4vh, 44px) 8%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -4438,7 +4459,7 @@ body {
 ========================================= */
 
 .unitutor-home2-hero-visual {
-    min-height: 760px;
+    min-height: 0;
     position: relative;
     overflow: hidden;
     background: #15181b;
@@ -18305,12 +18326,14 @@ html.dark-mode .unitutor-social-x i {
     ===================================================== */
 
     .unitutor-home2-hero {
-        min-height: 650px;
+        height: calc(100vh + 48px);
+        height: calc(100svh + 48px);
+        min-height: 560px;
         grid-template-columns: 48% 52%;
     }
 
     .unitutor-home2-hero-content {
-        padding: 80px 40px 75px 6%;
+        padding: clamp(28px, 5vh, 64px) 40px clamp(28px, 5vh, 64px) 6%;
     }
 
     .unitutor-home2-hero-content h1 {
@@ -18330,7 +18353,7 @@ html.dark-mode .unitutor-social-x i {
     }
 
     .unitutor-home2-hero-visual {
-        min-height: 650px;
+        min-height: 0;
     }
 
     .unitutor-home2-session-card {
@@ -18573,6 +18596,7 @@ html.dark-mode .unitutor-social-x i {
     ===================================================== */
 
     .unitutor-home2-hero {
+        height: auto;
         min-height: auto;
         grid-template-columns: 1fr;
     }
