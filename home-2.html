@@ -150,66 +150,72 @@
     <!-- Main Content -->
     <main>
 
+
         <!-- =========================================
-     HOME 2 HERO
+     UNITUTOR HOME 2 — HERO SECTION
 ========================================= -->
 
-        <section class="unitutor-home2-hero">
+        <section class="ut2-hero">
 
             <!-- Left Content -->
-            <div class="unitutor-home2-hero-content">
+            <div class="ut2-hero__content">
 
-                <div class="unitutor-home2-eyebrow">
-                    <span class="unitutor-home2-eyebrow-line"></span>
+                <div class="ut2-hero__eyebrow">
+                    <span class="ut2-hero__eyebrow-line"></span>
                     <span>UNIVERSITY LEARNING, REDEFINED</span>
                 </div>
 
-                <h1>
-                    Learn with
-                    <span>clarity.</span>
+                <h1 class="ut2-hero__title">
+                    Learn with <span>clarity.</span>
                     Grow with confidence.
                 </h1>
 
-                <p>
+                <p class="ut2-hero__description">
                     Connect with verified university tutors who understand your
                     subjects, your challenges and the way you learn best.
                 </p>
 
-                <div class="unitutor-home2-hero-actions">
+                <!-- CTA Buttons -->
+                <div class="ut2-hero__actions">
 
-                    <a href="tutors-subjects.html" class="primary-btn">
+                    <a href="tutors-subjects.html" class="ut2-hero__btn ut2-hero__btn--primary">
                         <span>Find Your Tutor</span>
                         <i data-lucide="arrow-up-right"></i>
                     </a>
 
-                    <a href="how-it-works.html" class="secondary-btn">
+                    <a href="how-it-works.html" class="ut2-hero__btn ut2-hero__btn--secondary">
+                        <span class="ut2-hero__play-icon">
+                            <i data-lucide="play"></i>
+                        </span>
                         <span>Explore UniTutor</span>
-                        <i data-lucide="play"></i>
                     </a>
 
                 </div>
 
-                <div class="unitutor-home2-hero-trust">
+                <!-- Student Trust -->
+                <div class="ut2-hero__trust">
 
-                    <div class="unitutor-home2-trust-avatars">
-                        <div class="unitutor-home2-avatar">
+                    <div class="ut2-hero__avatars">
+
+                        <div class="ut2-hero__avatar">
                             <img src="images/student-1.jpg" alt="Student">
                         </div>
 
-                        <div class="unitutor-home2-avatar">
+                        <div class="ut2-hero__avatar">
                             <img src="images/student-2.jpg" alt="Student">
                         </div>
 
-                        <div class="unitutor-home2-avatar">
+                        <div class="ut2-hero__avatar">
                             <img src="images/student-3.jpg" alt="Student">
                         </div>
 
-                        <div class="unitutor-home2-avatar unitutor-home2-avatar-more">
+                        <div class="ut2-hero__avatar ut2-hero__avatar--more">
                             <span>+</span>
                         </div>
+
                     </div>
 
-                    <div class="unitutor-home2-trust-text">
+                    <div class="ut2-hero__trust-copy">
                         <strong>Trusted by students</strong>
                         <span>Across multiple university subjects</span>
                     </div>
@@ -220,20 +226,24 @@
 
 
             <!-- Right Visual -->
-            <div class="unitutor-home2-hero-visual">
+            <div class="ut2-hero__visual">
 
-                <img src="images/home2-hero-tutor.jpg" alt="University student learning with a tutor"
-                    class="unitutor-home2-hero-image">
+                <div class="ut2-hero__image-wrap">
 
-                <div class="unitutor-home2-image-overlay"></div>
+                    <img src="images/home2-hero-tutor.jpg" alt="University student learning with a tutor"
+                        class="ut2-hero__image">
+
+                    <div class="ut2-hero__image-shade"></div>
+
+                </div>
 
 
-                <!-- Floating Session Card -->
-                <div class="unitutor-home2-session-card">
+                <!-- Upcoming Session Card -->
+                <div class="ut2-hero__session-card">
 
-                    <div class="unitutor-home2-session-top">
+                    <div class="ut2-hero__session-heading">
 
-                        <div class="unitutor-home2-session-icon">
+                        <div class="ut2-hero__session-icon">
                             <i data-lucide="video"></i>
                         </div>
 
@@ -241,7 +251,7 @@
 
                     </div>
 
-                    <div class="unitutor-home2-session-info">
+                    <div class="ut2-hero__session-info">
 
                         <div>
                             <strong>Data Structures</strong>
@@ -252,34 +262,34 @@
 
                     </div>
 
-                    <div class="unitutor-home2-session-tutor">
+                    <div class="ut2-hero__session-divider"></div>
 
-                        <div class="unitutor-home2-session-avatar">
-                            <img src="images/tutor-featured.jpg" alt="Tutor">
+                    <div class="ut2-hero__tutor-info">
+
+                        <div class="ut2-hero__tutor-avatar">
+                            <img src="images/tutor-featured.jpg" alt="Featured tutor">
                         </div>
 
-                        <div>
+                        <div class="ut2-hero__tutor-copy">
                             <strong>Dr. Emily Carter</strong>
                             <span>Computer Science</span>
                         </div>
 
-                        <span class="unitutor-home2-status">
-                            Confirmed
-                        </span>
+                        <span class="ut2-hero__status">Confirmed</span>
 
                     </div>
 
                 </div>
 
 
-                <!-- Floating Rating -->
-                <div class="unitutor-home2-rating-card">
+                <!-- Rating Card -->
+                <div class="ut2-hero__rating-card">
 
-                    <div class="unitutor-home2-rating-icon">
+                    <div class="ut2-hero__rating-icon">
                         <i data-lucide="star"></i>
                     </div>
 
-                    <div>
+                    <div class="ut2-hero__rating-copy">
                         <strong>4.9 / 5</strong>
                         <span>Student rating</span>
                     </div>
@@ -287,15 +297,18 @@
                 </div>
 
 
-                <!-- Floating Subject Tag -->
-                <div class="unitutor-home2-subject-tag">
-                    <i data-lucide="graduation-cap"></i>
+                <!-- Subject Tag -->
+                <div class="ut2-hero__subject-tag">
+                    <span class="ut2-hero__subject-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </span>
                     <span>Expert University Tutors</span>
                 </div>
 
             </div>
 
         </section>
+
 
         <!-- =========================================
      HOME 2 WHY UNITUTOR
